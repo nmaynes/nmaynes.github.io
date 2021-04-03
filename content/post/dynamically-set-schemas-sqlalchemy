@@ -1,0 +1,30 @@
+---
+author: nmaynes1
+categories:
+- Tutorials
+tags:
+- data
+- databases
+- sqlalchemy
+- orm
+title: "Dynamically Set ORM Schemas in Sqlalchemy"
+date: 2021-04-03T07:54:57-04:00
+draft: true
+---
+
+Sometimes the solution to a problem is so obvious, it takes a while to figure it out. Supporting a multi-tenant
+database model with SQLAlchemy proved to be a such a problem for me until I found the documentation for
+["Multi-Tenancy Schema Translation for Table objects"](https://stackoverflow.com/questions/9298296/sqlalchemy-support-of-postgres-schemas) in the
+documentation.
+
+
+### StackOverflow questions with answers that range from correct to straight up not good.
+[Stackoverflow question asking how to dynamically set schema](https://stackoverflow.com/questions/29595161/sqlalchemy-dynamic-schema-on-entity-at-runtime/55979164#55979164)
+[Stackoverflow question about sqlalchemy support of postgres schemas](https://stackoverflow.com/questions/9298296/sqlalchemy-support-of-postgres-schemas)
+
+So how can it be done correctly? I have seen quite a few answers on StackOverflow and plenty of Medium posts that
+document approaches that may "work" when creating the ORM objects but do not work properly. I needed a solution that
+would dynamically set the schema using SQLAchemy's declarative model, tear down the objects created by the ORM in the
+correct schemas, and support Alembic migrations. It almost goes without saying, I wanted something that would be easy
+ to maintain. Luckily the solution is pretty simple. It involves creating a SQLAlchemy engine with execution option
+ `schema_translation_map` arguement.
