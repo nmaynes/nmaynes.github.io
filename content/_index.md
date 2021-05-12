@@ -36,6 +36,6 @@
 `::::::::'  .:::::::::::::.                                    
 `::::'   .::::::::::::::'
 ```
-Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am learning.
+Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am working on.
 
-The blog is hosted on Github pages and built using Hugo. Follow me on Twitter @nathanmaynes.
+The blog is hosted on Github pages and built using [Hugo](https://gohugo.io) using the [smol](https://github.com/colorchestra/smol) theme.
