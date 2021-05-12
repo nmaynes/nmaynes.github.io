@@ -38,4 +38,4 @@
 ```
 Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am learning.
 
-The blog is hosted on Github pages and built using Hugo.
+The blog is hosted on Github pages and built using Hugo. Follow me on Twitter @nathanmaynes.
