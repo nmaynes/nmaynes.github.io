@@ -79,4 +79,4 @@ for schema in schemas:
 The code above creates an ORM for MyTable using declarative mapping. It then loops through the schema names and creates
 an engine for each with the schema name as an argument to `schema_translate_map`. It then checks whether the schema
 exists. If the schema does exist, it calls `Base.metadata.create_all()` to create the database objects according to the
-ORM. If the schema does not exist, it is created first. 
+ORM. If the schema does not exist, it is created first.
