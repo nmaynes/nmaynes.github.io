@@ -1,0 +1,55 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><style type=text/css>body{font-family:monospace}</style><title>Dynamically Set ORM Schemas via Sqlalchemy</title><link rel=stylesheet href=/nmaynes.github.io/css/style.css></head><body><header>===================<br>== <a href=nmaynes.github.io>Nathan's Blog</a> ==<br>===================<div style=float:right></div><br><p><nav><a href=/><b>Start</b></a>.</header><main><article><h1>Dynamically Set ORM Schemas via Sqlalchemy</h1><b><time>2021-04-03 07:54:57</time></b>
+<a href=/nmaynes.github.io/tags/data>data</a>
+<a href=/nmaynes.github.io/tags/databases>databases</a>
+<a href=/nmaynes.github.io/tags/sqlalchemy>sqlalchemy</a>
+<a href=/nmaynes.github.io/tags/orm>orm</a><div><p>Sometimes the solution to a problem is so obvious, it takes a while to figure it out. I recently stumbled on such a
+problem when trying to configure a set of Object Relational Mappings (ORM) to support an application with
+the same set of table objects across different schemas in Postgres. Developing an ORM to support this pattern,
+a multi-tenant database model, proved challenging because of where I started. Below, I will detail the correct
+way to support the multi-tenant pattern as well as various approaches I came across and why they should not be used.</p><p>I think one of the reasons good information is difficult to find is due to how the problem can be described. When
+thinking about the behavior of the application, it makes sense to describe setting the schema name for each tenant
+as a dynamic process. Something that is not defined in the ORM but is defined when the ORM is called and instantiated.
+So I began searching SQLAlchemy documentation to find ways to dynamically set schemas. These searches did not yield
+what I was looking to find until I stumbled across the documentation for
+<a href=https://stackoverflow.com/questions/9298296/sqlalchemy-support-of-postgres-schemas>&ldquo;Multi-Tenancy Schema Translation for Table objects&rdquo;</a>.</p><p>I searched StackOverflow for examples or explanations of how to properly define the schema mapping and noticed lots of
+code that was ingenious and out of date or just wrong.</p><h4 id=stackoverflow-questions-with-a-range-of-answers>StackOverflow questions with a range of answers</h4><p><a href=https://stackoverflow.com/questions/29595161/sqlalchemy-dynamic-schema-on-entity-at-runtime/55979164#55979164>Stackoverflow question asking how to dynamically set schema</a>
+<a href=https://stackoverflow.com/questions/9298296/sqlalchemy-support-of-postgres-schemas>Stackoverflow question about sqlalchemy support of postgres schemas</a></p><p>I needed a solution that
+would dynamically set the schema using SQLAchemy&rsquo;s declarative model, tear down the objects created by the ORM in the
+correct schemas, provide full support for constraints and indexes, and support Alembic migrations.
+It almost goes without saying, I also wanted something that would be easy to maintain.
+Luckily defining a schema translation map is pretty easy.</p><h3 id=schema_translation_map>schema_translation_map</h3><p>A simple example includes defining a declarative ORM and then calling <code>Base.metadata.create_all(conn)</code> via a function
+that iterates over a list of schema names. Assuming you already have the database connection sorted out, we just need to
+provide the Engine, Connection, or Session object with a <code>schema_translation_map</code>. I will demonstrate with an Engine
+object from SQLAlchemy 1.3.x. (Note, other versions of SQLAlchemy provide similar behavior but require small tweaks.
+Consult the SQLAlchemy documentation for the version you are using.)</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> sqlalchemy <span style=color:#f92672>import</span> create_engine
+<span style=color:#f92672>from</span> sqlalchemy.ext.declarative <span style=color:#f92672>import</span> declarative_base
+<span style=color:#f92672>from</span> sqlalchemy <span style=color:#f92672>import</span> String
+<span style=color:#f92672>from</span> sqlalchemy.schema <span style=color:#f92672>import</span> CreateSchema
+<span style=color:#f92672>from</span> sqlalchemy.dialects.postgresql <span style=color:#f92672>import</span> UUID
+<span style=color:#f92672>import</span> uuid
+
+Base <span style=color:#f92672>=</span> declarative_base()
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyTable</span>(Base):
+    __tablename__ <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;my_table&#34;</span>
+
+    id <span style=color:#f92672>=</span> Column(UUID(as_uuid<span style=color:#f92672>=</span>True), primary_key<span style=color:#f92672>=</span>True, default<span style=color:#f92672>=</span>uuid<span style=color:#f92672>.</span>uuid4)
+    name <span style=color:#f92672>=</span> Column(String)
+
+
+schemas <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;schema_1&#34;</span>, <span style=color:#e6db74>&#34;schema_2&#34;</span>]
+
+connection_string <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;postgresql://your_connection_details_go_here&#34;</span>
+
+<span style=color:#66d9ef>for</span> schema <span style=color:#f92672>in</span> schemas:
+    engine <span style=color:#f92672>=</span> create_engine(connection_string, echo<span style=color:#f92672>=</span>True, execution_options<span style=color:#f92672>=</span>{<span style=color:#e6db74>&#34;schema_translate_map&#34;</span>: {None: schema}})
+    <span style=color:#66d9ef>with</span> engine<span style=color:#f92672>.</span>connect() <span style=color:#66d9ef>as</span> conn:
+        <span style=color:#66d9ef>if</span> engine<span style=color:#f92672>.</span>dialect<span style=color:#f92672>.</span>has_schema(conn, schema):
+            Base<span style=color:#f92672>.</span>metadata<span style=color:#f92672>.</span>create_all(conn)
+        <span style=color:#66d9ef>else</span>:
+            conn<span style=color:#f92672>.</span>execute(CreateSchema(schema))
+            Base<span style=color:#f92672>.</span>metadata<span style=color:#f92672>.</span>create_all(conn)
+</code></pre></div><p>The code above creates an ORM for MyTable using declarative mapping. It then loops through the schema names and creates
+an engine for each with the schema name as an argument to <code>schema_translate_map</code>. It then checks whether the schema
+exists. If the schema does exist, it calls <code>Base.metadata.create_all()</code> to create the database objects according to the
+ORM. If the schema does not exist, it is created first.</p><p>This is a simple example. I recommend you create a wrapper function to call Base.metadata.create_all() to provide even
+more logic for handling various deployment scenarios.</p></div></article></main><aside><div><div><h3>LATEST POSTS</h3></div><div><ul><li><a href=nmaynes.github.io/post/2021-04-03-dynamically-set-schemas-sqlalchemy/>Dynamically Set ORM Schemas via Sqlalchemy</a></li><li><a href=nmaynes.github.io/2020/11/29/a-primer-on-data-normalization/>A Primer on Data Normalization</a></li><li><a href=nmaynes.github.io/2020/11/27/deals-deals-deals/>Deals, Deals, Deals</a></li><li><a href=nmaynes.github.io/2020/08/28/let-pycharm-use-wsls-git-executable/>Let Pycharm Use WSL&amp;#8217;s Git Executable</a></li><li><a href=nmaynes.github.io/2020/08/01/speed-up-your-rest-workflows-with-asyncio/>Speed Up Your REST Workflows with asyncio</a></li></ul></div></div></aside><footer><p>&copy; 2021 <a href=nmaynes.github.io><b>Nathan's Blog</b></a>.</p></footer></body></html>
