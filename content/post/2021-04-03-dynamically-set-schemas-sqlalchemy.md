@@ -7,9 +7,8 @@ tags:
 - databases
 - sqlalchemy
 - orm
-title: "Dynamically Set ORM Schemas in Sqlalchemy"
+title: "Dynamically Set ORM Schemas via Sqlalchemy"
 date: 2021-04-03T07:54:57-04:00
-draft: true
 ---
 
 Sometimes the solution to a problem is so obvious, it takes a while to figure it out. I recently stumbled on such a
@@ -25,11 +24,11 @@ So I began searching SQLAlchemy documentation to find ways to dynamically set sc
 what I was looking to find until I stumbled across the documentation for
 ["Multi-Tenancy Schema Translation for Table objects"](https://stackoverflow.com/questions/9298296/sqlalchemy-support-of-postgres-schemas).
 
-I searched StackOverflow for examples or explainations of how to properly define the schema mapping and noticed lots of
+I searched StackOverflow for examples or explanations of how to properly define the schema mapping and noticed lots of
 code that was ingenious and out of date or just wrong.
 
 
-### StackOverflow questions with a range of answers
+#### StackOverflow questions with a range of answers
 [Stackoverflow question asking how to dynamically set schema](https://stackoverflow.com/questions/29595161/sqlalchemy-dynamic-schema-on-entity-at-runtime/55979164#55979164)
 [Stackoverflow question about sqlalchemy support of postgres schemas](https://stackoverflow.com/questions/9298296/sqlalchemy-support-of-postgres-schemas)
 
@@ -80,3 +79,6 @@ The code above creates an ORM for MyTable using declarative mapping. It then loo
 an engine for each with the schema name as an argument to `schema_translate_map`. It then checks whether the schema
 exists. If the schema does exist, it calls `Base.metadata.create_all()` to create the database objects according to the
 ORM. If the schema does not exist, it is created first.
+
+This is a simple example. I recommend you create a wrapper function to call Base.metadata.create_all() to provide even
+more logic for handling various deployment scenarios.
