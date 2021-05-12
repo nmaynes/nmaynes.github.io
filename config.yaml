@@ -1,0 +1,5 @@
+baseURL: nmaynes.github.io
+disablePathToLower: true
+languageCode: en-us
+title: Nathan's Blog
+theme: "smol"
