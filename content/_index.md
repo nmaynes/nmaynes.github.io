@@ -1,4 +1,4 @@
-![Drawing of man looking though optic in early submarine](/img/submarine-service-pnp-ds-12200-12248v.jpg "Fulton, R. (1806) Submarine "Submarine Vessel, Submarine Bombs and Mode of Attack" for the United States government. Vessel sighting mechanism details. , 1806. [Photograph] Retrieved from the Library of Congress, https://www.loc.gov/item/96509728/.")
+![Drawing of man looking though optic in early submarine](/submarine-service-pnp-ds-12200-12248v.jpg)
 
 
 Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am working on.
