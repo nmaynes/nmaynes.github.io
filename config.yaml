@@ -11,7 +11,7 @@ menu:
   main:
     - identifier: posts
       name: Posts
-      url: /posts/
+      url: /post/
       weight: 1
     - identifier: categories
       name: Categories
