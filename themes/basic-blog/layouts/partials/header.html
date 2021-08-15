@@ -8,7 +8,7 @@
         <a href="/"><b>Start</b></a>.
         {{ with .Site.Menus.main }}
         {{ range . }}
-        <a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>.
+        <a href="{{ .URL | absURL }}"><b>{{ .Name }}</b></a>.
         {{ end }}
     </nav>
     </p>
