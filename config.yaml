@@ -2,7 +2,7 @@ baseURL: mayn.es
 disablePathToLower: true
 languageCode: en-us
 title: Nathan's Blog
-theme: "smol"
+theme: "basic-blog"
 
 params:
   subtitle: infrequent posts about things I am working on
