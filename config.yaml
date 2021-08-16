@@ -1,8 +1,8 @@
-baseURL: mayn.es
+baseURL: www.mayn.es
 disablePathToLower: true
 languageCode: en-us
 title: Nathan's Blog
-theme: "basic-blog"
+theme: "smol"
 
 params:
   subtitle: infrequent posts about things I am working on
@@ -26,6 +26,6 @@ menu:
       url: 'https://github.com/nmaynes'
       weight: 1
     - name: Twitter
-      url: 'https://twitter.com/@nmaynes'
+      url: 'https://twitter.com/nathanmaynes'
       weight: 2
 
