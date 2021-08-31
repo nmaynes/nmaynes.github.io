@@ -1,7 +1,13 @@
 <!doctype html><html lang=en-us><head><meta name=generator content="Hugo 0.81.0"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><style type=text/css>body{font-family:monospace}</style><title></title><link rel=stylesheet href=/css/style.css><link rel=alternate type=application/rss+xml href=/index.xml title="Nathan's Blog"></head><body><header>===================<br>== <a href=/>Nathan's Blog</a> ==<br>===================<div style=float:right>infrequent posts about things I am working on</div><br><p><nav><a href=/><b>Start</b></a>.
 <a href=/post/><b>Posts</b></a>.
 <a href=/categories/><b>Categories</b></a>.
-<a href=/tags/><b>Tags</b></a>.</nav></p></header><main><style>main{background-color:#fff}</style><header class=homepage-header><h1></h1></header><div class=homepage-content><p><figure><img src=/submarine-service-pnp-ds-12200-12248v.jpg alt="Drawing of man looking though optic in early submarine"></figure></p><p>Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am working on.</p><p>The blog is hosted on Github pages and built using <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/colorchestra/smol>smol</a> theme.</p></div><div><article><h1><a href=/post/2021-04-03-dynamically-set-schemas-sqlalchemy/>Dynamically Set ORM Schemas via Sqlalchemy</a></h1><b><time>03.04.2021 07:54</time></b>
+<a href=/tags/><b>Tags</b></a>.</nav></p></header><main><style>main{background-color:#fff}</style><header class=homepage-header><h1></h1></header><div class=homepage-content><p><figure><img src=/submarine-service-pnp-ds-12200-12248v.jpg alt="Drawing of man looking though optic in early submarine"></figure></p><p>Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am working on.</p><p>The blog is hosted on Github pages and built using <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/colorchestra/smol>smol</a> theme.</p></div><div><article><h1><a href=/post/2021-08-31-upload-pandas-df-to-s3/>Upload a Pandas Dataframe to AWS S3 With Ease</a></h1><b><time>31.08.2021 12:24</time></b><div>Uploading a Pandas dataframe to S3 is different from writing the dataframe to a local filesystem. But have no fear! It is easy once you understand a couple of key concepts. Here is a working example using boto3.resource("s3") that has been tested against pandas 1.3.2. It is worth noting that the following will only work with pandas versions greater than 1.2.0.
+from io import BytesIO import boto3 import pandas from pandas import util df = util.
+<a href=/post/2021-08-31-upload-pandas-df-to-s3/>Read more...</a></div></article><article><h1><a href=/post/2021-08-16-moving-my-blog-to-hugo/>Moving My Personal Blog From Wordpress to Hugo</a></h1><b><time>16.08.2021 11:13</time></b>
+<a href=/tags/hugo>hugo</a>
+<a href=/tags/website>website</a>
+<a href=/tags/hosting>hosting</a><div>I started the process of moving my personal blog over a year ago, when the global pandemic brought on by the COVID-19 virus sent my local area into lock down. The reasons for doing so were simple enough, my web hosting bill had grown north of $200 dollars a month for my personal blog. Don&rsquo;t get me wrong, Wordpress is great! I just wanted to get my blog onto something more appropriate for the audience (read, pretty small).
+<a href=/post/2021-08-16-moving-my-blog-to-hugo/>Read more...</a></div></article><article><h1><a href=/post/2021-04-03-dynamically-set-schemas-sqlalchemy/>Dynamically Set ORM Schemas via Sqlalchemy</a></h1><b><time>03.04.2021 07:54</time></b>
 <a href=/tags/data>data</a>
 <a href=/tags/databases>databases</a>
 <a href=/tags/sqlalchemy>sqlalchemy</a>
@@ -40,22 +46,6 @@ http://man7.org/linux/man-pages/man1/head.1.htmlBut what if that file does not h
 <a href=/tags/process>process</a>
 <a href=/tags/WAV>WAV</a><div>Collecting memories from people is an excellent way to celebrate the experience of others. I have found it helps me learn more about why people hold certain beliefs, how they overcame hardships, and the world we live in. Interviewing other people has helped me learn more about myself, which is why I wanted to write up a guide for collecting the stories of other people.
 The most obvious aspect of collecting stories is interviewing.
-<a href=/2020/01/19/your-simple-guide-to-collecting-oral-history/>Read more...</a></div></article><article><h1><a href=/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/>Troubleshooting Windows Subsystem for Linux and SSH</a></h1><b><time>16.01.2020 21:51</time></b>
-<a href=/tags/chown>chown</a>
-<a href=/tags/file-system>file system</a>
-<a href=/tags/linux>linux</a>
-<a href=/tags/ssh>ssh</a>
-<a href=/tags/windows>windows</a>
-<a href=/tags/wsl>wsl</a><div>The Windows Subsystem for Linux (WSL) is one of the best features on Windows 10. It makes development so much easier than it used to be but still has a few hiccups. Kinda like Linux, some things don’t “just work.” One pesky thing that I recently dealt with was getting SSH to work with a keypair file from WSL. Here is how to get SSH working on WSL.
-Goal Given a keypair file, we want to invoke ssh from the command line and establish a tunnel to another server.
-<a href=/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/>Read more...</a></div></article><article><h1><a href=/2020/01/14/kafkacat-amazon-workspace/>Kafkacat Amazon Workspace</a></h1><b><time>14.01.2020 16:16</time></b>
-<a href=/tags/amazon>amazon</a>
-<a href=/tags/aws>aws</a>
-<a href=/tags/epel>epel</a>
-<a href=/tags/kafka>kafka</a>
-<a href=/tags/linux>linux</a>
-<a href=/tags/workspace>workspace</a><div>Below are some notes on getting &lt;a href="https://github.com/edenhill/kafkacat#build">kafkacat&lt;/a> installed on an Amazon workspace with admin access.
-The commands listed on the GitHub page will not work without a little preparation. A Linux Amazon Workspace image is based on Amazon Linux. Attempts to use a package manager like yum go through a plugin, amzn_workspaces_filter_updates. This filter only has a handful of packages (30 at the time of this writing) that can be pulled.
-<a href=/2020/01/14/kafkacat-amazon-workspace/>Read more...</a></div></article></div></main><footer><p>&copy; 2021 <a href=/><b>Nathan's Blog</b></a>.
+<a href=/2020/01/19/your-simple-guide-to-collecting-oral-history/>Read more...</a></div></article></div></main><footer><p>&copy; 2021 <a href=/><b>Nathan's Blog</b></a>.
 <a href=https://github.com/nmaynes><b>Github</b></a>.
 <a href=https://twitter.com/nathanmaynes><b>Twitter</b></a>.</p></footer></body></html>
