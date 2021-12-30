@@ -8,7 +8,7 @@ tags:
 - aws
 - lambda
 date: 2021-10-04T14:56:18-04:00
-draft: true
+draft: false
 ---
 
 I recently started working on a workflow for picking up files from S3, processing them, and writing the
