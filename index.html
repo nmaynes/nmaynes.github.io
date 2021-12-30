@@ -1,7 +1,12 @@
 <!doctype html><html lang=en-us><head><meta name=generator content="Hugo 0.81.0"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><style type=text/css>body{font-family:monospace}</style><title></title><link rel=stylesheet href=/css/style.css><link rel=alternate type=application/rss+xml href=/index.xml title="Nathan's Blog"></head><body><header>===================<br>== <a href=/>Nathan's Blog</a> ==<br>===================<div style=float:right>infrequent posts about things I am working on</div><br><p><nav><a href=/><b>Start</b></a>.
 <a href=/post/><b>Posts</b></a>.
 <a href=/categories/><b>Categories</b></a>.
-<a href=/tags/><b>Tags</b></a>.</nav></p></header><main><style>main{background-color:#fff}</style><header class=homepage-header><h1></h1></header><div class=homepage-content><p><figure><img src=/submarine-service-pnp-ds-12200-12248v.jpg alt="Drawing of man looking though optic in early submarine"></figure></p><p>Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am working on.</p><p>The blog is hosted on Github pages and built using <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/colorchestra/smol>smol</a> theme.</p></div><div><article><h1><a href=/post/2021-08-31-upload-pandas-df-to-s3/>Upload a Pandas Dataframe to AWS S3 With Ease</a></h1><b><time>31.08.2021 12:24</time></b><div>Uploading a Pandas dataframe to S3 is different from writing the dataframe to a local filesystem. But have no fear! It is easy once you understand a couple of key concepts. Here is a working example using boto3.resource("s3") that has been tested against pandas 1.3.2. It is worth noting that the following will only work with pandas versions greater than 1.2.0.
+<a href=/tags/><b>Tags</b></a>.</nav></p></header><main><style>main{background-color:#fff}</style><header class=homepage-header><h1></h1></header><div class=homepage-content><p><figure><img src=/submarine-service-pnp-ds-12200-12248v.jpg alt="Drawing of man looking though optic in early submarine"></figure></p><p>Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am working on.</p><p>The blog is hosted on Github pages and built using <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/colorchestra/smol>smol</a> theme.</p></div><div><article><h1><a href=/post/2021-12-30-file-like-objects-in-lambda/>Working With File Like Objects in Lambda</a></h1><b><time>30.12.2021 16:35</time></b>
+<a href=/tags/python>python</a>
+<a href=/tags/zipfile>zipfile</a>
+<a href=/tags/aws>aws</a>
+<a href=/tags/lambda>lambda</a><div>I recently started working on a workflow for picking up files from S3, processing them, and writing the results to another S3 location. This is a common pattern in data processing pipelines and our team wanted to see whether we could do it using AWS serverless services. We were able to get it running via Lambda functions and event triggers published to an AWS EventHub. The entire workflow was fairly easy to stand up once we grasped how the various services worked together.
+<a href=/post/2021-12-30-file-like-objects-in-lambda/>Read more...</a></div></article><article><h1><a href=/post/2021-08-31-upload-pandas-df-to-s3/>Upload a Pandas Dataframe to AWS S3 With Ease</a></h1><b><time>31.08.2021 12:24</time></b><div>Uploading a Pandas dataframe to S3 is different from writing the dataframe to a local filesystem. But have no fear! It is easy once you understand a couple of key concepts. Here is a working example using boto3.resource("s3") that has been tested against pandas 1.3.2. It is worth noting that the following will only work with pandas versions greater than 1.2.0.
 from io import BytesIO import boto3 import pandas from pandas import util df = util.
 <a href=/post/2021-08-31-upload-pandas-df-to-s3/>Read more...</a></div></article><article><h1><a href=/post/2021-08-16-moving-my-blog-to-hugo/>Moving My Personal Blog From Wordpress to Hugo</a></h1><b><time>16.08.2021 11:13</time></b>
 <a href=/tags/hugo>hugo</a>
@@ -33,19 +38,6 @@ from io import BytesIO import boto3 import pandas from pandas import util df = u
 Will get you
 http://man7.org/linux/man-pages/man1/head.1.htmlBut what if that file does not have nice lines? Large SQL dump files come to mind. head has an answer. Use the -c flag to print the beginning bytes of a file instead of lines.
 <a href=/2020/04/14/how-to-get-the-first-n-bytes-of-a-file/>Read more...</a></div></article><article><h1><a href=/2020/01/30/search-for-a-string-in-a-list-of-encrypted-values/>Search for a String in a list of Encrypted Values</a></h1><b><time>30.01.2020 22:35</time></b><div>Imagine a scenario where one party wants to check whether a name they have exists in a list of names kept by the another party. But I do not want the other party to know what name I am searching. This problem may seem unrealistic but imagine a data breach where tons of personal information is leaked. You want to check whether you were impacted in the breach but do not trust the party hosting the personal information to keep your query safe.
-<a href=/2020/01/30/search-for-a-string-in-a-list-of-encrypted-values/>Read more...</a></div></article><article><h1><a href=/2020/01/19/your-simple-guide-to-collecting-oral-history/>Your Simple Guide to Collecting Oral History</a></h1><b><time>19.01.2020 21:25</time></b>
-<a href=/tags/audio>audio</a>
-<a href=/tags/family-history>family history</a>
-<a href=/tags/FLAC>FLAC</a>
-<a href=/tags/formats>formats</a>
-<a href=/tags/getting-started>getting started</a>
-<a href=/tags/interviews>interviews</a>
-<a href=/tags/ocen-audio>ocen audio</a>
-<a href=/tags/ocenaudio>ocenaudio</a>
-<a href=/tags/oral-history>oral history</a>
-<a href=/tags/process>process</a>
-<a href=/tags/WAV>WAV</a><div>Collecting memories from people is an excellent way to celebrate the experience of others. I have found it helps me learn more about why people hold certain beliefs, how they overcame hardships, and the world we live in. Interviewing other people has helped me learn more about myself, which is why I wanted to write up a guide for collecting the stories of other people.
-The most obvious aspect of collecting stories is interviewing.
-<a href=/2020/01/19/your-simple-guide-to-collecting-oral-history/>Read more...</a></div></article></div></main><footer><p>&copy; 2021 <a href=/><b>Nathan's Blog</b></a>.
+<a href=/2020/01/30/search-for-a-string-in-a-list-of-encrypted-values/>Read more...</a></div></article></div></main><footer><p>&copy; 2021 <a href=/><b>Nathan's Blog</b></a>.
 <a href=https://github.com/nmaynes><b>Github</b></a>.
 <a href=https://twitter.com/nathanmaynes><b>Twitter</b></a>.</p></footer></body></html>

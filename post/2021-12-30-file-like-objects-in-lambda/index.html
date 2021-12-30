@@ -1,0 +1,113 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><style type=text/css>body{font-family:monospace}</style><title>Working With File Like Objects in Lambda</title><link rel=stylesheet href=/css/style.css></head><body><header>===================<br>== <a href=/>Nathan's Blog</a> ==<br>===================<div style=float:right>infrequent posts about things I am working on</div><br><p><nav><a href=/><b>Start</b></a>.
+<a href=/post/><b>Posts</b></a>.
+<a href=/categories/><b>Categories</b></a>.
+<a href=/tags/><b>Tags</b></a>.</nav></p></header><main><article><h1>Working With File Like Objects in Lambda</h1><b><time>30.12.2021 16:35</time></b>
+<a href=/tags/python>python</a>
+<a href=/tags/zipfile>zipfile</a>
+<a href=/tags/aws>aws</a>
+<a href=/tags/lambda>lambda</a><div><p>I recently started working on a workflow for picking up files from S3, processing them, and writing the
+results to another S3 location. This is a common pattern in data processing pipelines and our team wanted to see whether
+we could do it using AWS serverless services. We were able to get it running via Lambda
+functions and event triggers published to an AWS EventHub. The entire workflow was fairly easy to stand up once we
+grasped how the various services worked together.</p><p>AWS recently stood up a site called
+<a href=https://serverlessland.com>serverlessland.com</a> which has a <a href=https://serverlessland.com/blog>bunch of resources</a>
+for building serverless workflows in AWS. I encourage you to take a look at some of the AWS resources to learn more
+about how to set up a workflow, properly set permissions, connect the services, or develop with the
+<a href="https://serverlessland.com/blog?tag=AWS%20SAM">SAM build tool</a>. For this post, I want to share how to work with
+file like objects in Lambda functions.</p><h2 id=the-lambda-function-handler>The Lambda Function Handler</h2><p>A Lambda function is &ldquo;a [&mldr;] compute service that lets you run code without provisioning or managing servers&rdquo;<figure><img src=/lambda_function_anatomy.png alt="Anatomy of a Lambda Function"></figure>When setting up a lambda function it is important to note that the code you write will be handled via a function called
+<code>lambda_handler</code> which is the entrypoint to the code. Currently, the handler function takes two arguments,
+<code>event</code> and <code>context</code>. The event argument contains objects and attributes from the calling process
+while the context allows the code to access information about the process that spawned the
+event. I&rsquo;ll focus on event objects triggered by <code>Put</code> events in an S3 bucket.</p><h2 id=get_object-and-its-streamingbody>get_object() and its StreamingBody</h2><p>When an event is passed to a Lambda function from S3, the file contents can be retrieved and manipulated by accessing
+the event, pulling out the Bucket and Key names, and finally passing the Bucket and Key names to a function like
+<a href=https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_object>Boto3 s3 client&rsquo;s <code>get_object()</code></a>.
+Pay attention to the fact that this is the client interface and not the resource interface. They have some similar methods
+but are not the same! I frequently see questions on StackOverflow asking why code does not work when the poster is
+calling a Boto3 client method on a Boto3 resource object. Calling <code>get_object()</code> from a Lambda function is pretty easy.
+Take care to set up the Lambda function with proper access and permissions. If the S3 bucket is in a VPC, the Lambda
+function needs to have access to that VPC. If the S3 bucket is locked to allow specific IAM roles access to specific
+objects, the Lambda function needs to be granted the proper IAM roles.</p><p>In my experience, getting the permissions right
+is the most time consuming task when developing a Lambda workflow. My advice? Develop the Lambda function in a way
+that allows you to confirm access to resources in steps. If the workflow is supposed to access one S3 bucket, download
+and manipulate a file&rsquo;s contents, and then upload the result to another S3 bucket then the development process should
+be split into three stages. One for accessing the S3 bucket when a file will be picked up. The next stage focuses on
+manipulating the file&rsquo;s contents. And the final stage focuses on putting a file in its destination. Get the permissions
+ironed out for each phase and verify you are able to do each operation before trying to write the whole function.</p><p>Calling <code>get_object()</code> will return the object and its contents. Take special care to respect the limits of Lambda. Jobs
+can live for a maximum of 15 minutes as I write this in November of 2021. The Lambda function has access to the <code>/tmp</code>
+directory but is only allowed to write 512mb to disk. More details about what a Lambda function is limited to can be
+found in the Lambda Getting Started guide under <a href=https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html>&ldquo;limits&rdquo;</a>.
+The contents can then be accessed via the response&rsquo;s &ldquo;Body&rdquo; attribute. The Body attribute is a
+<a href=https://botocore.amazonaws.com/v1/documentation/api/latest/reference/response.html#botocore-response>StreamingBody</a> object
+and must be handled properly. For small files, <code>read()</code> is the method to use in combination with other methods
+for working with file like objects.</p><h2 id=an-example>An Example</h2><p>It is easier to demonstrate how this works with an example. The code below was written
+to process a zip archive once it was created in a specific S3 bucket. It opens the archive and then parses the
+CSV contents. Finally it returns the contents of the files as a json payload if the process succeeded. Otherwise the
+function will return a non-success error code and exit.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> csv<span style=color:#f92672>,</span> json
+<span style=color:#f92672>import</span> os
+<span style=color:#f92672>import</span> urllib.parse
+<span style=color:#f92672>import</span> boto3
+<span style=color:#f92672>from</span> zipfile <span style=color:#f92672>import</span> ZipFile
+<span style=color:#f92672>import</span> io
+
+s3 <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#34;s3&#34;</span>)
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>extract_zip</span>(input_zip, file_name):
+    contents <span style=color:#f92672>=</span> input_zip<span style=color:#f92672>.</span>read()
+    input_zip <span style=color:#f92672>=</span> ZipFile(io<span style=color:#f92672>.</span>BytesIO(contents))
+    <span style=color:#66d9ef>return</span> {name: input_zip<span style=color:#f92672>.</span>read(name) <span style=color:#66d9ef>for</span> name <span style=color:#f92672>in</span> input_zip<span style=color:#f92672>.</span>namelist()}
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(event, context):
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;Received event: &#34;</span> <span style=color:#f92672>+</span> json<span style=color:#f92672>.</span>dumps(event, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>))
+    <span style=color:#75715e># Get the object from the event and show its content type</span>
+    bucket <span style=color:#f92672>=</span> event[<span style=color:#e6db74>&#34;Records&#34;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#34;s3&#34;</span>][<span style=color:#e6db74>&#34;bucket&#34;</span>][<span style=color:#e6db74>&#34;name&#34;</span>]
+    key <span style=color:#f92672>=</span> urllib<span style=color:#f92672>.</span>parse<span style=color:#f92672>.</span>unquote_plus(
+        event[<span style=color:#e6db74>&#34;Records&#34;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#34;s3&#34;</span>][<span style=color:#e6db74>&#34;object&#34;</span>][<span style=color:#e6db74>&#34;key&#34;</span>], encoding<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utf-8&#34;</span>
+    )
+    <span style=color:#66d9ef>try</span>:
+        bucket <span style=color:#f92672>=</span> event[<span style=color:#e6db74>&#39;Records&#39;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;s3&#39;</span>][<span style=color:#e6db74>&#39;bucket&#39;</span>][<span style=color:#e6db74>&#39;name&#39;</span>]
+        key <span style=color:#f92672>=</span> urllib<span style=color:#f92672>.</span>parse<span style=color:#f92672>.</span>unquote_plus(event[<span style=color:#e6db74>&#39;Records&#39;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;s3&#39;</span>][<span style=color:#e6db74>&#39;object&#39;</span>][<span style=color:#e6db74>&#39;key&#39;</span>], encoding<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;utf-8&#39;</span>)
+
+        response <span style=color:#f92672>=</span> s3<span style=color:#f92672>.</span>get_object(Bucket<span style=color:#f92672>=</span>bucket, Key<span style=color:#f92672>=</span>key)
+        <span style=color:#75715e># This example assumes the file to process shares the archive&#39;s name</span>
+        file_name <span style=color:#f92672>=</span> key<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;.&#34;</span>)[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.csv&#34;</span>
+        <span style=color:#66d9ef>print</span>(f<span style=color:#e6db74>&#34;Attempting to open {key} and read {file_name}&#34;</span>)
+        <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;CONTENT TYPE: &#34;</span> <span style=color:#f92672>+</span> response[<span style=color:#e6db74>&#34;ContentType&#34;</span>])
+        data <span style=color:#f92672>=</span> []
+        contents <span style=color:#f92672>=</span> extract_zip(response[<span style=color:#e6db74>&#34;Body&#34;</span>], file_name)
+        <span style=color:#66d9ef>for</span> k, v <span style=color:#f92672>in</span> contents<span style=color:#f92672>.</span>items():
+            <span style=color:#66d9ef>print</span>(v)
+            reader <span style=color:#f92672>=</span> csv<span style=color:#f92672>.</span>reader(io<span style=color:#f92672>.</span>StringIO(v<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>)), delimiter<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;,&#39;</span>)
+            <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> reader:
+                data<span style=color:#f92672>.</span>append(row)
+        <span style=color:#66d9ef>return</span> {
+            <span style=color:#e6db74>&#34;statusCode&#34;</span>: <span style=color:#ae81ff>200</span>,
+            <span style=color:#e6db74>&#34;body&#34;</span>: data
+        }
+
+    <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
+        <span style=color:#66d9ef>print</span>(e)
+        <span style=color:#66d9ef>print</span>(
+            <span style=color:#e6db74>&#34;Error getting object {} from bucket {}. Make sure they exist and your bucket is in the same region as this function.&#34;</span><span style=color:#f92672>.</span>format(
+                key, bucket
+            )
+        )
+        <span style=color:#66d9ef>raise</span> e
+</code></pre></div><p>This is very similar to code that would be executed on your local machine or a server. The only real differences are
+the <code>event</code> and <code>context</code> objects passed as arguments to <code>lambda_handler</code>. Those two objects are passed from the trigger
+that initiates the Lambda function. In this example, the trigger is an S3 event which fires whenever a file is &ldquo;created&rdquo;
+in a specific directory with a specific file extension. The <code>event</code> object is how we extract the bucket and key name.</p><p>The bucket</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>bucket <span style=color:#f92672>=</span> event[<span style=color:#e6db74>&#34;Records&#34;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#34;s3&#34;</span>][<span style=color:#e6db74>&#34;bucket&#34;</span>][<span style=color:#e6db74>&#34;name&#34;</span>]
+</code></pre></div><p>and the key</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>key <span style=color:#f92672>=</span> urllib<span style=color:#f92672>.</span>parse<span style=color:#f92672>.</span>unquote_plus(
+    event[<span style=color:#e6db74>&#34;Records&#34;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#34;s3&#34;</span>][<span style=color:#e6db74>&#34;object&#34;</span>][<span style=color:#e6db74>&#34;key&#34;</span>], encoding<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utf-8&#34;</span>
+)
+</code></pre></div><p>The bucket and key name allow us to call <code>s3.get_object()</code> and pull the contents into memory. In this example, the
+file contents are processed without writing to disk. This can be tricky if you are used to reading and writing from
+disk via <a href=https://docs.python.org/3.8/tutorial/inputoutput.html#methods-of-file-objects>file object commands</a> like <code>open()</code>.
+In the example, we operate on the StreamingBody which is a <a href=https://docs.python.org/3.8/glossary.html#term-bytes-like-object>bytes-like object</a>.
+That just means we need to access the byte stream the proper way.</p><p>In <code>extract_zip()</code> We call the <code>read()</code> method on the StreamingBody returned by <code>get_object()</code>. This example is
+expecting a zip archive so the results of read must be passed to a ZipFile in a BytesIO object. The files contained
+inside the archive are then looped over, and the contents added to a dictionary. The key of each dictionary entry is
+the name of the file from which the content was taken.</p><p>Finally, the dictionary is ready for processing. This example is expecting to process CSV files. Using the <code>csv.reader</code>
+method, we can cast the bytes to a StringIO object and handle the file just like any other CSV file. The rows can then
+be placed in a list and returned by the function.</p></div></article></main><aside><div><div><h3>LATEST POSTS</h3></div><div><ul><li><a href=/post/2021-12-30-file-like-objects-in-lambda/>Working With File Like Objects in Lambda</a></li><li><a href=/post/2021-08-31-upload-pandas-df-to-s3/>Upload a Pandas Dataframe to AWS S3 With Ease</a></li><li><a href=/post/2021-08-16-moving-my-blog-to-hugo/>Moving My Personal Blog From Wordpress to Hugo</a></li><li><a href=/post/2021-04-03-dynamically-set-schemas-sqlalchemy/>Dynamically Set ORM Schemas via Sqlalchemy</a></li><li><a href=/2020/11/29/a-primer-on-data-normalization/>A Primer on Data Normalization</a></li></ul></div></div></aside><footer><p>&copy; 2021 <a href=/><b>Nathan's Blog</b></a>.
+<a href=https://github.com/nmaynes><b>Github</b></a>.
+<a href=https://twitter.com/nathanmaynes><b>Twitter</b></a>.</p></footer></body></html>
