@@ -7,8 +7,7 @@ tags:
 - zipfile
 - aws
 - lambda
-date: 2021-10-04T14:56:18-04:00
-draft: false
+date: 2021-12-30T16:35:34-05:00
 ---
 
 I recently started working on a workflow for picking up files from S3, processing them, and writing the
@@ -20,7 +19,7 @@ grasped how the various services worked together.
 AWS recently stood up a site called
 [serverlessland.com](https://serverlessland.com) which has a [bunch of resources](https://serverlessland.com/blog)
 for building serverless workflows in AWS. I encourage you to take a look at some of the AWS resources to learn more
- about how to set up a workflow, properly set permissions, connect the services, or develop with the
+about how to set up a workflow, properly set permissions, connect the services, or develop with the
 [SAM build tool](https://serverlessland.com/blog?tag=AWS%20SAM). For this post, I want to share how to work with
 file like objects in Lambda functions.
 
@@ -154,6 +153,7 @@ inside the archive are then looped over, and the contents added to a dictionary.
 the name of the file from which the content was taken.
 
 Finally, the dictionary is ready for processing. This example is expecting to process CSV files. Using the `csv.reader`
- method, we can cast the bytes to a StringIO object and handle the file just like any other CSV file. The rows can then
- be placed in a list and returned by the function.
+method, we can cast the bytes to a StringIO object and handle the file just like any other CSV file. The rows can then
+be placed in a list and returned by the function.
+
 
