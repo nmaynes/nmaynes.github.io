@@ -1,12 +1,12 @@
-+++
-title = "Timing Execution to Help Optimize for Loops"
+---
+title: "Timing Execution to Help Optimize for Loops"
 categories:
 - Tutorials
-  tags:
+tags:
 - python
 - optimization
-date = 2022-02-10T22:03:13-05:00
-+++
+date: 2022-02-10T22:03:13-05:00
+---
 
 I was working on optimizing some code that contained a series of loops. I began my analysis by running a few different versions of the program and timing each execution. The results were enlightening! I decided to share the approach with my team along with an [essay on the topic](https://www.python.org/doc/essays/list2str/) by [Guido Van Rossem](https://gvanrossum.github.io/).
 
