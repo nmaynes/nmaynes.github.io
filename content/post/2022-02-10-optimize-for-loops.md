@@ -1,5 +1,10 @@
 +++
 title = "Timing Execution to Help Optimize for Loops"
+categories:
+- Tutorials
+  tags:
+- python
+- optimization
 date = 2022-02-10T22:03:13-05:00
 +++
 
@@ -11,8 +16,7 @@ I was working on optimizing some code that contained a series of loops. I began 
     - 2) Python incurs significant lookup charges for bytecode instructions and variable lookup, it rarely improves code to add extra conditionals/checks to a function to save a little work e.g. handling known scenarios with unpythonic case-like statements.
     - 3) Use intrinsic operations. An implied loop in `map()` is faster than an explicit for loop; An explicit for loop is faster than a while loop with a loop counter.
     
-[!Photo by <a href="https://unsplash.com/@daniele_franchi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniele Franchi</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-](../static/daniele-franchi-WyJ0rahs_2k-unsplash.jpg)
+![Photo by Daniele Franchi on Unsplash](/daniele-franchi-WyJ0rahs_2k-unsplash.jpg)
 
 ### Timing Programs
 Timing can help identify speed bottlenecks by comparing execution time between different approaches to the same task.
