@@ -9,18 +9,26 @@ params:
   dateFmt: '02.01.2006 15:04'
 menu:
   main:
+    - identifier: family-culture
+      name: Family Culture
+      url: /family-culture/
+      weight: 1
     - identifier: posts
       name: Posts
       url: /post/
-      weight: 1
+      weight: 2
     - identifier: categories
       name: Categories
       url: /categories/
-      weight: 2
+      weight: 3
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 3
+      weight: 4
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 5
   footer:
     - name: Github
       url: 'https://github.com/nmaynes'
