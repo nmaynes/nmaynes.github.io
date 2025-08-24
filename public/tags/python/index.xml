@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Nathan&#39;s Blog</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Feb 2022 22:03:13 -0500</lastBuildDate>
+    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Timing Execution to Help Optimize for Loops</title>
+      <link>/post/2022-02-10-optimize-for-loops/</link>
+      <pubDate>Thu, 10 Feb 2022 22:03:13 -0500</pubDate>
+      <guid>/post/2022-02-10-optimize-for-loops/</guid>
+      <description>&lt;p&gt;I was working on optimizing some code that contained a series of loops. I began my analysis by running a few different versions of the program and timing each execution. The results were enlightening! I decided to share the approach with my team along with an &lt;a href=&#34;https://www.python.org/doc/essays/list2str/&#34;&gt;essay on the topic&lt;/a&gt; by &lt;a href=&#34;https://gvanrossum.github.io/&#34;&gt;Guido Van Rossem&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;General Rules of Thumb by Which to Develop Loops&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Never optimize before you have proven a speed bottleneck exists. Then, only optimize the innermost loop. If you have a bunch of loops, consider breaking the function apart.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;Python incurs significant lookup charges for bytecode instructions and variable lookup, it rarely improves code to add extra conditionals/checks to a function to save a little work e.g. handling known scenarios with unpythonic case-like statements.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;Use intrinsic operations. An implied loop in &lt;code&gt;map()&lt;/code&gt; is faster than an explicit for loop; An explicit for loop is faster than a while loop with a loop counter.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;figure&gt;&#xA;  &lt;img src=&#34;/daniele-franchi-WyJ0rahs_2k-unsplash.jpg&#34; alt=&#34;Photo by Daniele Franchi on Unsplash&#34; /&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Working With File Like Objects in Lambda</title>
+      <link>/post/2021-12-30-file-like-objects-in-lambda/</link>
+      <pubDate>Thu, 30 Dec 2021 16:35:34 -0500</pubDate>
+      <guid>/post/2021-12-30-file-like-objects-in-lambda/</guid>
+      <description>&lt;p&gt;I recently started working on a workflow for picking up files from S3, processing them, and writing the&#xA;results to another S3 location. This is a common pattern in data processing pipelines and our team wanted to see whether&#xA;we could do it using AWS serverless services. We were able to get it running via Lambda&#xA;functions and event triggers published to an AWS EventHub. The entire workflow was fairly easy to stand up once we&#xA;grasped how the various services worked together.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Speed Up Your REST Workflows with asyncio</title>
+      <link>/2020/08/01/speed-up-your-rest-workflows-with-asyncio/</link>
+      <pubDate>Sat, 01 Aug 2020 03:02:22 +0000</pubDate>
+      <guid>/2020/08/01/speed-up-your-rest-workflows-with-asyncio/</guid>
+      <description>&lt;p&gt;I have been waiting for a project that would allow me to dig into the Python’s &lt;a href=&#34;https://docs.python.org/3/library/asyncio.html&#34;&gt;asyncio&lt;/a&gt; library. Recently, such a project presented itself. I was tasked with hitting a rate limited REST API with just under 4 million requests. My first attempt was simple. Gather and build a block of search queries, POST each one to the API, process the results, and finally insert them in a database. Here is what the code looked like:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Simple Progress Bar in Python</title>
+      <link>/2019/04/18/a-simple-progress-bar-in-python/</link>
+      <pubDate>Thu, 18 Apr 2019 18:33:32 +0000</pubDate>
+      <guid>/2019/04/18/a-simple-progress-bar-in-python/</guid>
+      <description>&lt;p&gt;Recently, I have been working with the &lt;!-- raw HTML omitted --&gt;Requests&lt;!-- raw HTML omitted --&gt; library in Python. I wrote a simple function to pull down a file that took more than a minute to download. While waiting for the download to complete I realized it would be nice to have some insight into the download’s progress. A quick search on StackOverflow led to an &lt;!-- raw HTML omitted --&gt;excellent example&lt;!-- raw HTML omitted --&gt;. Below is a simple way to display a progress bar while downloading a file.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

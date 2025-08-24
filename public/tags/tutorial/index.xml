@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Nathan&#39;s Blog</title>
+    <link>/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Apr 2020 18:38:57 +0000</lastBuildDate>
+    <atom:link href="/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Get the First N Bytes of a File</title>
+      <link>/2020/04/14/how-to-get-the-first-n-bytes-of-a-file/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/2020/04/14/how-to-get-the-first-n-bytes-of-a-file/</guid>
+      <description>&lt;p&gt;There comes a time when you just need to take a little off the top of a file, see what you are working with. That is where knowing how to use a utility like &lt;code&gt;&amp;lt;a href=&amp;quot;http://man7.org/linux/man-pages/man1/head.1.html&amp;quot;&amp;gt;head&amp;lt;/a&amp;gt;&lt;/code&gt; can help. Just running:&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Will get you&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://man7.org/linux/man-pages/man1/head.1.html&#34;&gt;http://man7.org/linux/man-pages/man1/head.1.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;But what if that file does not have nice lines? Large SQL dump files come to mind. &lt;code&gt;head&lt;/code&gt; has an answer. Use the &lt;code&gt;-c&lt;/code&gt; flag to print the beginning bytes of a file instead of lines. Change the command above to:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

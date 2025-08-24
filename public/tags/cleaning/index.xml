@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cleaning on Nathan&#39;s Blog</title>
+    <link>/tags/cleaning/</link>
+    <description>Recent content in Cleaning on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Dec 2019 17:11:48 +0000</lastBuildDate>
+    <atom:link href="/tags/cleaning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quickly Find Large Files On Windows File System</title>
+      <link>/2019/12/18/quickly-find-large-files-on-windows-file-system/</link>
+      <pubDate>Wed, 18 Dec 2019 17:11:48 +0000</pubDate>
+      <guid>/2019/12/18/quickly-find-large-files-on-windows-file-system/</guid>
+      <description>&lt;p&gt;Once a year I need to free up space on my work machine. Once a year I find myself searching for an efficient way to identify the largest files that I do not need any longer without installing third party software. Here is the solution I stumbled on this year and it couldn’t be simpler.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Open File Explorer&lt;/li&gt;&#xA;&lt;li&gt;Navigate to the drive you want to search. Normally, C:\&lt;/li&gt;&#xA;&lt;li&gt;Type “size:gigantic” in the search bar&lt;/li&gt;&#xA;&lt;li&gt;Wait for the search to complete&lt;/li&gt;&#xA;&lt;li&gt;Sort the results by size&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This search will scan your computer’s file system for files that are larger than 128mb. You can then identify files that are no longer needed.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

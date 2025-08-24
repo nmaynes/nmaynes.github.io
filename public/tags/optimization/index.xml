@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optimization on Nathan&#39;s Blog</title>
+    <link>/tags/optimization/</link>
+    <description>Recent content in Optimization on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Feb 2022 22:03:13 -0500</lastBuildDate>
+    <atom:link href="/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Timing Execution to Help Optimize for Loops</title>
+      <link>/post/2022-02-10-optimize-for-loops/</link>
+      <pubDate>Thu, 10 Feb 2022 22:03:13 -0500</pubDate>
+      <guid>/post/2022-02-10-optimize-for-loops/</guid>
+      <description>&lt;p&gt;I was working on optimizing some code that contained a series of loops. I began my analysis by running a few different versions of the program and timing each execution. The results were enlightening! I decided to share the approach with my team along with an &lt;a href=&#34;https://www.python.org/doc/essays/list2str/&#34;&gt;essay on the topic&lt;/a&gt; by &lt;a href=&#34;https://gvanrossum.github.io/&#34;&gt;Guido Van Rossem&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;General Rules of Thumb by Which to Develop Loops&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Never optimize before you have proven a speed bottleneck exists. Then, only optimize the innermost loop. If you have a bunch of loops, consider breaking the function apart.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;Python incurs significant lookup charges for bytecode instructions and variable lookup, it rarely improves code to add extra conditionals/checks to a function to save a little work e.g. handling known scenarios with unpythonic case-like statements.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;Use intrinsic operations. An implied loop in &lt;code&gt;map()&lt;/code&gt; is faster than an explicit for loop; An explicit for loop is faster than a while loop with a loop counter.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;figure&gt;&#xA;  &lt;img src=&#34;/daniele-franchi-WyJ0rahs_2k-unsplash.jpg&#34; alt=&#34;Photo by Daniele Franchi on Unsplash&#34; /&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

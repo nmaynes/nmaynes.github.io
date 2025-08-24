@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uncategorized on Nathan&#39;s Blog</title>
+    <link>/categories/Uncategorized/</link>
+    <description>Recent content in Uncategorized on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Nov 2020 20:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/Uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Primer on Data Normalization</title>
+      <link>/2020/11/29/a-primer-on-data-normalization/</link>
+      <pubDate>Sun, 29 Nov 2020 20:00:00 +0000</pubDate>
+      <guid>/2020/11/29/a-primer-on-data-normalization/</guid>
+      <description>&lt;p&gt;Normalizing data is a common data engineering task. It prepares information to be stored in a way that minimizes duplication and is digestible by machines.  It also aims to solve &lt;a href=&#34;https://en.wikipedia.org/wiki/Database_normalization&#34;&gt;other problems and issues&lt;/a&gt; that are out of scope for this particular article but worth reading about if you find yourself struggling to understand jokes about E. F. Codd. This begs the question, why does normalization matter when entering information in a table or organizing a spreadsheet? In order to properly answer that question, we should explore a simple example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deals, Deals, Deals</title>
+      <link>/2020/11/27/deals-deals-deals/</link>
+      <pubDate>Fri, 27 Nov 2020 13:37:28 +0000</pubDate>
+      <guid>/2020/11/27/deals-deals-deals/</guid>
+      <description>&lt;p&gt;Wondering whether your favorite tools, services, or products are one sale this week? Below is a list of Cyber Week deals to help you get started with Data Engineering, refresh your toolbox, or launch your side project. Feel free to add to the list over on &lt;a href=&#34;https://gist.github.com/nmaynes/78e1749ca92bc97d73b5b821f48718af&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let Pycharm Use WSL&amp;#8217;s Git Executable</title>
+      <link>/2020/08/28/let-pycharm-use-wsls-git-executable/</link>
+      <pubDate>Fri, 28 Aug 2020 16:39:19 +0000</pubDate>
+      <guid>/2020/08/28/let-pycharm-use-wsls-git-executable/</guid>
+      <description>&lt;p&gt;This post is mostly for me but I ran into a ton of conflicting information while troubleshooting my Windows Subsystem for Linux (WSL) and PyCharm integration and figured it may help someone else. First things first. Versions matter! Before wasting your time trying to get Pycharm and WSL to play nicely, make sure you are running PyCharm2020.2 or greater and WSL 2. If you a) have no idea what those versions mean or b) are not sure what version you are using, allow me a chance to explain.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Get the First N Bytes of a File</title>
+      <link>/2020/04/14/how-to-get-the-first-n-bytes-of-a-file/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/2020/04/14/how-to-get-the-first-n-bytes-of-a-file/</guid>
+      <description>&lt;p&gt;There comes a time when you just need to take a little off the top of a file, see what you are working with. That is where knowing how to use a utility like &lt;code&gt;&amp;lt;a href=&amp;quot;http://man7.org/linux/man-pages/man1/head.1.html&amp;quot;&amp;gt;head&amp;lt;/a&amp;gt;&lt;/code&gt; can help. Just running:&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Will get you&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://man7.org/linux/man-pages/man1/head.1.html&#34;&gt;http://man7.org/linux/man-pages/man1/head.1.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;But what if that file does not have nice lines? Large SQL dump files come to mind. &lt;code&gt;head&lt;/code&gt; has an answer. Use the &lt;code&gt;-c&lt;/code&gt; flag to print the beginning bytes of a file instead of lines. Change the command above to:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Search for a String in a list of Encrypted Values</title>
+      <link>/2020/01/30/search-for-a-string-in-a-list-of-encrypted-values/</link>
+      <pubDate>Thu, 30 Jan 2020 22:35:08 +0000</pubDate>
+      <guid>/2020/01/30/search-for-a-string-in-a-list-of-encrypted-values/</guid>
+      <description>&lt;p&gt;Imagine a scenario where one party wants to check whether a name they have exists in a list of names kept by the another party. But I do not want the other party to know what name I am searching. This problem may seem unrealistic but imagine a data breach where tons of personal information is leaked. You want to check whether you were impacted in the breach but do not trust the party hosting the personal information to keep your query safe. This is possible with the help of homomorphic encryption, specifically &lt;a href=&#34;https://en.wikipedia.org/wiki/Paillier_cryptosystem&#34;&gt;Paillier&lt;/a&gt; encrytption.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Your Simple Guide to Collecting Oral History</title>
+      <link>/2020/01/19/your-simple-guide-to-collecting-oral-history/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/2020/01/19/your-simple-guide-to-collecting-oral-history/</guid>
+      <description>&lt;p&gt;Collecting memories from people is an excellent way to celebrate the experience of others. I have found it helps me learn more about why people hold certain beliefs, how they overcame hardships, and the world we live in. Interviewing other people has helped me learn more about myself, which is why I wanted to write up a guide for collecting the stories of other people.&lt;/p&gt;&#xA;&lt;p&gt;The most obvious aspect of collecting stories is interviewing. There are a ton of resources by people much more experienced than myself on how to conduct an oral history interview. It is important to come up with a sample outline and use that as a starting point. I continue to consult the following resources to help me prepare for interviews.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Troubleshooting Windows Subsystem for Linux and SSH</title>
+      <link>/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/</guid>
+      <description>&lt;p&gt;The Windows Subsystem for Linux (WSL) is one of the best features on Windows 10. It makes development so much easier than it used to be but still has a few hiccups. Kinda like Linux, some things don’t “just work.” One pesky thing that I recently dealt with was getting SSH to work with a keypair file from WSL. Here is how to get SSH working on WSL.&lt;/p&gt;&#xA;&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;&#xA;&lt;p&gt;Given a keypair file, we want to invoke ssh from the command line and establish a tunnel to another server. This is a common task when connecting to remote servers. Think AWS, Azure, or Digital Ocean. It is a simple command:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kafkacat Amazon Workspace</title>
+      <link>/2020/01/14/kafkacat-amazon-workspace/</link>
+      <pubDate>Tue, 14 Jan 2020 16:16:49 +0000</pubDate>
+      <guid>/2020/01/14/kafkacat-amazon-workspace/</guid>
+      <description>&lt;p&gt;Below are some notes on getting &lt;code&gt;&amp;lt;a href=&amp;quot;https://github.com/edenhill/kafkacat#build&amp;quot;&amp;gt;kafkacat&amp;lt;/a&amp;gt;&lt;/code&gt; installed on an Amazon workspace with admin access.&lt;/p&gt;&#xA;&lt;p&gt;The commands listed on the &lt;a href=&#34;https://github.com/edenhill/kafkacat&#34;&gt;GitHub page&lt;/a&gt; will not work without a little preparation. A Linux Amazon Workspace image is based on Amazon Linux. Attempts to use a package manager like &lt;code&gt;yum&lt;/code&gt; go through a plugin, &lt;code&gt;amzn_workspaces_filter_updates&lt;/code&gt;. This filter only has a handful of packages (30 at the time of this writing) that can be pulled. The first thing to do is add Extra Packages for Enterprise Linux, EPEL, to the instance’s package repository. Following the instructions on the &lt;a href=&#34;https://fedoraproject.org/wiki/EPEL/FAQ#How_can_I_install_the_packages_from_the_EPEL_software_repository.3F&#34;&gt;Fedora FAQ&lt;/a&gt; run:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Processing Audio Files with Amazon Transcribe</title>
+      <link>/2019/12/31/processing-audio-files-with-amazon-transcribe/</link>
+      <pubDate>Tue, 31 Dec 2019 21:41:36 +0000</pubDate>
+      <guid>/2019/12/31/processing-audio-files-with-amazon-transcribe/</guid>
+      <description>&lt;p&gt;I have been working on collecting a family’s oral history for the past few months. During the process I took notes with simple descriptions of what the speaker was describing or telling and a rough timestamp of when in the file the conversation took place. After collecting hours of stories, I realized that having a transcription would make things much easier to search and perhaps more useful to those interested in these particular histories. Why not get a transcription of the contents via one of the cloud offerings? Amazon offers a service called Transcribe that is available via the AWS suite of services. Since I have a small account and some credits to burn I figured why not kick the tires and see how Transcribe would perform on meandering oral history interviews. But before I jump into the how, let me describe my particular use case.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quickly Find Large Files On Windows File System</title>
+      <link>/2019/12/18/quickly-find-large-files-on-windows-file-system/</link>
+      <pubDate>Wed, 18 Dec 2019 17:11:48 +0000</pubDate>
+      <guid>/2019/12/18/quickly-find-large-files-on-windows-file-system/</guid>
+      <description>&lt;p&gt;Once a year I need to free up space on my work machine. Once a year I find myself searching for an efficient way to identify the largest files that I do not need any longer without installing third party software. Here is the solution I stumbled on this year and it couldn’t be simpler.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Open File Explorer&lt;/li&gt;&#xA;&lt;li&gt;Navigate to the drive you want to search. Normally, C:\&lt;/li&gt;&#xA;&lt;li&gt;Type “size:gigantic” in the search bar&lt;/li&gt;&#xA;&lt;li&gt;Wait for the search to complete&lt;/li&gt;&#xA;&lt;li&gt;Sort the results by size&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This search will scan your computer’s file system for files that are larger than 128mb. You can then identify files that are no longer needed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Simple Progress Bar in Python</title>
+      <link>/2019/04/18/a-simple-progress-bar-in-python/</link>
+      <pubDate>Thu, 18 Apr 2019 18:33:32 +0000</pubDate>
+      <guid>/2019/04/18/a-simple-progress-bar-in-python/</guid>
+      <description>&lt;p&gt;Recently, I have been working with the &lt;!-- raw HTML omitted --&gt;Requests&lt;!-- raw HTML omitted --&gt; library in Python. I wrote a simple function to pull down a file that took more than a minute to download. While waiting for the download to complete I realized it would be nice to have some insight into the download’s progress. A quick search on StackOverflow led to an &lt;!-- raw HTML omitted --&gt;excellent example&lt;!-- raw HTML omitted --&gt;. Below is a simple way to display a progress bar while downloading a file.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

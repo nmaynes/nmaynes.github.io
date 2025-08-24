@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrent on Nathan&#39;s Blog</title>
+    <link>/tags/concurrent/</link>
+    <description>Recent content in Concurrent on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Aug 2020 03:02:22 +0000</lastBuildDate>
+    <atom:link href="/tags/concurrent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Speed Up Your REST Workflows with asyncio</title>
+      <link>/2020/08/01/speed-up-your-rest-workflows-with-asyncio/</link>
+      <pubDate>Sat, 01 Aug 2020 03:02:22 +0000</pubDate>
+      <guid>/2020/08/01/speed-up-your-rest-workflows-with-asyncio/</guid>
+      <description>&lt;p&gt;I have been waiting for a project that would allow me to dig into the Python’s &lt;a href=&#34;https://docs.python.org/3/library/asyncio.html&#34;&gt;asyncio&lt;/a&gt; library. Recently, such a project presented itself. I was tasked with hitting a rate limited REST API with just under 4 million requests. My first attempt was simple. Gather and build a block of search queries, POST each one to the API, process the results, and finally insert them in a database. Here is what the code looked like:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -7,6 +7,7 @@ theme: "smol"
 params:
   subtitle: infrequent posts about things I am working on
   dateFmt: '02.01.2006 15:04'
+  calendarURL: webcal://www.fcps.edu/events/15/calendar.ics
 menu:
   main:
     - identifier: family-culture
@@ -16,6 +17,10 @@ menu:
     - identifier: posts
       name: Posts
       url: /post/
+      weight: 2
+    - identifier: events
+      name: Events
+      url: /event/
       weight: 2
     - identifier: categories
       name: Categories
@@ -36,4 +41,8 @@ menu:
     - name: Twitter
       url: 'https://twitter.com/nathanmaynes'
       weight: 2
-
+outputs:
+  section:
+      - html
+ignoreLogs:
+  warning-goldmark-raw-html

@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Nathan&#39;s Blog</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Apr 2025 06:23:26 -0400</lastBuildDate>
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Default</title>
+      <link>/tags/default/</link>
+      <pubDate>Wed, 02 Apr 2025 06:23:26 -0400</pubDate>
+      <guid>/tags/default/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ai</title>
+      <link>/tags/ai/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Children</title>
+      <link>/tags/children/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/children/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Digital Literacy</title>
+      <link>/tags/digital-literacy/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/digital-literacy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Digital Wellbeing</title>
+      <link>/tags/digital-wellbeing/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/digital-wellbeing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Family</title>
+      <link>/tags/family/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/family/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Online Safety</title>
+      <link>/tags/online-safety/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/online-safety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Roblox</title>
+      <link>/tags/roblox/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/roblox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>/tags/technology/</link>
+      <pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate>
+      <guid>/tags/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>/tags/optimization/</link>
+      <pubDate>Thu, 10 Feb 2022 22:03:13 -0500</pubDate>
+      <guid>/tags/optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Thu, 10 Feb 2022 22:03:13 -0500</pubDate>
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aws</title>
+      <link>/tags/aws/</link>
+      <pubDate>Thu, 30 Dec 2021 16:35:34 -0500</pubDate>
+      <guid>/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lambda</title>
+      <link>/tags/lambda/</link>
+      <pubDate>Thu, 30 Dec 2021 16:35:34 -0500</pubDate>
+      <guid>/tags/lambda/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zipfile</title>
+      <link>/tags/zipfile/</link>
+      <pubDate>Thu, 30 Dec 2021 16:35:34 -0500</pubDate>
+      <guid>/tags/zipfile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hosting</title>
+      <link>/tags/hosting/</link>
+      <pubDate>Mon, 16 Aug 2021 11:13:00 -0400</pubDate>
+      <guid>/tags/hosting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Mon, 16 Aug 2021 11:13:00 -0400</pubDate>
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Website</title>
+      <link>/tags/website/</link>
+      <pubDate>Mon, 16 Aug 2021 11:13:00 -0400</pubDate>
+      <guid>/tags/website/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data</title>
+      <link>/tags/data/</link>
+      <pubDate>Sat, 03 Apr 2021 07:54:57 -0400</pubDate>
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Databases</title>
+      <link>/tags/databases/</link>
+      <pubDate>Sat, 03 Apr 2021 07:54:57 -0400</pubDate>
+      <guid>/tags/databases/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Orm</title>
+      <link>/tags/orm/</link>
+      <pubDate>Sat, 03 Apr 2021 07:54:57 -0400</pubDate>
+      <guid>/tags/orm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sqlalchemy</title>
+      <link>/tags/sqlalchemy/</link>
+      <pubDate>Sat, 03 Apr 2021 07:54:57 -0400</pubDate>
+      <guid>/tags/sqlalchemy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EF Codd</title>
+      <link>/tags/EF-Codd/</link>
+      <pubDate>Sun, 29 Nov 2020 20:00:00 +0000</pubDate>
+      <guid>/tags/EF-Codd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Normalization</title>
+      <link>/tags/normalization/</link>
+      <pubDate>Sun, 29 Nov 2020 20:00:00 +0000</pubDate>
+      <guid>/tags/normalization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API</title>
+      <link>/tags/API/</link>
+      <pubDate>Sat, 01 Aug 2020 03:02:22 +0000</pubDate>
+      <guid>/tags/API/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Concurrent</title>
+      <link>/tags/concurrent/</link>
+      <pubDate>Sat, 01 Aug 2020 03:02:22 +0000</pubDate>
+      <guid>/tags/concurrent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>REST</title>
+      <link>/tags/REST/</link>
+      <pubDate>Sat, 01 Aug 2020 03:02:22 +0000</pubDate>
+      <guid>/tags/REST/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Big Files</title>
+      <link>/tags/big-files/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/tags/big-files/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bytes</title>
+      <link>/tags/bytes/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/tags/bytes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>/tags/powershell/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/tags/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>/tags/tutorial/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wc</title>
+      <link>/tags/wc/</link>
+      <pubDate>Tue, 14 Apr 2020 18:38:57 +0000</pubDate>
+      <guid>/tags/wc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Audio</title>
+      <link>/tags/audio/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/audio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Family History</title>
+      <link>/tags/family-history/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/family-history/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FLAC</title>
+      <link>/tags/FLAC/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/FLAC/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Formats</title>
+      <link>/tags/formats/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/formats/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Getting Started</title>
+      <link>/tags/getting-started/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/getting-started/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interviews</title>
+      <link>/tags/interviews/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/interviews/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ocen Audio</title>
+      <link>/tags/ocen-audio/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/ocen-audio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ocenaudio</title>
+      <link>/tags/ocenaudio/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/ocenaudio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oral History</title>
+      <link>/tags/oral-history/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/oral-history/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Process</title>
+      <link>/tags/process/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/process/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WAV</title>
+      <link>/tags/WAV/</link>
+      <pubDate>Sun, 19 Jan 2020 21:25:12 +0000</pubDate>
+      <guid>/tags/WAV/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chown</title>
+      <link>/tags/chown/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/tags/chown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File System</title>
+      <link>/tags/file-system/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/tags/file-system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ssh</title>
+      <link>/tags/ssh/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wsl</title>
+      <link>/tags/wsl/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/tags/wsl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Amazon</title>
+      <link>/tags/amazon/</link>
+      <pubDate>Tue, 14 Jan 2020 16:16:49 +0000</pubDate>
+      <guid>/tags/amazon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Epel</title>
+      <link>/tags/epel/</link>
+      <pubDate>Tue, 14 Jan 2020 16:16:49 +0000</pubDate>
+      <guid>/tags/epel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kafka</title>
+      <link>/tags/kafka/</link>
+      <pubDate>Tue, 14 Jan 2020 16:16:49 +0000</pubDate>
+      <guid>/tags/kafka/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workspace</title>
+      <link>/tags/workspace/</link>
+      <pubDate>Tue, 14 Jan 2020 16:16:49 +0000</pubDate>
+      <guid>/tags/workspace/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transcribe</title>
+      <link>/tags/transcribe/</link>
+      <pubDate>Tue, 31 Dec 2019 21:41:36 +0000</pubDate>
+      <guid>/tags/transcribe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transcription</title>
+      <link>/tags/transcription/</link>
+      <pubDate>Tue, 31 Dec 2019 21:41:36 +0000</pubDate>
+      <guid>/tags/transcription/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cleaning</title>
+      <link>/tags/cleaning/</link>
+      <pubDate>Wed, 18 Dec 2019 17:11:48 +0000</pubDate>
+      <guid>/tags/cleaning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Disk Space</title>
+      <link>/tags/disk-space/</link>
+      <pubDate>Wed, 18 Dec 2019 17:11:48 +0000</pubDate>
+      <guid>/tags/disk-space/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Function</title>
+      <link>/tags/function/</link>
+      <pubDate>Thu, 18 Apr 2019 18:33:32 +0000</pubDate>
+      <guid>/tags/function/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Requests</title>
+      <link>/tags/requests/</link>
+      <pubDate>Thu, 18 Apr 2019 18:33:32 +0000</pubDate>
+      <guid>/tags/requests/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cheat Sheet</title>
+      <link>/tags/cheat-sheet/</link>
+      <pubDate>Thu, 18 Oct 2018 21:08:52 +0000</pubDate>
+      <guid>/tags/cheat-sheet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logic</title>
+      <link>/tags/logic/</link>
+      <pubDate>Thu, 18 Oct 2018 21:08:52 +0000</pubDate>
+      <guid>/tags/logic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>/tags/artificial-intelligence/</link>
+      <pubDate>Wed, 10 Oct 2018 03:36:29 +0000</pubDate>
+      <guid>/tags/artificial-intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Philosophy</title>
+      <link>/tags/philosophy/</link>
+      <pubDate>Wed, 10 Oct 2018 03:36:29 +0000</pubDate>
+      <guid>/tags/philosophy/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

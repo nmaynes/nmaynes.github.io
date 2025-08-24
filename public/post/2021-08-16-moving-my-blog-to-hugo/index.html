@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Moving My Personal Blog From Wordpress to Hugo</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	===================<br>
+	== <a href="/">Nathan&#39;s Blog</a> ==<br>
+	===================
+	<div style="float: right;">infrequent posts about things I am working on</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Home</b></a>.
+			
+			
+			<a href="/family-culture/"><b>Family Culture</b></a>.
+			
+			<a href="/event/"><b>Events</b></a>.
+			
+			<a href="/post/"><b>Posts</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/about/"><b>About</b></a>.
+			
+		  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+	      <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+          <div id="search" className="mt-6"></div>
+          <script>
+              window.addEventListener('DOMContentLoaded', (event) => {
+                  new PagefindUI({element: "#search", showSubResults: true})
+              });
+          </script>
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Moving My Personal Blog From Wordpress to Hugo</h1>
+			<b><time>16.08.2021 11:13</time></b>
+		       
+		           <a href="/tags/hugo">hugo</a>
+        	       
+		           <a href="/tags/website">website</a>
+        	       
+		           <a href="/tags/hosting">hosting</a>
+        	       
+
+			<div>
+				<p>I started the process of moving my personal blog over a year ago, when the global pandemic
+brought on by the COVID-19 virus sent my local area into lock down.
+The reasons for doing so were simple enough, my web hosting bill had grown north of
+$200 dollars a month for my personal blog. Don&rsquo;t get me wrong, Wordpress is great! I just
+wanted to get my blog onto something more appropriate for the audience (read, pretty small).</p>
+<ul>
+<li>Hosting costs for my small sites went from $50 dollars a year to over $250 dollars a year</li>
+<li>I no longer wanted to play with plugins</li>
+<li>Managing comments became tedious. Spam, spam, and more spam.</li>
+<li>I wanted something simple that could be hosted on Github Pages.</li>
+</ul>
+<p>I used a wordpress plugin to export my content and moved it into a Hugo site. Once I had that process completed,
+I needed to figure out how to get the site to update properly on Github. Figuring it out was pretty easy. All I needed
+to do was follow the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">great documentation at Hugo</a>. The
+trickiest part of the process was updating settings to get my domain name pointing to the blog.
+I had to follow the directions of my registrar which differed slightly
+from the Hugo documentation and the Github documentation. Keep that in mind if you are planning on
+making the switch.</p>
+<p>One thing that I had to spend a bit of time troubleshooting was getting
+the urls to match on my local machine and the deployed Github repository. I was
+able to solve the problem by setting the baseURL config.yaml value to:</p>
+<p><code>baseURL: /</code></p>
+<p>Instead of my first guess which was:</p>
+<p><code>baseURL: mayn.es</code></p>
+<p>This is a little theme dependant. You will know you have the same problems as I did if the CSS and images do not load.
+Check the href values and if they look similar to <code>href=https://mayn.es/mayn.es</code> you probably need
+to update your baseURL setting.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>I would like to add a few things to the blog. Instead of writing up a post on why or detailing
+what they are, I am just going to drop a list of things that I would like to do in the future.</p>
+<ul>
+<li>
+<p>Add a <a href="https://neofeed.dev/">neofeed</a></p>
+</li>
+<li>
+<p>Connect <a href="https://webmention.io/">Webmention</a> to the site.</p>
+</li>
+<li>
+<p>Join the <a href="https://indieweb.org/">IndieWeb</a></p>
+</li>
+</ul>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/post/2025-03-28-family-technology-use/">Family Technology Use</a></li>
+				
+				<li><a href="/post/2022-02-10-optimize-for-loops/">Timing Execution to Help Optimize for Loops</a></li>
+				
+				<li><a href="/post/2021-12-30-file-like-objects-in-lambda/">Working With File Like Objects in Lambda</a></li>
+				
+				<li><a href="/post/2021-08-31-upload-pandas-df-to-s3/">Upload a Pandas Dataframe to AWS S3 With Ease</a></li>
+				
+				<li><a href="/post/2021-08-16-moving-my-blog-to-hugo/">Moving My Personal Blog From Wordpress to Hugo</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2025 <a href="/"><b>Nathan&#39;s Blog</b></a>.
+	<a href="https://github.com/nmaynes"><b>Github</b></a>.
+	<a href="https://twitter.com/nathanmaynes"><b>Twitter</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

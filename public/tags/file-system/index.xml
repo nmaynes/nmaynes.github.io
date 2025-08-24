@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>File System on Nathan&#39;s Blog</title>
+    <link>/tags/file-system/</link>
+    <description>Recent content in File System on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jan 2020 21:51:26 +0000</lastBuildDate>
+    <atom:link href="/tags/file-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshooting Windows Subsystem for Linux and SSH</title>
+      <link>/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/</guid>
+      <description>&lt;p&gt;The Windows Subsystem for Linux (WSL) is one of the best features on Windows 10. It makes development so much easier than it used to be but still has a few hiccups. Kinda like Linux, some things don’t “just work.” One pesky thing that I recently dealt with was getting SSH to work with a keypair file from WSL. Here is how to get SSH working on WSL.&lt;/p&gt;&#xA;&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;&#xA;&lt;p&gt;Given a keypair file, we want to invoke ssh from the command line and establish a tunnel to another server. This is a common task when connecting to remote servers. Think AWS, Azure, or Digital Ocean. It is a simple command:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quickly Find Large Files On Windows File System</title>
+      <link>/2019/12/18/quickly-find-large-files-on-windows-file-system/</link>
+      <pubDate>Wed, 18 Dec 2019 17:11:48 +0000</pubDate>
+      <guid>/2019/12/18/quickly-find-large-files-on-windows-file-system/</guid>
+      <description>&lt;p&gt;Once a year I need to free up space on my work machine. Once a year I find myself searching for an efficient way to identify the largest files that I do not need any longer without installing third party software. Here is the solution I stumbled on this year and it couldn’t be simpler.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Open File Explorer&lt;/li&gt;&#xA;&lt;li&gt;Navigate to the drive you want to search. Normally, C:\&lt;/li&gt;&#xA;&lt;li&gt;Type “size:gigantic” in the search bar&lt;/li&gt;&#xA;&lt;li&gt;Wait for the search to complete&lt;/li&gt;&#xA;&lt;li&gt;Sort the results by size&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This search will scan your computer’s file system for files that are larger than 128mb. You can then identify files that are no longer needed.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

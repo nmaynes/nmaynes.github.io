@@ -1,0 +1,20 @@
+{{- define "main" -}}
+
+<main>
+  <h1>Events</h1>
+</main>
+<article>
+    <h1>{{ .Title }}</h1>
+    <b><time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time></b>
+       {{ range .Params.tags }}
+           <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+           {{ end }}
+
+    <div>
+        {{ .Content }}
+    </div>
+</article>
+<section>
+    <iframe src="https://calendar.google.com/calendar/embed?src=jdsqdv01n7d9e51e6sqae55i1u4o5btm%40import.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</section>
+{{- end -}}

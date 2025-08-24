@@ -1,0 +1,75 @@
+{{ define "main" }}
+{{ $todayDay := now.Format "2006-01-02" }}
+{{ $events := where .Site.RegularPages "Type" "events" }}
+{{ $futureEvents := slice }}
+{{ range $events }}
+  {{ if gt (time.AsTime .Params.Start) $todayDay }}
+    {{ $futureEvents = $futureEvents | append . }}
+  {{ end }}
+{{ end }}
+{{ $pastEvents := slice }}
+{{ range $events }}
+  {{ if lt (time.AsTime .Params.Start) $todayDay }}
+    {{ $pastEvents = $pastEvents | append . }}
+  {{ end }}
+{{ end }}
+	<main>
+		{{ $listtitle := .Title }}
+		{{ if or .Title .Content }}
+		<div>
+			{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+			{{ with .Content }}<div>{{ . }}</div>{{ end }}
+		</div>
+		{{ end }}
+
+		All Events:
+		<h3>{{ now }}</h3>
+		<ul>
+		    {{ range .Paginator.Pages }}
+		    <li>
+		        <div class="post-title">
+				{{ if eq $listtitle "Posts" }}
+				    {{ .Date.Format "2006-01-02" }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
+				{{ else }}
+				    <a href="{{ .RelPermalink }}">{{.Title }}</a>
+				{{ end }}
+		        </div>
+				<div><a>Start Time: {{ .Params.Start }}</a></div>
+		    </li>
+		    {{ end }}
+		</ul>
+		{{ partial "pagination.html" . }}
+
+		Upcoming Events:
+		<ul>
+		    {{ range $futureEvents }}
+		    <li>
+		        <div class="post-title">
+				{{ if eq $listtitle "Posts" }}
+				    {{ .Date.Format "2006-01-02" }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
+				{{ else }}
+				    <a href="{{ .RelPermalink }}">{{.Title }}</a>
+				{{ end }}
+		        </div>
+		    </li>
+		    {{ end }}
+		</ul>
+		{{ partial "pagination.html" . }}
+
+		Previous Events:
+		<ul>
+		    {{ range $pastEvents }}
+		    <li>
+		        <div class="post-title">
+				{{ if eq $listtitle "Posts" and .Date.Before now}}
+				    {{ .Date.Format "2006-01-02" }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
+				{{ else }}
+				    <a href="{{ .RelPermalink }}">{{.Title }}</a>
+				{{ end }}
+		        </div>
+		    </li>
+		    {{ end }}
+		</ul>
+		{{ partial "pagination.html" . }}
+	</main>
+{{ end }}

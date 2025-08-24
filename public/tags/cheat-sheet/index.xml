@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cheat Sheet on Nathan&#39;s Blog</title>
+    <link>/tags/cheat-sheet/</link>
+    <description>Recent content in Cheat Sheet on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Oct 2018 21:08:52 +0000</lastBuildDate>
+    <atom:link href="/tags/cheat-sheet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logic for Artificial Intelligence</title>
+      <link>/2018/10/18/logic-for-artificial-intelligence/</link>
+      <pubDate>Thu, 18 Oct 2018 21:08:52 +0000</pubDate>
+      <guid>/2018/10/18/logic-for-artificial-intelligence/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Patrick Winston, Artificial Intelligence, pp 283&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Logic in artificial intelligence can be used to help an agent create rules of inference. It provides a formal framework for creating if-then statements. Formal logic statements can be difficult for beginners because of the symbols and vocabulary used. Below is a cheat sheet for some of the basic symbols and definitions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

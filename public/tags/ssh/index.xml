@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on Nathan&#39;s Blog</title>
+    <link>/tags/ssh/</link>
+    <description>Recent content in Ssh on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jan 2020 21:51:26 +0000</lastBuildDate>
+    <atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshooting Windows Subsystem for Linux and SSH</title>
+      <link>/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/</link>
+      <pubDate>Thu, 16 Jan 2020 21:51:26 +0000</pubDate>
+      <guid>/2020/01/16/setting-up-windows-subsystem-for-linux-to-ssh/</guid>
+      <description>&lt;p&gt;The Windows Subsystem for Linux (WSL) is one of the best features on Windows 10. It makes development so much easier than it used to be but still has a few hiccups. Kinda like Linux, some things don’t “just work.” One pesky thing that I recently dealt with was getting SSH to work with a keypair file from WSL. Here is how to get SSH working on WSL.&lt;/p&gt;&#xA;&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;&#xA;&lt;p&gt;Given a keypair file, we want to invoke ssh from the command line and establish a tunnel to another server. This is a common task when connecting to remote servers. Think AWS, Azure, or Digital Ocean. It is a simple command:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kafka on Nathan&#39;s Blog</title>
+    <link>/tags/kafka/</link>
+    <description>Recent content in Kafka on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Jan 2020 16:16:49 +0000</lastBuildDate>
+    <atom:link href="/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kafkacat Amazon Workspace</title>
+      <link>/2020/01/14/kafkacat-amazon-workspace/</link>
+      <pubDate>Tue, 14 Jan 2020 16:16:49 +0000</pubDate>
+      <guid>/2020/01/14/kafkacat-amazon-workspace/</guid>
+      <description>&lt;p&gt;Below are some notes on getting &lt;code&gt;&amp;lt;a href=&amp;quot;https://github.com/edenhill/kafkacat#build&amp;quot;&amp;gt;kafkacat&amp;lt;/a&amp;gt;&lt;/code&gt; installed on an Amazon workspace with admin access.&lt;/p&gt;&#xA;&lt;p&gt;The commands listed on the &lt;a href=&#34;https://github.com/edenhill/kafkacat&#34;&gt;GitHub page&lt;/a&gt; will not work without a little preparation. A Linux Amazon Workspace image is based on Amazon Linux. Attempts to use a package manager like &lt;code&gt;yum&lt;/code&gt; go through a plugin, &lt;code&gt;amzn_workspaces_filter_updates&lt;/code&gt;. This filter only has a handful of packages (30 at the time of this writing) that can be pulled. The first thing to do is add Extra Packages for Enterprise Linux, EPEL, to the instance’s package repository. Following the instructions on the &lt;a href=&#34;https://fedoraproject.org/wiki/EPEL/FAQ#How_can_I_install_the_packages_from_the_EPEL_software_repository.3F&#34;&gt;Fedora FAQ&lt;/a&gt; run:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

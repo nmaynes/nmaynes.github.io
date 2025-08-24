@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Requests on Nathan&#39;s Blog</title>
+    <link>/tags/requests/</link>
+    <description>Recent content in Requests on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Apr 2019 18:33:32 +0000</lastBuildDate>
+    <atom:link href="/tags/requests/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Simple Progress Bar in Python</title>
+      <link>/2019/04/18/a-simple-progress-bar-in-python/</link>
+      <pubDate>Thu, 18 Apr 2019 18:33:32 +0000</pubDate>
+      <guid>/2019/04/18/a-simple-progress-bar-in-python/</guid>
+      <description>&lt;p&gt;Recently, I have been working with the &lt;!-- raw HTML omitted --&gt;Requests&lt;!-- raw HTML omitted --&gt; library in Python. I wrote a simple function to pull down a file that took more than a minute to download. While waiting for the download to complete I realized it would be nice to have some insight into the download’s progress. A quick search on StackOverflow led to an &lt;!-- raw HTML omitted --&gt;excellent example&lt;!-- raw HTML omitted --&gt;. Below is a simple way to display a progress bar while downloading a file.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

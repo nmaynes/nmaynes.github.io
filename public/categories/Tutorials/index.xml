@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on Nathan&#39;s Blog</title>
+    <link>/categories/Tutorials/</link>
+    <description>Recent content in Tutorials on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Feb 2022 22:03:13 -0500</lastBuildDate>
+    <atom:link href="/categories/Tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Timing Execution to Help Optimize for Loops</title>
+      <link>/post/2022-02-10-optimize-for-loops/</link>
+      <pubDate>Thu, 10 Feb 2022 22:03:13 -0500</pubDate>
+      <guid>/post/2022-02-10-optimize-for-loops/</guid>
+      <description>&lt;p&gt;I was working on optimizing some code that contained a series of loops. I began my analysis by running a few different versions of the program and timing each execution. The results were enlightening! I decided to share the approach with my team along with an &lt;a href=&#34;https://www.python.org/doc/essays/list2str/&#34;&gt;essay on the topic&lt;/a&gt; by &lt;a href=&#34;https://gvanrossum.github.io/&#34;&gt;Guido Van Rossem&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;General Rules of Thumb by Which to Develop Loops&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Never optimize before you have proven a speed bottleneck exists. Then, only optimize the innermost loop. If you have a bunch of loops, consider breaking the function apart.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;Python incurs significant lookup charges for bytecode instructions and variable lookup, it rarely improves code to add extra conditionals/checks to a function to save a little work e.g. handling known scenarios with unpythonic case-like statements.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;Use intrinsic operations. An implied loop in &lt;code&gt;map()&lt;/code&gt; is faster than an explicit for loop; An explicit for loop is faster than a while loop with a loop counter.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;figure&gt;&#xA;  &lt;img src=&#34;/daniele-franchi-WyJ0rahs_2k-unsplash.jpg&#34; alt=&#34;Photo by Daniele Franchi on Unsplash&#34; /&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Working With File Like Objects in Lambda</title>
+      <link>/post/2021-12-30-file-like-objects-in-lambda/</link>
+      <pubDate>Thu, 30 Dec 2021 16:35:34 -0500</pubDate>
+      <guid>/post/2021-12-30-file-like-objects-in-lambda/</guid>
+      <description>&lt;p&gt;I recently started working on a workflow for picking up files from S3, processing them, and writing the&#xA;results to another S3 location. This is a common pattern in data processing pipelines and our team wanted to see whether&#xA;we could do it using AWS serverless services. We were able to get it running via Lambda&#xA;functions and event triggers published to an AWS EventHub. The entire workflow was fairly easy to stand up once we&#xA;grasped how the various services worked together.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Moving My Personal Blog From Wordpress to Hugo</title>
+      <link>/post/2021-08-16-moving-my-blog-to-hugo/</link>
+      <pubDate>Mon, 16 Aug 2021 11:13:00 -0400</pubDate>
+      <guid>/post/2021-08-16-moving-my-blog-to-hugo/</guid>
+      <description>&lt;p&gt;I started the process of moving my personal blog over a year ago, when the global pandemic&#xA;brought on by the COVID-19 virus sent my local area into lock down.&#xA;The reasons for doing so were simple enough, my web hosting bill had grown north of&#xA;$200 dollars a month for my personal blog. Don&amp;rsquo;t get me wrong, Wordpress is great! I just&#xA;wanted to get my blog onto something more appropriate for the audience (read, pretty small).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dynamically Set ORM Schemas via Sqlalchemy</title>
+      <link>/post/2021-04-03-dynamically-set-schemas-sqlalchemy/</link>
+      <pubDate>Sat, 03 Apr 2021 07:54:57 -0400</pubDate>
+      <guid>/post/2021-04-03-dynamically-set-schemas-sqlalchemy/</guid>
+      <description>&lt;p&gt;Sometimes the solution to a problem is so obvious, it takes a while to figure it out. I recently stumbled on such a&#xA;problem when trying to configure a set of Object Relational Mappings (ORM) to support an application with&#xA;the same set of table objects across different schemas in Postgres. Developing an ORM to support this pattern,&#xA;a multi-tenant database model, proved challenging because of where I started. Below, I will detail the correct&#xA;way to support the multi-tenant pattern as well as various approaches I came across and why they should not be used.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Speed Up Your REST Workflows with asyncio</title>
+      <link>/2020/08/01/speed-up-your-rest-workflows-with-asyncio/</link>
+      <pubDate>Sat, 01 Aug 2020 03:02:22 +0000</pubDate>
+      <guid>/2020/08/01/speed-up-your-rest-workflows-with-asyncio/</guid>
+      <description>&lt;p&gt;I have been waiting for a project that would allow me to dig into the Python’s &lt;a href=&#34;https://docs.python.org/3/library/asyncio.html&#34;&gt;asyncio&lt;/a&gt; library. Recently, such a project presented itself. I was tasked with hitting a rate limited REST API with just under 4 million requests. My first attempt was simple. Gather and build a block of search queries, POST each one to the API, process the results, and finally insert them in a database. Here is what the code looked like:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

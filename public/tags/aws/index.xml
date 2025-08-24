@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on Nathan&#39;s Blog</title>
+    <link>/tags/aws/</link>
+    <description>Recent content in Aws on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Dec 2021 16:35:34 -0500</lastBuildDate>
+    <atom:link href="/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working With File Like Objects in Lambda</title>
+      <link>/post/2021-12-30-file-like-objects-in-lambda/</link>
+      <pubDate>Thu, 30 Dec 2021 16:35:34 -0500</pubDate>
+      <guid>/post/2021-12-30-file-like-objects-in-lambda/</guid>
+      <description>&lt;p&gt;I recently started working on a workflow for picking up files from S3, processing them, and writing the&#xA;results to another S3 location. This is a common pattern in data processing pipelines and our team wanted to see whether&#xA;we could do it using AWS serverless services. We were able to get it running via Lambda&#xA;functions and event triggers published to an AWS EventHub. The entire workflow was fairly easy to stand up once we&#xA;grasped how the various services worked together.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kafkacat Amazon Workspace</title>
+      <link>/2020/01/14/kafkacat-amazon-workspace/</link>
+      <pubDate>Tue, 14 Jan 2020 16:16:49 +0000</pubDate>
+      <guid>/2020/01/14/kafkacat-amazon-workspace/</guid>
+      <description>&lt;p&gt;Below are some notes on getting &lt;code&gt;&amp;lt;a href=&amp;quot;https://github.com/edenhill/kafkacat#build&amp;quot;&amp;gt;kafkacat&amp;lt;/a&amp;gt;&lt;/code&gt; installed on an Amazon workspace with admin access.&lt;/p&gt;&#xA;&lt;p&gt;The commands listed on the &lt;a href=&#34;https://github.com/edenhill/kafkacat&#34;&gt;GitHub page&lt;/a&gt; will not work without a little preparation. A Linux Amazon Workspace image is based on Amazon Linux. Attempts to use a package manager like &lt;code&gt;yum&lt;/code&gt; go through a plugin, &lt;code&gt;amzn_workspaces_filter_updates&lt;/code&gt;. This filter only has a handful of packages (30 at the time of this writing) that can be pulled. The first thing to do is add Extra Packages for Enterprise Linux, EPEL, to the instance’s package repository. Following the instructions on the &lt;a href=&#34;https://fedoraproject.org/wiki/EPEL/FAQ#How_can_I_install_the_packages_from_the_EPEL_software_repository.3F&#34;&gt;Fedora FAQ&lt;/a&gt; run:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Processing Audio Files with Amazon Transcribe</title>
+      <link>/2019/12/31/processing-audio-files-with-amazon-transcribe/</link>
+      <pubDate>Tue, 31 Dec 2019 21:41:36 +0000</pubDate>
+      <guid>/2019/12/31/processing-audio-files-with-amazon-transcribe/</guid>
+      <description>&lt;p&gt;I have been working on collecting a family’s oral history for the past few months. During the process I took notes with simple descriptions of what the speaker was describing or telling and a rough timestamp of when in the file the conversation took place. After collecting hours of stories, I realized that having a transcription would make things much easier to search and perhaps more useful to those interested in these particular histories. Why not get a transcription of the contents via one of the cloud offerings? Amazon offers a service called Transcribe that is available via the AWS suite of services. Since I have a small account and some credits to burn I figured why not kick the tires and see how Transcribe would perform on meandering oral history interviews. But before I jump into the how, let me describe my particular use case.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

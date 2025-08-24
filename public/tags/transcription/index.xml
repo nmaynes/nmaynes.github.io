@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transcription on Nathan&#39;s Blog</title>
+    <link>/tags/transcription/</link>
+    <description>Recent content in Transcription on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Dec 2019 21:41:36 +0000</lastBuildDate>
+    <atom:link href="/tags/transcription/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Processing Audio Files with Amazon Transcribe</title>
+      <link>/2019/12/31/processing-audio-files-with-amazon-transcribe/</link>
+      <pubDate>Tue, 31 Dec 2019 21:41:36 +0000</pubDate>
+      <guid>/2019/12/31/processing-audio-files-with-amazon-transcribe/</guid>
+      <description>&lt;p&gt;I have been working on collecting a family’s oral history for the past few months. During the process I took notes with simple descriptions of what the speaker was describing or telling and a rough timestamp of when in the file the conversation took place. After collecting hours of stories, I realized that having a transcription would make things much easier to search and perhaps more useful to those interested in these particular histories. Why not get a transcription of the contents via one of the cloud offerings? Amazon offers a service called Transcribe that is available via the AWS suite of services. Since I have a small account and some credits to burn I figured why not kick the tires and see how Transcribe would perform on meandering oral history interviews. But before I jump into the how, let me describe my particular use case.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

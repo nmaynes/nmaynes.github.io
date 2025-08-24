@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orm on Nathan&#39;s Blog</title>
+    <link>/tags/orm/</link>
+    <description>Recent content in Orm on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Apr 2021 07:54:57 -0400</lastBuildDate>
+    <atom:link href="/tags/orm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dynamically Set ORM Schemas via Sqlalchemy</title>
+      <link>/post/2021-04-03-dynamically-set-schemas-sqlalchemy/</link>
+      <pubDate>Sat, 03 Apr 2021 07:54:57 -0400</pubDate>
+      <guid>/post/2021-04-03-dynamically-set-schemas-sqlalchemy/</guid>
+      <description>&lt;p&gt;Sometimes the solution to a problem is so obvious, it takes a while to figure it out. I recently stumbled on such a&#xA;problem when trying to configure a set of Object Relational Mappings (ORM) to support an application with&#xA;the same set of table objects across different schemas in Postgres. Developing an ORM to support this pattern,&#xA;a multi-tenant database model, proved challenging because of where I started. Below, I will detail the correct&#xA;way to support the multi-tenant pattern as well as various approaches I came across and why they should not be used.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

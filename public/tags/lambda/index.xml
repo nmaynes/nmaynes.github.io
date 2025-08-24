@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lambda on Nathan&#39;s Blog</title>
+    <link>/tags/lambda/</link>
+    <description>Recent content in Lambda on Nathan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Dec 2021 16:35:34 -0500</lastBuildDate>
+    <atom:link href="/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working With File Like Objects in Lambda</title>
+      <link>/post/2021-12-30-file-like-objects-in-lambda/</link>
+      <pubDate>Thu, 30 Dec 2021 16:35:34 -0500</pubDate>
+      <guid>/post/2021-12-30-file-like-objects-in-lambda/</guid>
+      <description>&lt;p&gt;I recently started working on a workflow for picking up files from S3, processing them, and writing the&#xA;results to another S3 location. This is a common pattern in data processing pipelines and our team wanted to see whether&#xA;we could do it using AWS serverless services. We were able to get it running via Lambda&#xA;functions and event triggers published to an AWS EventHub. The entire workflow was fairly easy to stand up once we&#xA;grasped how the various services worked together.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
