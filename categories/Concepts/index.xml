@@ -1,2 +1,138 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Concepts on Nathan's Blog</title><link>/categories/Concepts/</link><description>Recent content in Concepts on Nathan's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 18 Oct 2018 21:08:52 +0000</lastBuildDate><atom:link href="/categories/Concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>Logic for Artificial Intelligence</title><link>/2018/10/18/logic-for-artificial-intelligence/</link><pubDate>Thu, 18 Oct 2018 21:08:52 +0000</pubDate><guid>/2018/10/18/logic-for-artificial-intelligence/</guid><description>Patrick Winston, Artificial Intelligence, pp 283Logic in artificial intelligence can be used to help an agent create rules of inference. It provides a formal framework for creating if-then statements. Formal logic statements can be difficult for beginners because of the symbols and vocabulary used. Below is a cheat sheet for some of the basic symbols and definitions.
-&amp;lt;td&amp;gt; Definition &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Logical conjunction. In most instances it will be used as an AND operator.</description></item><item><title>Qualia</title><link>/2018/10/10/qualia/</link><pubDate>Wed, 10 Oct 2018 03:36:29 +0000</pubDate><guid>/2018/10/10/qualia/</guid><description>Have you ever tried to describe the color red to someone who suffers from protanopia, deuteranopia, protanomaly, or deuteranomaly? It is nearly impossible since those who are red-green color blind are missing the corresponding photoreceptors. The experience of seeing red is so familiar to those who have experienced it. And that type of experience, one which is difficult to communicate, does not change based on other experiences, is unique to the individual experiencing it, and immediately recognized, is qualia.</description></item><item><title>A Brief Introduction to Bayes&amp;#8217; Theorem</title><link>/2018/08/22/a-brief-introduction-to-bayes-theorem/</link><pubDate>Wed, 22 Aug 2018 13:13:41 +0000</pubDate><guid>/2018/08/22/a-brief-introduction-to-bayes-theorem/</guid><description>Bayes’ Theorem stated is, “the conditional probability of A given B is the conditional probability of B given A scaled by the relative probability of A compared to B”. I find it easier to understand through a practical explanation. Let’s say you are having a medical test performed at the recommendation of your doctor, who recommends tests to everyone because they get a nice kickback and college tuition is not cheap!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Concepts on Nathan's Blog</title><link>/categories/Concepts/</link><description>Recent content in Concepts on Nathan's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 18 Oct 2018 21:08:52 +0000</lastBuildDate><atom:link href="/categories/Concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>Logic for Artificial Intelligence</title><link>/2018/10/18/logic-for-artificial-intelligence/</link><pubDate>Thu, 18 Oct 2018 21:08:52 +0000</pubDate><guid>/2018/10/18/logic-for-artificial-intelligence/</guid><description>&lt;blockquote class="wp-block-quote"&gt;
+ &lt;p&gt;
+ &amp;#8220;Logic has both seductive advantages and bothersome disadvantages.&amp;#8221;
+ &lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;Patrick Winston, Artificial Intelligence, pp 283&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Logic in artificial intelligence can be used to help an agent create rules of inference. It provides a formal framework for creating if-then statements. Formal logic statements can be difficult for beginners because of the symbols and vocabulary used. Below is a cheat sheet for some of the basic symbols and definitions.&lt;/p&gt;
+&lt;table class="wp-block-table"&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ Symbol
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Definition
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ ∧
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Logical conjunction. In most instances it will be used as an AND operator.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ ∨
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Logical disjunction.  In most instances it will be used as an ORoperator.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ ∀
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Universal quantifier. Placed in front of a statement that includes ALL entities in the agent&amp;amp;#8217;s universe. 
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ ∃
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Existential quantifier. Placed in front of a statement where it applies to at least one entity in the agent&amp;amp;#8217;s universe.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ ¬
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Negation. The statement is only true if the condition is false.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+&lt;table class="wp-block-table"&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ Word
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Definition
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ Conjunction
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ And. Means the truth of a set of operands is true if and only if all of its operands are true. Symbol used to represent this operator is typically ∧ or &amp;amp;.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ Conjuct
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ An operand of a conjunction.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ Disjunction
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ Or. Means the truth of a set of operands is true if and only if one or more of its operands is true.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ Disjunct
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ An operand of a disjunct. 
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ Predicates
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ A boolean valued function or a relationship. A ∧ B = True or A and B have a specific relationship.
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ &lt;em&gt;modus ponus&lt;/em&gt;
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ The rule of inference. Given A is true and B is true then (A and B) is true
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;
+ monotonic
+ &lt;/td&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+ A property that states a &amp;amp;#8220;function is monotonic if, for every combination of inputs, switching one of the inputs from false to true can only cause the output to switch from false to true and not from true to false&amp;amp;#8221;
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;Logic focuses on using knowledge in a provable and correct way. When it is used in AI it does not prove out that the claims are true. If an agent is taught that all birds can fly, it will be able to use logic to infer that a dog is not a bird. However, it will run into problems when classifying a penguin. &lt;/p&gt;</description></item><item><title>Qualia</title><link>/2018/10/10/qualia/</link><pubDate>Wed, 10 Oct 2018 03:36:29 +0000</pubDate><guid>/2018/10/10/qualia/</guid><description>&lt;p&gt;Have you ever tried to describe the color red to someone who suffers from protanopia, deuteranopia, protanomaly, or deuteranomaly? It is nearly impossible since those who are red-green color blind are missing the corresponding photoreceptors. The experience of seeing red is so familiar to those who have experienced it. And that type of experience, one which is difficult to communicate, does not change based on other experiences, is unique to the individual experiencing it, and immediately recognized, is qualia. &lt;/p&gt;</description></item><item><title>A Brief Introduction to Bayes&amp;#8217; Theorem</title><link>/2018/08/22/a-brief-introduction-to-bayes-theorem/</link><pubDate>Wed, 22 Aug 2018 13:13:41 +0000</pubDate><guid>/2018/08/22/a-brief-introduction-to-bayes-theorem/</guid><description>&lt;p&gt;Bayes’ Theorem stated is, “the conditional probability of A given B is the conditional probability of B given A scaled by the relative probability of A compared to B”. I find it easier to understand through a practical explanation. Let’s say you are having a medical test performed at the recommendation of your doctor, who recommends tests to everyone because they get a nice kickback and college tuition is not cheap! You are young and healthy and are being tested for the existence of a new form of cancer that only exists in 1% of the population. These cancer detecting tests accurately detect the cancer 8 out of 10 times in an infected individual. However, they “detect” cancer in 1 out of 10 cancer free patients. Your test results come back positive! But before you get worried, let’s figure out the chance that you actually have cancer.&lt;/p&gt;</description></item></channel></rss>
