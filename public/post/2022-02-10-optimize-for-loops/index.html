@@ -1,66 +1,80 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Timing Execution to Help Optimize for Loops</title>
-	
-	
-	<link rel="stylesheet" href="/css/style.css">
-	
-	
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing Execution to Help Optimize for Loops | Nathan&#39;s Blog</title>
+
+    
+    <meta name="description" content="infrequent posts about things I am working on">
+    <meta name="author" content="">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="/css/main.css">
+    
 </head>
 <body>
-	<header>
-	===================<br>
-	== <a href="/">Nathan&#39;s Blog</a> ==<br>
-	===================
-	<div style="float: right;">infrequent posts about things I am working on</div><br>
-	<p>
-	<nav>
-			<a href="/"><b>Home</b></a>.
-			
-			
-			<a href="/family-culture/"><b>Family Culture</b></a>.
-			
-			<a href="/event/"><b>Events</b></a>.
-			
-			<a href="/post/"><b>Posts</b></a>.
-			
-			<a href="/categories/"><b>Categories</b></a>.
-			
-			<a href="/tags/"><b>Tags</b></a>.
-			
-			<a href="/about/"><b>About</b></a>.
-			
-		  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
-	      <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
-          <div id="search" className="mt-6"></div>
-          <script>
-              window.addEventListener('DOMContentLoaded', (event) => {
-                  new PagefindUI({element: "#search", showSubResults: true})
-              });
-          </script>
-	</nav>
-	</p>
-	
-</header>
+    
+    <header>
+        <h1><a href="/">Nathan&#39;s Blog</a></h1>
+        
+        <p>infrequent posts about things I am working on</p>
+        
 
-	
-	<main>
-		<article>
-			<h1>Timing Execution to Help Optimize for Loops</h1>
-			<b><time>10.02.2022 22:03</time></b>
-		       
-		           <a href="/tags/python">python</a>
-        	       
-		           <a href="/tags/optimization">optimization</a>
-        	       
+        
+        <nav>
+            <ul>
+            
+                <li><a href="/family-culture/">Family Culture</a></li>
+            
+                <li><a href="/event/">Events</a></li>
+            
+                <li><a href="/post/">Posts</a></li>
+            
+                <li><a href="/categories/">Categories</a></li>
+            
+                <li><a href="/tags/">Tags</a></li>
+            
+                <li><a href="/about/">About</a></li>
+            
+            </ul>
+        </nav>
+        
+    </header>
+    
 
-			<div>
-				<p>I was working on optimizing some code that contained a series of loops. I began my analysis by running a few different versions of the program and timing each execution. The results were enlightening! I decided to share the approach with my team along with an <a href="https://www.python.org/doc/essays/list2str/">essay on the topic</a> by <a href="https://gvanrossum.github.io/">Guido Van Rossem</a>.</p>
+    
+<main>
+    <article>
+        <header>
+            <h1>Timing Execution to Help Optimize for Loops</h1>
+            <div class="post-meta">
+                <time datetime="2022-02-10">
+                    February 10, 2022
+                </time>
+                
+                <span>in Tutorials</span>
+                
+                
+                <div class="tags">
+                    Tags:
+                    
+                    <a href="/tags/python">python</a>
+                    
+                    <a href="/tags/optimization">optimization</a>
+                    
+                </div>
+                
+            </div>
+        </header>
+
+        <div class="content">
+            <p>I was working on optimizing some code that contained a series of loops. I began my analysis by running a few different versions of the program and timing each execution. The results were enlightening! I decided to share the approach with my team along with an <a href="https://www.python.org/doc/essays/list2str/">essay on the topic</a> by <a href="https://gvanrossum.github.io/">Guido Van Rossem</a>.</p>
 <ul>
 <li>
 <p>General Rules of Thumb by Which to Develop Loops</p>
@@ -83,15 +97,8 @@
 </ul>
 </li>
 </ul>
-<p>
-<figure>
-  <img src="/daniele-franchi-WyJ0rahs_2k-unsplash.jpg" alt="Photo by Daniele Franchi on Unsplash" />
-</figure>
-
-
-</p>
-<h3 id="timing-programs">Timing Programs</h3>
-<p>Timing can help identify speed bottlenecks by comparing execution time between different approaches to the same task.
+<p><img src="/daniele-franchi-WyJ0rahs_2k-unsplash.jpg" alt="Photo by Daniele Franchi on Unsplash"></p>
+<h3 id="timing-programs">Timing Programs</h3><p>Timing can help identify speed bottlenecks by comparing execution time between different approaches to the same task.
 For timing small snippets of code use <a href="https://docs.python.org/3/library/timeit.html?highlight=timeit">timeit</a>.</p>
 <p>For everything else there&rsquo;s, a Timing Decorator.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> wraps
@@ -118,8 +125,7 @@ For timing small snippets of code use <a href="https://docs.python.org/3/library
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;func:</span><span style="color:#e6db74">%r</span><span style="color:#e6db74"> took: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> nano sec&#39;</span> <span style="color:#f92672">%</span> \
 </span></span><span style="display:flex;"><span>      (f<span style="color:#f92672">.</span>__name__, te<span style="color:#f92672">-</span>ts))
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> wrap
-</span></span></code></pre></div><h2 id="helpful-rules-of-thumb-for-clean-fast-loops---by-example">Helpful rules of thumb for clean, fast loops - By Example</h2>
-<ul>
+</span></span></code></pre></div><h2 id="helpful-rules-of-thumb-for-clean-fast-loops---by-example">Helpful rules of thumb for clean, fast loops - By Example</h2><ul>
 <li>Ask whether you can use <a href="https://docs.python.org/3.10/library/functions.html?highlight=built#map">built-in functions</a> eg <code>map</code>, <code>reduce</code>, <code>filter</code>
 <ul>
 <li>&ldquo;[A] map with a built-in function beats for loop, but a for loop with in-line code beats map with a lambda function!&rdquo; - <a href="https://www.python.org/doc/essays/list2str/">Source</a></li>
@@ -191,42 +197,45 @@ The way I built a list for this example was by downloading an <a href="http://ww
 </span></span><span style="display:flex;"><span>func:<span style="color:#e6db74">&#39;f4&#39;</span> took: <span style="color:#ae81ff">1471997300</span> nano sec
 </span></span><span style="display:flex;"><span>f5(wordlist)
 </span></span><span style="display:flex;"><span>func:<span style="color:#e6db74">&#39;f5&#39;</span> took: <span style="color:#ae81ff">1957422600</span> nano sec
-</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
-<p>Getting comfortable with timing techniques will help you feel more confident in the code you write. Execution time provides one input when optimizing functions. Remember to only optimize when you know there is a problem and defer optimizing until the code is working and stable.</p>
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2><p>Getting comfortable with timing techniques will help you feel more confident in the code you write. Execution time provides one input when optimizing functions. Remember to only optimize when you know there is a problem and defer optimizing until the code is working and stable.</p>
 
-			</div>
-		</article>
-	</main>
-<aside>
-	<div>
-		<div>
-			<h3>LATEST POSTS</h3>
-		</div>
-		<div>
-			<ul>
-				
-				<li><a href="/post/2025-03-28-family-technology-use/">Family Technology Use</a></li>
-				
-				<li><a href="/post/2022-02-10-optimize-for-loops/">Timing Execution to Help Optimize for Loops</a></li>
-				
-				<li><a href="/post/2021-12-30-file-like-objects-in-lambda/">Working With File Like Objects in Lambda</a></li>
-				
-				<li><a href="/post/2021-08-31-upload-pandas-df-to-s3/">Upload a Pandas Dataframe to AWS S3 With Ease</a></li>
-				
-				<li><a href="/post/2021-08-16-moving-my-blog-to-hugo/">Moving My Personal Blog From Wordpress to Hugo</a></li>
-				
-			</ul>
-		</div>
-	</div>
-</aside>
+        </div>
+
+        
+        <nav class="post-navigation">
+            
+            <div class="prev-post">
+                <span>← Previous</span>
+                <a href="/post/2021-12-30-file-like-objects-in-lambda/">Working With File Like Objects in Lambda</a>
+            </div>
+            
+            
+            <div class="next-post">
+                <span>Next →</span>
+                <a href="/post/2025-03-28-family-technology-use/">Family Technology Use</a>
+            </div>
+            
+        </nav>
+        
+    </article>
+</main>
 
 
-	<footer>
-	<p>&copy; 2025 <a href="/"><b>Nathan&#39;s Blog</b></a>.
-	<a href="https://github.com/nmaynes"><b>Github</b></a>.
-	<a href="https://twitter.com/nathanmaynes"><b>Twitter</b></a>.
-	</p>
-</footer>
-
+    
+    <footer>
+        <p>&copy; 2025 Nathan&#39;s Blog</p>
+        
+        <nav>
+            <ul>
+            
+                <li><a href="https://github.com/nmaynes" target="_blank" rel="noopener">Github</a></li>
+            
+                <li><a href="https://x.com/nathanmaynes" target="_blank" rel="noopener">X</a></li>
+            
+            </ul>
+        </nav>
+        
+    </footer>
+    
 </body>
 </html>

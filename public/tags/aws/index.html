@@ -1,104 +1,137 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Aws</title>
-	
-	
-	<link rel="stylesheet" href="/css/style.css">
-	
-	<link rel="alternate" type="application/rss+xml" href="/tags/aws/index.xml" title="Nathan's Blog">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aws | Nathan&#39;s Blog</title>
+
+    
+    <meta name="description" content="infrequent posts about things I am working on">
+    <meta name="author" content="">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="/css/main.css">
+    
 </head>
 <body>
-	<header>
-	===================<br>
-	== <a href="/">Nathan&#39;s Blog</a> ==<br>
-	===================
-	<div style="float: right;">infrequent posts about things I am working on</div><br>
-	<p>
-	<nav>
-			<a href="/"><b>Home</b></a>.
-			
-			
-			<a href="/family-culture/"><b>Family Culture</b></a>.
-			
-			<a href="/event/"><b>Events</b></a>.
-			
-			<a href="/post/"><b>Posts</b></a>.
-			
-			<a href="/categories/"><b>Categories</b></a>.
-			
-			<a href="/tags/"><b>Tags</b></a>.
-			
-			<a href="/about/"><b>About</b></a>.
-			
-		  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
-	      <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
-          <div id="search" className="mt-6"></div>
-          <script>
-              window.addEventListener('DOMContentLoaded', (event) => {
-                  new PagefindUI({element: "#search", showSubResults: true})
-              });
-          </script>
-	</nav>
-	</p>
-	
-</header>
+    
+    <header>
+        <h1><a href="/">Nathan&#39;s Blog</a></h1>
+        
+        <p>infrequent posts about things I am working on</p>
+        
 
-	
-	<main>
-		
-		
-		<div>
-			<h1>Aws</h1>
-			
-		</div>
-		
-		
-		<ul>
-		    
-		    <li>
-		        <div class="post-title">
-				
-				    <a href="/post/2021-12-30-file-like-objects-in-lambda/">Working With File Like Objects in Lambda</a>
-				
-		        </div>
-		    </li>
-		    
-		    <li>
-		        <div class="post-title">
-				
-				    <a href="/2020/01/14/kafkacat-amazon-workspace/">Kafkacat Amazon Workspace</a>
-				
-		        </div>
-		    </li>
-		    
-		    <li>
-		        <div class="post-title">
-				
-				    <a href="/2019/12/31/processing-audio-files-with-amazon-transcribe/">Processing Audio Files with Amazon Transcribe</a>
-				
-		        </div>
-		    </li>
-		    
-		</ul>
-		<div>
+        
+        <nav>
+            <ul>
+            
+                <li><a href="/family-culture/">Family Culture</a></li>
+            
+                <li><a href="/event/">Events</a></li>
+            
+                <li><a href="/post/">Posts</a></li>
+            
+                <li><a href="/categories/">Categories</a></li>
+            
+                <li><a href="/tags/">Tags</a></li>
+            
+                <li><a href="/about/">About</a></li>
+            
+            </ul>
+        </nav>
+        
+    </header>
+    
 
-1 of 1
+    
+<main>
+    
+    <h1>Aws</h1>
+    
 
-</div>
+    
 
-	</main>
+    
+    <ul class="post-list">
+        
+        <li>
+            <div class="post-title">
+                <a href="/post/2021-12-30-file-like-objects-in-lambda/">Working With File Like Objects in Lambda</a>
+            </div>
+            <div class="post-meta">
+                <span class="post-date">December 30, 2021</span>
+                
+                <span>in Tutorials</span>
+                
+            </div>
+            
+            <p><p>I recently started working on a workflow for picking up files from S3, processing them, and writing the
+results to another S3 location. This is a common pattern in data processing pipelines and our team wanted to see whether
+we could do it using AWS serverless services. We were able to get it running via Lambda
+functions and event triggers published to an AWS EventHub. The entire workflow was fairly easy to stand up once we
+grasped how the various services worked together.</p></p>
+            
+        </li>
+        
+        <li>
+            <div class="post-title">
+                <a href="/2020/01/14/kafkacat-amazon-workspace/">Kafkacat Amazon Workspace</a>
+            </div>
+            <div class="post-meta">
+                <span class="post-date">January 14, 2020</span>
+                
+                <span>in Uncategorized</span>
+                
+            </div>
+            
+            <p><p>Below are some notes on getting <code>&lt;a href=&quot;https://github.com/edenhill/kafkacat#build&quot;&gt;kafkacat&lt;/a&gt;</code> installed on an Amazon workspace with admin access.</p>
+<p>The commands listed on the <a href="https://github.com/edenhill/kafkacat">GitHub page</a> will not work without a little preparation. A Linux Amazon Workspace image is based on Amazon Linux. Attempts to use a package manager like <code>yum</code> go through a plugin, <code>amzn_workspaces_filter_updates</code>. This filter only has a handful of packages (30 at the time of this writing) that can be pulled. The first thing to do is add Extra Packages for Enterprise Linux, EPEL, to the instance’s package repository. Following the instructions on the <a href="https://fedoraproject.org/wiki/EPEL/FAQ#How_can_I_install_the_packages_from_the_EPEL_software_repository.3F">Fedora FAQ</a> run:</p></p>
+            
+        </li>
+        
+        <li>
+            <div class="post-title">
+                <a href="/2019/12/31/processing-audio-files-with-amazon-transcribe/">Processing Audio Files with Amazon Transcribe</a>
+            </div>
+            <div class="post-meta">
+                <span class="post-date">December 31, 2019</span>
+                
+                <span>in Uncategorized</span>
+                
+            </div>
+            
+            <p><p>I have been working on collecting a family’s oral history for the past few months. During the process I took notes with simple descriptions of what the speaker was describing or telling and a rough timestamp of when in the file the conversation took place. After collecting hours of stories, I realized that having a transcription would make things much easier to search and perhaps more useful to those interested in these particular histories. Why not get a transcription of the contents via one of the cloud offerings? Amazon offers a service called Transcribe that is available via the AWS suite of services. Since I have a small account and some credits to burn I figured why not kick the tires and see how Transcribe would perform on meandering oral history interviews. But before I jump into the how, let me describe my particular use case.<figure class="wp-block-image size-large"></p></p>
+            
+        </li>
+        
+    </ul>
+    
 
-	<footer>
-	<p>&copy; 2025 <a href="/"><b>Nathan&#39;s Blog</b></a>.
-	<a href="https://github.com/nmaynes"><b>Github</b></a>.
-	<a href="https://twitter.com/nathanmaynes"><b>Twitter</b></a>.
-	</p>
-</footer>
+    
 
+</main>
+
+
+    
+    <footer>
+        <p>&copy; 2025 Nathan&#39;s Blog</p>
+        
+        <nav>
+            <ul>
+            
+                <li><a href="https://github.com/nmaynes" target="_blank" rel="noopener">Github</a></li>
+            
+                <li><a href="https://x.com/nathanmaynes" target="_blank" rel="noopener">X</a></li>
+            
+            </ul>
+        </nav>
+        
+    </footer>
+    
 </body>
 </html>

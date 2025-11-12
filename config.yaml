@@ -2,12 +2,15 @@ baseURL: /
 disablePathToLower: true
 languageCode: en-us
 title: Nathan's Blog
-theme: "smol"
+theme: "offset"
 
 params:
   subtitle: infrequent posts about things I am working on
   dateFmt: '02.01.2006 15:04'
   calendarURL: webcal://www.fcps.edu/events/15/calendar.ics
+  mainSections:
+    - post
+    - family-culture
 menu:
   main:
     - identifier: family-culture
@@ -38,11 +41,20 @@ menu:
     - name: Github
       url: 'https://github.com/nmaynes'
       weight: 1
-    - name: Twitter
-      url: 'https://twitter.com/nathanmaynes'
+    - name: X
+      url: 'https://x.com/nathanmaynes'
       weight: 2
 outputs:
   section:
       - html
 ignoreLogs:
   warning-goldmark-raw-html
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+    renderer:
+      unsafe: true

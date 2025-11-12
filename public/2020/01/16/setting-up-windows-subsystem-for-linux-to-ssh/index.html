@@ -1,145 +1,180 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Troubleshooting Windows Subsystem for Linux and SSH</title>
-	
-	
-	<link rel="stylesheet" href="/css/style.css">
-	
-	
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Windows Subsystem for Linux and SSH | Nathan&#39;s Blog</title>
+
+    
+    <meta name="description" content="infrequent posts about things I am working on">
+    <meta name="author" content="">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="/css/main.css">
+    
 </head>
 <body>
-	<header>
-	===================<br>
-	== <a href="/">Nathan&#39;s Blog</a> ==<br>
-	===================
-	<div style="float: right;">infrequent posts about things I am working on</div><br>
-	<p>
-	<nav>
-			<a href="/"><b>Home</b></a>.
-			
-			
-			<a href="/family-culture/"><b>Family Culture</b></a>.
-			
-			<a href="/event/"><b>Events</b></a>.
-			
-			<a href="/post/"><b>Posts</b></a>.
-			
-			<a href="/categories/"><b>Categories</b></a>.
-			
-			<a href="/tags/"><b>Tags</b></a>.
-			
-			<a href="/about/"><b>About</b></a>.
-			
-		  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
-	      <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
-          <div id="search" className="mt-6"></div>
-          <script>
-              window.addEventListener('DOMContentLoaded', (event) => {
-                  new PagefindUI({element: "#search", showSubResults: true})
-              });
-          </script>
-	</nav>
-	</p>
-	
-</header>
+    
+    <header>
+        <h1><a href="/">Nathan&#39;s Blog</a></h1>
+        
+        <p>infrequent posts about things I am working on</p>
+        
 
-	
-	<main>
-		<article>
-			<h1>Troubleshooting Windows Subsystem for Linux and SSH</h1>
-			<b><time>16.01.2020 21:51</time></b>
-		       
-		           <a href="/tags/chown">chown</a>
-        	       
-		           <a href="/tags/file-system">file system</a>
-        	       
-		           <a href="/tags/linux">linux</a>
-        	       
-		           <a href="/tags/ssh">ssh</a>
-        	       
-		           <a href="/tags/windows">windows</a>
-        	       
-		           <a href="/tags/wsl">wsl</a>
-        	       
+        
+        <nav>
+            <ul>
+            
+                <li><a href="/family-culture/">Family Culture</a></li>
+            
+                <li><a href="/event/">Events</a></li>
+            
+                <li><a href="/post/">Posts</a></li>
+            
+                <li><a href="/categories/">Categories</a></li>
+            
+                <li><a href="/tags/">Tags</a></li>
+            
+                <li><a href="/about/">About</a></li>
+            
+            </ul>
+        </nav>
+        
+    </header>
+    
 
-			<div>
-				<p>The Windows Subsystem for Linux (WSL) is one of the best features on Windows 10. It makes development so much easier than it used to be but still has a few hiccups. Kinda like Linux, some things don’t “just work.” One pesky thing that I recently dealt with was getting SSH to work with a keypair file from WSL. Here is how to get SSH working on WSL.</p>
-<h2 id="goal">Goal</h2>
-<p>Given a keypair file, we want to invoke ssh from the command line and establish a tunnel to another server. This is a common task when connecting to remote servers. Think AWS, Azure, or Digital Ocean. It is a simple command:</p>
+    
+<main>
+    <article>
+        <header>
+            <h1>Troubleshooting Windows Subsystem for Linux and SSH</h1>
+            <div class="post-meta">
+                <time datetime="2020-01-16">
+                    January 16, 2020
+                </time>
+                
+                <span>in Uncategorized</span>
+                
+                
+                <div class="tags">
+                    Tags:
+                    
+                    <a href="/tags/chown">chown</a>
+                    
+                    <a href="/tags/file-system">file system</a>
+                    
+                    <a href="/tags/linux">linux</a>
+                    
+                    <a href="/tags/ssh">ssh</a>
+                    
+                    <a href="/tags/windows">windows</a>
+                    
+                    <a href="/tags/wsl">wsl</a>
+                    
+                </div>
+                
+            </div>
+        </header>
+
+        <div class="content">
+            <p>The Windows Subsystem for Linux (WSL) is one of the best features on Windows 10. It makes development so much easier than it used to be but still has a few hiccups. Kinda like Linux, some things don’t “just work.” One pesky thing that I recently dealt with was getting SSH to work with a keypair file from WSL. Here is how to get SSH working on WSL.</p>
+<h2 id="goal">Goal</h2><p>Given a keypair file, we want to invoke ssh from the command line and establish a tunnel to another server. This is a common task when connecting to remote servers. Think AWS, Azure, or Digital Ocean. It is a simple command:</p>
 <p><code>$ ssh -i /path/to/keypair.pem</code></p>
 <p>But WSL may throw a permissions error similar to:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h2 id="why">Why?</h2>
-<p>Windows and Linux manage file permissions in a different way. For a detailed look at interoperability between a Windows and Linux filesystem see this <a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support">blog post</a>. Some excerpts are included below.</p>
-<h3 id="file-systems-on-windows">File systems on Windows</h3>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support">https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support</a><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<h3 id="file-systems-on-linux">File systems on Linux</h3>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --><a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support">https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support</a><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p>One of the many things that is handled differently is how file permissions are handled. Linux flips bits to set the various file permissions. For a detailed explanation read the <a href="http://man7.org/linux/man-pages/man1/chmod.1.html">chmod man page</a> or the <a href="https://nitstorm.github.io/blog/understanding-linux-file-permissions/">excellent blog</a> post by Nitin V. <!-- raw HTML omitted --></p>
-<p>
-<figure>
-  <img src="http://i.imgur.com/SGYIu.png" alt="" />
-</figure>
+<pre class="wp-block-preformatted">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
 
- <!-- raw HTML omitted -->Table of Linux File Permissions – <a href="https://nitstorm.github.io/blog/understanding-linux-file-permissions/">https://nitstorm.github.io/blog/understanding-linux-file-permissions/</a><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<p>Windows stores files as objects. The Windows file system manager provides a general interface for dealing with file objects and leaves fine grained operations to the file system drivers. One of the ways users bump into those differences is through file permissions. WSL, in trying to provide a level of interoperability attempts to support working on files across both systems through a single interface. <!-- raw HTML omitted --></p>
-<p>
-<figure>
-  <img src="https://msdnshared.blob.core.windows.net/media/2016/06/file-system-graphic.png" alt="" />
-</figure>
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+Permissions 0777 for 'keypair.pem' are too open.
 
- <!-- raw HTML omitted -->WSL Virtual File System – <a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support#file-systems-in-wsl">https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support#file-systems-in-wsl</a><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+It is required that your private key files are NOT accessible by others.
+
+This private key will be ignored.
+
+Load key "keypair.pem": bad permissions
+
+Permission denied (publickey).</pre>
+<h2 id="why">Why?</h2><p>Windows and Linux manage file permissions in a different way. For a detailed look at interoperability between a Windows and Linux filesystem see this <a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support">blog post</a>. Some excerpts are included below.</p>
+<h3 id="file-systems-on-windows">File systems on Windows</h3><blockquote class="wp-block-quote">
+  <p>
+    Windows generalizes all system resources into objects. These include not just files, but also things like threads, shared memory sections, and timers, just to name a few. All requests to open a file ultimately go through the Object Manager in the NT kernel, which routes the request through the I/O Manager to the correct file system driver. The interface that file system drivers implement in Windows is more generic and enforces fewer requirements. For example, there is no common inode structure or anything similar, nor is there a directory entry; instead, file system drivers such as ntfs.sys are responsible for resolving paths and opening file objects.
+  </p>
+<p><cite><a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support">https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support</a></cite></p>
+</blockquote>
+<h3 id="file-systems-on-linux">File systems on Linux</h3><blockquote class="wp-block-quote">
+  <p>
+    Linux abstracts file systems operations through the Virtual File System (VFS), which provides both an interface for user mode programs to interact with the file system (through system calls such as open, read, chmod, stat, etc.) and an interface that file systems have to implement. This allows multiple file systems to coexist, providing the same operations and semantics, with VFS giving a single namespace view of all these file systems to the user.
+  </p>
+<p><cite><a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support">https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support</a></cite></p>
+</blockquote>
+<p>One of the many things that is handled differently is how file permissions are handled. Linux flips bits to set the various file permissions. For a detailed explanation read the <a href="http://man7.org/linux/man-pages/man1/chmod.1.html">chmod man page</a> or the <a href="https://nitstorm.github.io/blog/understanding-linux-file-permissions/">excellent blog</a> post by Nitin V. <figure class="wp-block-image size-large"></p>
+<p><img src="http://i.imgur.com/SGYIu.png" alt=""> <figcaption>Table of Linux File Permissions – <a href="https://nitstorm.github.io/blog/understanding-linux-file-permissions/">https://nitstorm.github.io/blog/understanding-linux-file-permissions/</a></figcaption></figure></p>
+<p>Windows stores files as objects. The Windows file system manager provides a general interface for dealing with file objects and leaves fine grained operations to the file system drivers. One of the ways users bump into those differences is through file permissions. WSL, in trying to provide a level of interoperability attempts to support working on files across both systems through a single interface. <figure class="wp-block-image size-large"></p>
+<p><img src="https://msdnshared.blob.core.windows.net/media/2016/06/file-system-graphic.png" alt=""> <figcaption>WSL Virtual File System – <a href="https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support#file-systems-in-wsl">https://docs.microsoft.com/en-us/archive/blogs/wsl/wsl-file-system-support#file-systems-in-wsl</a></figcaption></figure></p>
 <p>This is cool, complex, and has unintended side effects. One being, SSH can run into file permission problems if the host drive is mounted without file permissions exposed in a Linux friendly format. There are two ways to fix it. Place the <code>.pem</code> file in the WSL home directory (cd ~). Once it is there, you should be able to run <code>$ chmod 600 keyfile.pem</code> and create an SSH session. The other, more complicated way, is to remount the drive with <a href="https://devblogs.microsoft.com/commandline/chmod-chown-wsl-improvements/">metadata enabled</a>. You will need to unmount the drive, remount it with DrvFs, and verify that the additional metadata is enabled. To do that run:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="wp-block-preformatted">$ sudo umount /mnt/c<br />$ sudo mount -t drvfs C: /mnt/c -o metadata<br />$ mount -l<br /></pre>
+<pre class="wp-block-preformatted">rootfs on / type lxfs (rw,noatime)
+root on /root type lxfs (rw,noatime)
+home on /home type lxfs (rw,noatime)
+data on /data type lxfs (rw,noatime)
+cache on /cache type lxfs (rw,noatime)
+mnt on /mnt type lxfs (rw,noatime)
+none on /dev type tmpfs (rw,noatime,mode=755)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,noatime,gid=5,mode=620)
+none on /run type tmpfs (rw,nosuid,noexec,noatime,mode=755)
+none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,noatime)
+none on /run/shm type tmpfs (rw,nosuid,nodev,noatime)
+none on /run/user type tmpfs (rw,nosuid,nodev,noexec,noatime,mode=755)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noatime)
+C: on /mnt/c type drvfs (rw,relatime,<strong>metadata</strong>,case=off)</pre>
 <p>Confirm that metadata is enabled and you should be able to <code>chown</code> the keypair file and initiate an SSH session. WSL is being improved constantly and has become much better over the past couple years. I use it everyday at work and home. Its functionality has me working more in the Windows environment despite my home machine’s dual boot capabilities.</p>
 
-			</div>
-		</article>
-	</main>
-<aside>
-	<div>
-		<div>
-			<h3>LATEST POSTS</h3>
-		</div>
-		<div>
-			<ul>
-				
-				<li><a href="/post/2025-03-28-family-technology-use/">Family Technology Use</a></li>
-				
-				<li><a href="/post/2022-02-10-optimize-for-loops/">Timing Execution to Help Optimize for Loops</a></li>
-				
-				<li><a href="/post/2021-12-30-file-like-objects-in-lambda/">Working With File Like Objects in Lambda</a></li>
-				
-				<li><a href="/post/2021-08-31-upload-pandas-df-to-s3/">Upload a Pandas Dataframe to AWS S3 With Ease</a></li>
-				
-				<li><a href="/post/2021-08-16-moving-my-blog-to-hugo/">Moving My Personal Blog From Wordpress to Hugo</a></li>
-				
-			</ul>
-		</div>
-	</div>
-</aside>
+        </div>
+
+        
+        <nav class="post-navigation">
+            
+            <div class="prev-post">
+                <span>← Previous</span>
+                <a href="/2020/01/14/kafkacat-amazon-workspace/">Kafkacat Amazon Workspace</a>
+            </div>
+            
+            
+            <div class="next-post">
+                <span>Next →</span>
+                <a href="/2020/01/19/your-simple-guide-to-collecting-oral-history/">Your Simple Guide to Collecting Oral History</a>
+            </div>
+            
+        </nav>
+        
+    </article>
+</main>
 
 
-	<footer>
-	<p>&copy; 2025 <a href="/"><b>Nathan&#39;s Blog</b></a>.
-	<a href="https://github.com/nmaynes"><b>Github</b></a>.
-	<a href="https://twitter.com/nathanmaynes"><b>Twitter</b></a>.
-	</p>
-</footer>
-
+    
+    <footer>
+        <p>&copy; 2025 Nathan&#39;s Blog</p>
+        
+        <nav>
+            <ul>
+            
+                <li><a href="https://github.com/nmaynes" target="_blank" rel="noopener">Github</a></li>
+            
+                <li><a href="https://x.com/nathanmaynes" target="_blank" rel="noopener">X</a></li>
+            
+            </ul>
+        </nav>
+        
+    </footer>
+    
 </body>
 </html>
