@@ -1,0 +1,200 @@
+/*
+ * Base Styles
+ * Semantic HTML element styling
+ * These styles are automatically applied to markdown-generated HTML
+ */
+
+/* === RESET === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* === ROOT === */
+body {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--weight-normal);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+
+    /* Better font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* === TYPOGRAPHY === */
+
+/* Headings inherit from parent context */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+    color: var(--color-heading);
+    margin-bottom: var(--space-4);
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
+
+/* Spacing between headings */
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+    margin-top: var(--space-2);
+}
+
+p {
+    margin-bottom: var(--space-4);
+}
+
+/* Lead paragraph */
+.lead {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+/* Links */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color var(--transition-fast) var(--ease-out);
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+/* Strong & Emphasis */
+strong, b {
+    font-weight: var(--weight-bold);
+}
+
+em, i {
+    font-style: italic;
+}
+
+/* Code */
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: var(--space-1) var(--space-2);
+    background-color: var(--color-code-bg);
+    color: var(--color-code-text);
+    border-radius: var(--border-radius-sm);
+}
+
+pre {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    padding: var(--space-4);
+    background-color: var(--color-code-bg);
+    border-radius: var(--border-radius-md);
+    overflow-x: auto;
+    margin-bottom: var(--space-4);
+}
+
+pre code {
+    padding: 0;
+    background: none;
+    font-size: inherit;
+}
+
+/* === LISTS === */
+ul, ol {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+}
+
+li {
+    margin-bottom: var(--space-2);
+}
+
+/* Nested lists */
+li > ul,
+li > ol {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+/* === BLOCKQUOTES === */
+blockquote {
+    margin: var(--space-6) 0;
+    padding-left: var(--space-4);
+    border-left: var(--border-width-thick) solid var(--color-primary-500);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: var(--space-2);
+}
+
+/* === HORIZONTAL RULE === */
+hr {
+    margin: var(--space-8) 0;
+    border: 0;
+    border-top: var(--border-width-thin) solid var(--color-border);
+}
+
+/* === IMAGES === */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: var(--space-6) 0;
+}
+
+figcaption {
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+/* === TABLES === */
+table {
+    width: 100%;
+    margin-bottom: var(--space-6);
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+th {
+    font-weight: var(--weight-semibold);
+    background-color: var(--color-bg-secondary);
+}
+
+/* === SELECTION === */
+::selection {
+    background-color: var(--color-primary-200);
+    color: var(--color-primary-900);
+}

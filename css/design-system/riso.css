@@ -1,0 +1,361 @@
+/*
+ * Risograph Print Style
+ * Three-color offset effect with deterministic randomization
+ */
+
+/* === RISOGRAPH COLORS === */
+:root {
+    /* Classic Risograph ink colors */
+    --riso-red:       #ff665e;
+    --riso-blue:      #0078bf;
+    --riso-yellow:    #ffe800;
+    --riso-green:     #00a95c;
+    --riso-orange:    #ff6c2f;
+    --riso-violet:    #765ba7;
+    --riso-teal:      #00a5c8;
+    --riso-burgundy:  #914e72;
+    --riso-black:     #000000;
+
+    /* Fluorescent colors */
+    --riso-fluor-pink:   #ff48b0;
+    --riso-fluor-orange: #ff7477;
+    --riso-fluor-yellow: #fff700;
+
+    /* Default three-color combination */
+    --riso-color-1: var(--riso-red);
+    --riso-color-2: var(--riso-blue);
+    --riso-color-3: var(--riso-yellow);
+}
+
+/* === RISO TITLE === */
+.riso-title {
+    position: relative;
+    display: inline-block;
+    color: var(--riso-color-1);
+
+    /* Slightly rougher appearance */
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.02em;
+
+    /* Prevent text selection from looking weird */
+    user-select: none;
+}
+
+.riso-title::before,
+.riso-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Mix blend mode for color overlap */
+    mix-blend-mode: multiply;
+
+    /* Prevent selection */
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Second color layer */
+.riso-title::before {
+    color: var(--riso-color-2);
+    transform: translate(
+        var(--riso-offset2-x, 2px),
+        var(--riso-offset2-y, -2px)
+    );
+}
+
+/* Third color layer */
+.riso-title::after {
+    color: var(--riso-color-3);
+    transform: translate(
+        var(--riso-offset3-x, -2px),
+        var(--riso-offset3-y, 2px)
+    );
+}
+
+/* Alternative: Using text-shadow (simpler, but less control) */
+.riso-title-shadow {
+    color: var(--riso-color-1);
+    text-shadow:
+        var(--riso-offset2-x, 2px) var(--riso-offset2-y, -2px) 0 var(--riso-color-2),
+        var(--riso-offset3-x, -2px) var(--riso-offset3-y, 2px) 0 var(--riso-color-3);
+}
+
+/* === COLOR SCHEMES === */
+
+/* Red, Blue, Yellow (Classic) */
+.riso-scheme-classic {
+    --riso-color-1: var(--riso-red);
+    --riso-color-2: var(--riso-blue);
+    --riso-color-3: var(--riso-yellow);
+}
+
+/* Fluorescent Pop */
+.riso-scheme-fluor {
+    --riso-color-1: var(--riso-fluor-pink);
+    --riso-color-2: var(--riso-fluor-orange);
+    --riso-color-3: var(--riso-fluor-yellow);
+}
+
+/* Cool Tones */
+.riso-scheme-cool {
+    --riso-color-1: var(--riso-blue);
+    --riso-color-2: var(--riso-teal);
+    --riso-color-3: var(--riso-violet);
+}
+
+/* Warm Tones */
+.riso-scheme-warm {
+    --riso-color-1: var(--riso-red);
+    --riso-color-2: var(--riso-orange);
+    --riso-color-3: var(--riso-yellow);
+}
+
+/* Duotone (two colors only) */
+.riso-scheme-duo {
+    --riso-color-1: var(--riso-red);
+    --riso-color-2: var(--riso-blue);
+    --riso-color-3: var(--riso-blue); /* Same as 2 */
+}
+
+/* Monochrome with intensity */
+.riso-scheme-mono {
+    --riso-color-1: var(--riso-black);
+    --riso-color-2: rgba(0, 0, 0, 0.5);
+    --riso-color-3: rgba(0, 0, 0, 0.3);
+}
+
+/* === RISO TEXT EFFECT === */
+/* Apply to any element */
+.riso-text {
+    position: relative;
+    display: inline-block;
+    color: var(--riso-color-1);
+}
+
+.riso-text::before,
+.riso-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+}
+
+.riso-text::before {
+    color: var(--riso-color-2);
+    transform: translate(1px, -1px);
+}
+
+.riso-text::after {
+    color: var(--riso-color-3);
+    transform: translate(-1px, 1px);
+}
+
+/* === RISO BACKGROUND === */
+/* Subtle texture overlay */
+.riso-bg {
+    position: relative;
+    background-color: var(--color-bg-primary);
+}
+
+.riso-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Cpath d='M0 0h1v1H0zm2 2h1v1H2z' fill='%23000' fill-opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* === RISO LINK HOVER === */
+a.riso-link {
+    position: relative;
+    display: inline-block;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: transform 0.2s var(--ease-out);
+}
+
+a.riso-link:hover {
+    transform: translate(2px, -2px);
+}
+
+a.riso-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        var(--riso-red) 0%,
+        var(--riso-blue) 50%,
+        var(--riso-yellow) 100%
+    );
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s var(--ease-out);
+}
+
+a.riso-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* === UTILITY CLASSES === */
+
+/* Offset size variations */
+.riso-offset-sm {
+    --riso-max-offset: 1px;
+}
+
+.riso-offset-md {
+    --riso-max-offset: 2px;
+}
+
+.riso-offset-lg {
+    --riso-max-offset: 4px;
+}
+
+.riso-offset-xl {
+    --riso-max-offset: 6px;
+}
+
+/* Disable mix-blend for solid colors */
+.riso-solid::before,
+.riso-solid::after {
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+/* === RISOGRAPH BLOB DECORATION === */
+
+/* Container: centered, 1/3 width, responsive */
+.riso-blob-container {
+    width: 33.333%; /* 1/3 of container */
+    max-width: 400px;
+    margin: var(--space-8) auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SVG blob styling */
+.riso-blob {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+/* Three layers with risograph offset effect */
+.riso-blob-layer-1 {
+    fill: var(--riso-color-1);
+    opacity: 0.7;
+    transform: translate(0, 0);
+}
+
+.riso-blob-layer-2 {
+    fill: var(--riso-color-2);
+    opacity: 0.6;
+    transform: translate(var(--offset1-x, 2px), var(--offset1-y, -2px));
+    mix-blend-mode: multiply;
+}
+
+.riso-blob-layer-3 {
+    fill: var(--riso-color-3);
+    opacity: 0.6;
+    transform: translate(var(--offset2-x, -2px), var(--offset2-y, 2px));
+    mix-blend-mode: multiply;
+}
+
+/* === BLOB COLOR SCHEMES === */
+
+/* Classic: Red, Blue, Yellow */
+.riso-blob-scheme-classic {
+    --riso-color-1: var(--riso-red);
+    --riso-color-2: var(--riso-blue);
+    --riso-color-3: var(--riso-yellow);
+}
+
+/* Fluorescent Pop */
+.riso-blob-scheme-fluor {
+    --riso-color-1: var(--riso-fluor-pink);
+    --riso-color-2: var(--riso-fluor-orange);
+    --riso-color-3: var(--riso-fluor-yellow);
+}
+
+/* Cool Tones */
+.riso-blob-scheme-cool {
+    --riso-color-1: var(--riso-blue);
+    --riso-color-2: var(--riso-teal);
+    --riso-color-3: var(--riso-violet);
+}
+
+/* Warm Tones */
+.riso-blob-scheme-warm {
+    --riso-color-1: var(--riso-red);
+    --riso-color-2: var(--riso-orange);
+    --riso-color-3: var(--riso-yellow);
+}
+
+/* Duotone (two colors) */
+.riso-blob-scheme-duo {
+    --riso-color-1: var(--riso-red);
+    --riso-color-2: var(--riso-blue);
+    --riso-color-3: var(--riso-blue);
+}
+
+/* Earthy */
+.riso-blob-scheme-earth {
+    --riso-color-1: var(--riso-burgundy);
+    --riso-color-2: var(--riso-green);
+    --riso-color-3: var(--riso-orange);
+}
+
+/* Monochrome */
+.riso-blob-scheme-mono {
+    --riso-color-1: var(--riso-black);
+    --riso-color-2: rgba(0, 0, 0, 0.5);
+    --riso-color-3: rgba(0, 0, 0, 0.3);
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+
+/* Mobile: slightly larger relative size */
+@media (max-width: 768px) {
+    .riso-blob-container {
+        width: 50%; /* Half width on mobile */
+        max-width: 250px;
+        margin: var(--space-6) auto;
+    }
+
+    /* Reduce offsets on mobile */
+    .riso-blob-layer-2 {
+        transform: translate(
+            calc(var(--offset1-x, 2px) * 0.75),
+            calc(var(--offset1-y, -2px) * 0.75)
+        );
+    }
+
+    .riso-blob-layer-3 {
+        transform: translate(
+            calc(var(--offset2-x, -2px) * 0.75),
+            calc(var(--offset2-y, 2px) * 0.75)
+        );
+    }
+}
+
+/* Print: remove blobs (decorative only) */
+@media print {
+    .riso-blob-container {
+        display: none;
+    }
+}

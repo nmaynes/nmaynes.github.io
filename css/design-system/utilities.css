@@ -1,0 +1,135 @@
+/*
+ * Utility Classes
+ * Single-purpose helpers for quick adjustments
+ * Use sparingly - prefer semantic components
+ */
+
+/* === TEXT === */
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+.text-xs   { font-size: var(--text-xs); }
+.text-sm   { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg   { font-size: var(--text-lg); }
+.text-xl   { font-size: var(--text-xl); }
+.text-2xl  { font-size: var(--text-2xl); }
+
+.font-normal  { font-weight: var(--weight-normal); }
+.font-medium  { font-weight: var(--weight-medium); }
+.font-semibold { font-weight: var(--weight-semibold); }
+.font-bold    { font-weight: var(--weight-bold); }
+
+.leading-tight   { line-height: var(--leading-tight); }
+.leading-normal  { line-height: var(--leading-normal); }
+.leading-relaxed { line-height: var(--leading-relaxed); }
+
+.text-primary   { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-tertiary  { color: var(--color-text-tertiary); }
+
+/* === BACKGROUND === */
+.bg-primary   { background-color: var(--color-bg-primary); }
+.bg-secondary { background-color: var(--color-bg-secondary); }
+.bg-tertiary  { background-color: var(--color-bg-tertiary); }
+
+/* === DISPLAY === */
+.block       { display: block; }
+.inline-block { display: inline-block; }
+.inline      { display: inline; }
+.flex        { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid        { display: grid; }
+.hidden      { display: none; }
+
+/* === FLEX === */
+.flex-row    { flex-direction: row; }
+.flex-col    { flex-direction: column; }
+.flex-wrap   { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.items-start   { align-items: flex-start; }
+.items-center  { align-items: center; }
+.items-end     { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+
+.justify-start   { justify-content: flex-start; }
+.justify-center  { justify-content: center; }
+.justify-end     { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+
+/* === BORDERS === */
+.border       { border: var(--border-width-thin) solid var(--color-border); }
+.border-t     { border-top: var(--border-width-thin) solid var(--color-border); }
+.border-b     { border-bottom: var(--border-width-thin) solid var(--color-border); }
+.border-l     { border-left: var(--border-width-thin) solid var(--color-border); }
+.border-r     { border-right: var(--border-width-thin) solid var(--color-border); }
+
+.rounded-none { border-radius: 0; }
+.rounded-sm   { border-radius: var(--border-radius-sm); }
+.rounded      { border-radius: var(--border-radius-md); }
+.rounded-lg   { border-radius: var(--border-radius-lg); }
+.rounded-full { border-radius: var(--border-radius-full); }
+
+/* === SHADOWS === */
+.shadow-none { box-shadow: none; }
+.shadow-sm   { box-shadow: var(--shadow-sm); }
+.shadow      { box-shadow: var(--shadow-md); }
+.shadow-lg   { box-shadow: var(--shadow-lg); }
+
+/* === WIDTH === */
+.w-full  { width: 100%; }
+.w-auto  { width: auto; }
+.w-fit   { width: fit-content; }
+
+.max-w-xs  { max-width: 320px; }
+.max-w-sm  { max-width: 384px; }
+.max-w-md  { max-width: 448px; }
+.max-w-lg  { max-width: 512px; }
+.max-w-xl  { max-width: 576px; }
+.max-w-2xl { max-width: 672px; }
+.max-w-3xl { max-width: 768px; }
+.max-w-full { max-width: 100%; }
+
+/* === OVERFLOW === */
+.overflow-auto   { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+
+/* === POSITION === */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed; }
+.sticky   { position: sticky; }
+
+/* === VISIBILITY === */
+.visible   { visibility: visible; }
+.invisible { visibility: hidden; }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* === RESPONSIVE HELPERS === */
+@media (max-width: 768px) {
+    .hide-mobile { display: none; }
+}
+
+@media (min-width: 769px) {
+    .hide-desktop { display: none; }
+    .show-mobile { display: none; }
+}
