@@ -3,4 +3,6 @@
 
 Welcome to my blog! I post infrequently about things, mostly related to computers and software, I am working on.
 
-The blog is hosted on Github pages and built using [Hugo](https://gohugo.io) using the [smol](https://github.com/colorchestra/smol) theme.
+The blog is hosted on Github pages and built using [Hugo](https://gohugo.io) using the [offset](https://github.com/nmaynes/offset) theme.
+
+I am currently in the process of restyling this website.
