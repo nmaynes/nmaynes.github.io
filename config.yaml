@@ -58,3 +58,8 @@ markup:
         title: true
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
+    lineNos: false
+    lineNumbersInTable: false
+    tabWidth: 4
