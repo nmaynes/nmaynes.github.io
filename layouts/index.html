@@ -1,31 +1,45 @@
 {{ define "main" }}
-<main>
-    <style>
-        /*body {*/
-        /*    background-image: url('http://localhost:1313/img/bauhaus_background.gif');*/
-        /*    background-repeat: no-repeat;*/
-        /*    background-attachment: fixed;*/
-        /*    background-size: cover;*/
-        /*}*/
-        main {
-            background-color: #ffffff;
-        }
-
-    </style>
-    <header class="homepage-header">
-        <h1>{{.Title}}</h1>
-        {{ with .Params.subtitle }}
-        <span class="subtitle">{{.}}</span>
-        {{ end }}
-    </header>
-    <div class="homepage-content">
-        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
-        {{.Content}}
+<main id="main-content">
+    <div class="homepage-content flow">
+        {{ .Content }}
     </div>
-    <div>
-        {{ range first 10 .Site.RegularPages }}
-        {{ .Render "summary"}}
-        {{ end }}
+
+    <div class="grid grid-2">
+        <section>
+            <h2>Recent Posts</h2>
+
+            {{ $recentPosts := first 10 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+
+            {{ if $recentPosts }}
+            <ul class="post-list">
+                {{ range $recentPosts }}
+                <li class="post-list-item">
+                    <div class="post-title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </div>
+                    <div class="post-meta">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+            {{ else }}
+            <p>No posts found.</p>
+            {{ end }}
+
+            <p><a href="{{ "/post/" | relLangURL }}">Browse all posts &rarr;</a></p>
+        </section>
+
+        <section>
+            <h2>Elsewhere</h2>
+
+            <ul>
+                <li><a href="{{ "/about/" | relLangURL }}">About</a> &mdash; who I am and how to reach me</li>
+                <li><a href="{{ "/design/" | relLangURL }}">Design</a> &mdash; behind the organization of this site</li>
+                <li><a href="{{ "/ai-use-disclosure/" | relLangURL }}">AI Use Disclosure</a> &mdash; AI writes no words</li>
+                <li><a href="{{ "/family-culture/" | relLangURL }}">Family Culture</a> &mdash; notes on raising our kids deliberately</li>
+            </ul>
+        </section>
     </div>
 </main>
 {{ end }}

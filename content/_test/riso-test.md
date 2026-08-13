@@ -208,6 +208,26 @@ Red, orange, and yellow bring warmth and energy.
 
 Burgundy, green, and orange for a natural feel.
 
+### Size Presets
+
+Size is a percentage of the surrounding container's width, so it stays responsive rather than pinned to a pixel value.
+
+{{< riso-blob scheme="duo" size="small" >}}
+
+Small (25% of container width).
+
+{{< riso-blob scheme="duo" size="medium" >}}
+
+Medium (33% of container width) -- the default when no size is given.
+
+{{< riso-blob scheme="duo" size="large" >}}
+
+Large (50% of container width).
+
+{{< riso-blob scheme="duo" size="xlarge" >}}
+
+X-Large (100% of container width).
+
 ### Usage
 
 Add a blob decoration after your post title or at the end of content:

@@ -13,8 +13,14 @@ The output of that effort is located under [Family Culture](/family-culture) in 
 I realize that the decisions we make may not fit or make sense to every person who visits this website. 
 To provide context, I try and include key resources that shaped our thinking on the topic.
 
+> the purpose of a system is what it does. -- Stafford Beer
+
+
 
 ## What I believe
+
+> Human beings, whatever their backgrounds, are more open than we think, that their behavior cannot be confidently predicted from their past, that we are all creatures vulnerable to new thoughts, new attitudes. And while such vulnerability creates all sorts of possibilities, both good and bad, its very existence is exciting. It means that no human being should be written off, no change in thinking deemed impossible.
+-- Howard Zinn, You Can't Be Neutral on a Moving Train
 
 Every parent's journey is different and the needs of their children, partner, and family are unique.  
 Parenting constitutes an educational odyssey where perfection remains perpetually beyond reach.
@@ -28,6 +34,8 @@ We must support through attentive presence, non-judgemental listening, and earne
 We bear both the solemn responsibility and profound privilege of imparting essential skills that enable young humans to emerge as autonomous, contributive members of our collective species. 
 
 We inhabit an intricate system transcending the boundaries of self, family, and even humanity itself. The environmental context in which we exist molds our being just as surely as we shape it through our actions—a dialectical relationship demanding both awareness and respect.
+
+> So I have heard, and do in part believe it -- Horatio, Hamlet, Act 1, Scene 1
 
 ## How to reach out
 

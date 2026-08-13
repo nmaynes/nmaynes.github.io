@@ -12,8 +12,8 @@
 {{- $scheme := .Get "scheme" | default "classic" -}}
 {{- $size := 120 -}}
 
-{{- /* Generate deterministic seed from page URL + letter */ -}}
-{{- $hash := md5 (printf "%s%s" .Page.RelPermalink $letter) -}}
+{{- /* Generate deterministic seed from page URL + letter + this shortcode's position on the page, so multiple riso-dropcap calls with the same letter on one page don't collide on the same id */ -}}
+{{- $hash := md5 (printf "%s-%s-%d" .Page.RelPermalink $letter .Ordinal) -}}
 {{- $seed := int (printf "0x%s" (substr $hash 0 6)) -}}
 
 {{- /* Generate blob parameters */ -}}
@@ -72,8 +72,10 @@
     <defs>
       <path id="{{ $dropId }}-path" d="" />
 
-      <!-- Clip path to constrain effects to blob shape -->
+      <!-- Clip path to constrain effects to the union of all three offset blob layers -->
       <clipPath id="{{ $dropId }}-clip">
+        <use href="#{{ $dropId }}-path" transform="translate(0, 0)" />
+        <use href="#{{ $dropId }}-path" transform="translate({{ $offset1X }}, {{ $offset1Y }})" />
         <use href="#{{ $dropId }}-path" transform="translate({{ $offset2X }}, {{ $offset2Y }})" />
       </clipPath>
 
@@ -107,8 +109,8 @@
       </radialGradient>
     </defs>
 
-    <!-- Apply noise filter to entire blob group for textured color -->
-    <g filter="url(#{{ $dropId }}-noise)">
+    <!-- Apply noise filter to entire blob group for textured color, clipped to the blob outline so the filter's rectangular region doesn't leave a visible box outside the shape -->
+    <g filter="url(#{{ $dropId }}-noise)" clip-path="url(#{{ $dropId }}-clip)">
       <!-- Opaque color layers - risograph printing style -->
       <g class="riso-dropcap-base">
         <!-- First color layer (bottom) -->
@@ -151,7 +153,14 @@
   const createPoints = (size, minGrowth, edgesCount, seed) => {
     const randGen = randomDoubleGenerator(seed);
     const outerRad = size / 2;
-    const innerRad = minGrowth * (outerRad / 10);
+    // innerRad is the floor a point's random radius can dip to. Keeping it a large
+    // fraction of outerRad (70-90%, scaled by the deterministic minGrowth seed of
+    // 4-7) makes the blob consistently fill most of its canvas while still varying
+    // shape per page. The original 40-70% floor let some instances shrink well
+    // away from the edges, leaving a lot of empty canvas around the visible shape.
+    const minRadiusRatio = 0.70;
+    const maxRadiusRatio = 0.90;
+    const innerRad = outerRad * (minRadiusRatio + ((minGrowth - 4) / 3) * (maxRadiusRatio - minRadiusRatio));
     const center = size / 2;
     const slices = divide(edgesCount);
     const destPoints = [];

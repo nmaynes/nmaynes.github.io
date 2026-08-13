@@ -168,6 +168,24 @@ Below this line.
 
 ---
 
+## Footer Quote Styles
+
+Pulls a quote from posts tagged `quote` (see `themes/offset/layouts/_partials/footer-quote.html`). All three below pull the same underlying quote, since selection is deterministic per-page -- only the wrapper style differs. Currently applied site-wide in the footer: **card**.
+
+### Style 1: Minimal
+
+{{< footer-quote-demo style="minimal" >}}
+
+### Style 2: Card (current default)
+
+{{< footer-quote-demo style="card" >}}
+
+### Style 3: Riso
+
+{{< footer-quote-demo style="riso" >}}
+
+---
+
 ## Component Information
 
 **Template Used:** `layouts/_test/list.html` (or fallback `layouts/list.html`)

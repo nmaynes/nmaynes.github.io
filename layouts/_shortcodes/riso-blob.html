@@ -3,16 +3,37 @@
   Generates an organic blob shape with three-color risograph offset effect
 
   Usage: riso-blob or riso-blob scheme="fluor"
+  Size: riso-blob size="large" -- how much of the surrounding container the
+        blob takes up, as a responsive CSS percentage (small=25%, medium=33%,
+        large=50%, xlarge=100%), or riso-blob size="60" for an exact percentage.
+        This is independent of the SVG's internal coordinate space below, which
+        stays fixed regardless of on-screen size.
 
   Credits:
   - Blob generation algorithm adapted from: https://github.com/lokesh-coder/blobshape
   - Gradient texture effect inspired by: https://codepen.io/chriskirknielsen/pen/rNmgXyV
 */}}
 {{- $scheme := .Get "scheme" | default "classic" -}}
-{{- $size := .Get "size" | default "300" -}}
 
-{{- /* Generate deterministic seed from page URL */ -}}
-{{- $hash := md5 .Page.RelPermalink -}}
+{{- $sizeParam := .Get "size" | default "medium" -}}
+{{- $displayWidth := "33.333%" -}}
+{{- if eq $sizeParam "small" -}}
+  {{- $displayWidth = "25%" -}}
+{{- else if eq $sizeParam "medium" -}}
+  {{- $displayWidth = "33.333%" -}}
+{{- else if eq $sizeParam "large" -}}
+  {{- $displayWidth = "50%" -}}
+{{- else if eq $sizeParam "xlarge" -}}
+  {{- $displayWidth = "100%" -}}
+{{- else -}}
+  {{- $displayWidth = printf "%s%%" $sizeParam -}}
+{{- end -}}
+
+{{- /* Fixed internal drawing canvas for the blob-generation math -- not the on-screen size */ -}}
+{{- $size := 300 -}}
+
+{{- /* Generate deterministic seed from page URL + this shortcode's position on the page, so multiple riso-blob calls on one page don't collide on the same id */ -}}
+{{- $hash := md5 (printf "%s-%d" .Page.RelPermalink .Ordinal) -}}
 {{- $seed := int (printf "0x%s" (substr $hash 0 6)) -}}
 
 {{- /* Generate blob parameters from hash */ -}}
@@ -59,7 +80,7 @@
   {{- $color3 = "rgba(0, 0, 0, 0.3)" -}}
 {{- end -}}
 
-<div class="riso-blob-container">
+<div class="riso-blob-container" style="--riso-blob-width: {{ $displayWidth }};">
   <svg class="riso-blob"
        id="{{ $blobId }}"
        viewBox="0 0 {{ $size }} {{ $size }}"
@@ -71,18 +92,21 @@
     <defs>
       <path id="{{ $blobId }}-path" d="" />
 
-      <!-- Clip path to constrain effects to blob shape -->
+      <!-- Clip path to constrain effects to the union of all three offset blob layers -->
       <clipPath id="{{ $blobId }}-clip">
+        <use href="#{{ $blobId }}-path" transform="translate(0, 0)" />
+        <use href="#{{ $blobId }}-path" transform="translate({{ $offset1X }}, {{ $offset1Y }})" />
         <use href="#{{ $blobId }}-path" transform="translate({{ $offset2X }}, {{ $offset2Y }})" />
       </clipPath>
 
-      <!-- Complex noise filter with more visible texture -->
-      <filter id="{{ $blobId }}-noise">
-        <feOffset in="SourceGraphic" dx="-8" dy="-8" result="offset" />
-        <feGaussianBlur in="offset" stdDeviation="48" result="blur" />
-        <feTurbulence result="waves" type="turbulence" baseFrequency="0.85 0.92" numOctaves="2" seed="{{ $seed }}" />
-        <feDisplacementMap in="blur" in2="waves" scale="380" xChannelSelector="R" yChannelSelector="B" result="ripples" />
-        <feComposite in="waves" in2="ripples" operator="arithmetic" k1="1.2" k2="0" k3="1" k4="0" />
+      <!-- Subtle noise texture that preserves colors -->
+      <filter id="{{ $blobId }}-noise" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="{{ $seed }}" result="noise" />
+        <feColorMatrix in="noise" type="saturate" values="0" result="desaturatedNoise"/>
+        <feComponentTransfer in="desaturatedNoise" result="bwNoise">
+          <feFuncA type="table" tableValues="0 0.05 0.1 0.15 0.2" />
+        </feComponentTransfer>
+        <feBlend in="SourceGraphic" in2="bwNoise" mode="multiply" result="textured" />
       </filter>
 
       <!-- Radial gradients offset to bottom-right -->
@@ -105,8 +129,8 @@
       </radialGradient>
     </defs>
 
-    <!-- Apply noise filter to entire blob group for textured color -->
-    <g filter="url(#{{ $blobId }}-noise)">
+    <!-- Apply noise filter to entire blob group for textured color, clipped to the blob outline so the filter's rectangular region doesn't leave a visible box outside the shape -->
+    <g filter="url(#{{ $blobId }}-noise)" clip-path="url(#{{ $blobId }}-clip)">
       <!-- Opaque color layers - risograph printing style -->
       <g class="riso-blob-base">
         <!-- First color layer (bottom) -->
@@ -148,7 +172,14 @@
   const createPoints = (size, minGrowth, edgesCount, seed) => {
     const randGen = randomDoubleGenerator(seed);
     const outerRad = size / 2;
-    const innerRad = minGrowth * (outerRad / 10);
+    // innerRad is the floor a point's random radius can dip to. Keeping it a large
+    // fraction of outerRad (70-90%, scaled by the deterministic minGrowth seed of
+    // 4-7) makes the blob consistently fill most of its canvas while still varying
+    // shape per page. The original 40-70% floor let some instances shrink well
+    // away from the edges, leaving a lot of empty canvas around the visible shape.
+    const minRadiusRatio = 0.70;
+    const maxRadiusRatio = 0.90;
+    const innerRad = outerRad * (minRadiusRatio + ((minGrowth - 4) / 3) * (maxRadiusRatio - minRadiusRatio));
     const center = size / 2;
     const slices = divide(edgesCount);
     const destPoints = [];

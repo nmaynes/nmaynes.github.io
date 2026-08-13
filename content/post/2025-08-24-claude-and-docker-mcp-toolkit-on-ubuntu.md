@@ -1,9 +1,8 @@
 ---
-title: "2025 08 24 Claude and Docker Mcp Toolkit on Ubuntu"
+title: "Claude and Docker MCP Toolkit on Ubuntu"
 date: 2025-08-24T12:29:12-04:00
 slug: 2025-08-24-2025-08-24-claude-and-docker-mcp-toolkit-on-ubuntu
-type: posts
-draft: true
+draft: false
 categories:
   - default
 tags:
