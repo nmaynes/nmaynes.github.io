@@ -1,0 +1,2 @@
+{{/* Dev-only wrapper so the component test page can render each footer-quote style variant for side-by-side comparison. Not used in production templates -- baseof.html calls the partial directly. */}}
+{{- partial "footer-quote.html" (dict "context" .Page "style" (.Get "style")) -}}
