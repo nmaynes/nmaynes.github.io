@@ -1,7 +1,575 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nathan's Blog</title><link>/</link><description>Recent content on Nathan's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 02 Apr 2025 06:23:26 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 04 02 Test Event</title><link>/event/2025-04-02-2025-04-02-test-event/</link><pubDate>Wed, 02 Apr 2025 06:23:26 -0400</pubDate><guid>/event/2025-04-02-2025-04-02-test-event/</guid><description>&lt;h1 id="this-is-an-event-detail-example"&gt;This is an Event Detail Example&lt;/h1&gt;
-&lt;h2 id="mark-your-calendars-for-the-upcoming-event"&gt;Mark your calendar&amp;rsquo;s for the upcoming event!&lt;/h2&gt;
-&lt;p&gt;Come one and all to the annual event that will be held in the future. People of all ages and abilities are welcome. Cost of admission is free. We are collecting food for the Food For Other&amp;rsquo;s pantry and suggested donation is one can or shelf stable item per person.&lt;/p&gt;
-&lt;h1 id="fcps-school-calendar"&gt;FCPS School Calendar&lt;/h1&gt;</description></item><item><title>Family Technology Use</title><link>/family-culture/family-technology-use/</link><pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate><guid>/family-culture/family-technology-use/</guid><description>&lt;h1 id="definition"&gt;Definition&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nathan's Blog</title><link>/</link><description>Recent content on Nathan's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 13 Aug 2026 00:00:00 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>AI Use Disclosure</title><link>/ai-use-disclosure/</link><pubDate>Thu, 13 Aug 2026 00:00:00 -0400</pubDate><guid>/ai-use-disclosure/</guid><description>&lt;p&gt;&lt;span class="riso-dropcap"&gt;
+ &lt;svg class="riso-dropcap-blob"
+ id="riso-drop-53536eac"
+ viewBox="0 0 120 120"
+ xmlns="http://www.w3.org/2000/svg"
+ data-seed="5460846"
+ data-randomness="4"
+ data-complexity="8"
+ data-size="120"&gt;
+ &lt;defs&gt;
+ &lt;path id="riso-drop-53536eac-path" d="" /&gt;
+
+ 
+ &lt;clipPath id="riso-drop-53536eac-clip"&gt;
+ &lt;use href="#riso-drop-53536eac-path" transform="translate(0, 0)" /&gt;
+ &lt;use href="#riso-drop-53536eac-path" transform="translate(-2, -1)" /&gt;
+ &lt;use href="#riso-drop-53536eac-path" transform="translate(3, -3)" /&gt;
+ &lt;/clipPath&gt;
+
+ 
+ &lt;filter id="riso-drop-53536eac-noise" x="-20%" y="-20%" width="140%" height="140%"&gt;
+ &lt;feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="5460846" result="noise" /&gt;
+ &lt;feColorMatrix in="noise" type="saturate" values="0" result="desaturatedNoise"/&gt;
+ &lt;feComponentTransfer in="desaturatedNoise" result="bwNoise"&gt;
+ &lt;feFuncA type="table" tableValues="0 0.05 0.1 0.15 0.2" /&gt;
+ &lt;/feComponentTransfer&gt;
+ &lt;feBlend in="SourceGraphic" in2="bwNoise" mode="multiply" result="textured" /&gt;
+ &lt;/filter&gt;
+
+ 
+ &lt;radialGradient id="riso-drop-53536eac-grad1" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#ff665e" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#ff665e" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#ff665e" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+
+ &lt;radialGradient id="riso-drop-53536eac-grad2" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#0078bf" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#0078bf" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#0078bf" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+
+ &lt;radialGradient id="riso-drop-53536eac-grad3" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#ffe800" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#ffe800" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#ffe800" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+ &lt;/defs&gt;
+
+ 
+ &lt;g filter="url(#riso-drop-53536eac-noise)" clip-path="url(#riso-drop-53536eac-clip)"&gt;
+ 
+ &lt;g class="riso-dropcap-base"&gt;
+ 
+ &lt;use href="#riso-drop-53536eac-path"
+ fill="#ff665e"
+ transform="translate(0, 0)" /&gt;
+
+ 
+ &lt;use href="#riso-drop-53536eac-path"
+ fill="#0078bf"
+ transform="translate(-2, -1)" /&gt;
+
+ 
+ &lt;use href="#riso-drop-53536eac-path"
+ fill="#ffe800"
+ transform="translate(3, -3)" /&gt;
+ &lt;/g&gt;
+
+ 
+ &lt;g class="riso-dropcap-gradient"&gt;
+ &lt;use href="#riso-drop-53536eac-path"
+ fill="url(#riso-drop-53536eac-grad1)"
+ opacity="0.2"
+ transform="translate(3, -3)" /&gt;
+ &lt;/g&gt;
+ &lt;/g&gt;
+ &lt;/svg&gt;
+ &lt;span class="riso-dropcap-letter"&gt;I&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;script&gt;
+(function() {
+ 
+ const generateBlob = (config) =&gt; {
+ const { size, growth, edges, seed } = config;
+ const points = createPoints(size, growth, edges, seed);
+ return createSvgPath(points);
+ };
+
+ const createPoints = (size, minGrowth, edgesCount, seed) =&gt; {
+ const randGen = randomDoubleGenerator(seed);
+ const outerRad = size / 2;
+ 
+ 
+ 
+ 
+ 
+ const minRadiusRatio = 0.70;
+ const maxRadiusRatio = 0.90;
+ const innerRad = outerRad * (minRadiusRatio + ((minGrowth - 4) / 3) * (maxRadiusRatio - minRadiusRatio));
+ const center = size / 2;
+ const slices = divide(edgesCount);
+ const destPoints = [];
+
+ slices.forEach((degree) =&gt; {
+ const O = magicPoint(randGen(), innerRad, outerRad);
+ const end = point(center, O, degree);
+ destPoints.push(end);
+ });
+
+ return destPoints;
+ };
+
+ const divide = (count) =&gt; {
+ const deg = 360 / count;
+ return Array(count).fill(0).map((_, i) =&gt; i * deg);
+ };
+
+ const point = (origin, radius, degree) =&gt; {
+ const rad = (degree * Math.PI) / 180;
+ const x = origin + radius * Math.cos(rad);
+ const y = origin + radius * Math.sin(rad);
+ return [Math.round(x), Math.round(y)];
+ };
+
+ const magicPoint = (value, min, max) =&gt; {
+ let radius = min + value * (max - min);
+ if (radius &gt; max) radius = radius - min;
+ else if (radius &lt; min) radius = radius + min;
+ return radius;
+ };
+
+ const randomDoubleGenerator = (s) =&gt; {
+ const mask = 0xffffffff;
+ let m_w = (123456789 + s) &amp; mask;
+ let m_z = (987654321 - s) &amp; mask;
+
+ return function() {
+ m_z = (36969 * (m_z &amp; 65535) + (m_z &gt;&gt;&gt; 16)) &amp; mask;
+ m_w = (18000 * (m_w &amp; 65535) + (m_w &gt;&gt;&gt; 16)) &amp; mask;
+ const result = ((m_z &lt;&lt; 16) + (m_w &amp; 65535)) &gt;&gt;&gt; 0;
+ return result / 4294967296;
+ };
+ };
+
+ const createSvgPath = (points) =&gt; {
+ let svgPath = "";
+ let mid = [
+ (points[0][0] + points[1][0]) / 2,
+ (points[0][1] + points[1][1]) / 2,
+ ];
+ svgPath += "M" + mid[0] + "," + mid[1];
+
+ for (let i = 0; i &lt; points.length; i++) {
+ const p1 = points[(i + 1) % points.length];
+ const p2 = points[(i + 2) % points.length];
+ mid = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
+ svgPath += "Q" + p1[0] + "," + p1[1] + "," + mid[0] + "," + mid[1];
+ }
+ svgPath += "Z";
+ return svgPath;
+ };
+
+ 
+ const svg = document.getElementById('riso-drop-53536eac');
+ if (svg) {
+ const seed = parseInt(svg.dataset.seed);
+ const randomness = parseInt(svg.dataset.randomness);
+ const complexity = parseInt(svg.dataset.complexity);
+ const size = parseInt(svg.dataset.size);
+
+ const path = generateBlob({
+ size: size,
+ growth: randomness,
+ edges: complexity,
+ seed: seed
+ });
+
+ const pathElement = document.getElementById('riso-drop-53536eac-path');
+ if (pathElement) {
+ pathElement.setAttribute('d', path);
+ }
+ }
+})();
+&lt;/script&gt;
+nspired by writers on the Internet I respect, I am including an AI disclosure page on my site.&lt;/p&gt;</description></item><item><title>Design</title><link>/design/</link><pubDate>Thu, 13 Aug 2026 00:00:00 -0400</pubDate><guid>/design/</guid><description>&lt;p&gt;&lt;span class="riso-dropcap"&gt;
+ &lt;svg class="riso-dropcap-blob"
+ id="riso-drop-0831e69a"
+ viewBox="0 0 120 120"
+ xmlns="http://www.w3.org/2000/svg"
+ data-seed="537062"
+ data-randomness="6"
+ data-complexity="8"
+ data-size="120"&gt;
+ &lt;defs&gt;
+ &lt;path id="riso-drop-0831e69a-path" d="" /&gt;
+
+ 
+ &lt;clipPath id="riso-drop-0831e69a-clip"&gt;
+ &lt;use href="#riso-drop-0831e69a-path" transform="translate(0, 0)" /&gt;
+ &lt;use href="#riso-drop-0831e69a-path" transform="translate(-4, -1)" /&gt;
+ &lt;use href="#riso-drop-0831e69a-path" transform="translate(-3, -1)" /&gt;
+ &lt;/clipPath&gt;
+
+ 
+ &lt;filter id="riso-drop-0831e69a-noise" x="-20%" y="-20%" width="140%" height="140%"&gt;
+ &lt;feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="537062" result="noise" /&gt;
+ &lt;feColorMatrix in="noise" type="saturate" values="0" result="desaturatedNoise"/&gt;
+ &lt;feComponentTransfer in="desaturatedNoise" result="bwNoise"&gt;
+ &lt;feFuncA type="table" tableValues="0 0.05 0.1 0.15 0.2" /&gt;
+ &lt;/feComponentTransfer&gt;
+ &lt;feBlend in="SourceGraphic" in2="bwNoise" mode="multiply" result="textured" /&gt;
+ &lt;/filter&gt;
+
+ 
+ &lt;radialGradient id="riso-drop-0831e69a-grad1" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#ff665e" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#ff665e" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#ff665e" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+
+ &lt;radialGradient id="riso-drop-0831e69a-grad2" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#ff6c2f" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#ff6c2f" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#ff6c2f" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+
+ &lt;radialGradient id="riso-drop-0831e69a-grad3" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#ffe800" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#ffe800" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#ffe800" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+ &lt;/defs&gt;
+
+ 
+ &lt;g filter="url(#riso-drop-0831e69a-noise)" clip-path="url(#riso-drop-0831e69a-clip)"&gt;
+ 
+ &lt;g class="riso-dropcap-base"&gt;
+ 
+ &lt;use href="#riso-drop-0831e69a-path"
+ fill="#ff665e"
+ transform="translate(0, 0)" /&gt;
+
+ 
+ &lt;use href="#riso-drop-0831e69a-path"
+ fill="#ff6c2f"
+ transform="translate(-4, -1)" /&gt;
+
+ 
+ &lt;use href="#riso-drop-0831e69a-path"
+ fill="#ffe800"
+ transform="translate(-3, -1)" /&gt;
+ &lt;/g&gt;
+
+ 
+ &lt;g class="riso-dropcap-gradient"&gt;
+ &lt;use href="#riso-drop-0831e69a-path"
+ fill="url(#riso-drop-0831e69a-grad1)"
+ opacity="0.2"
+ transform="translate(-3, -1)" /&gt;
+ &lt;/g&gt;
+ &lt;/g&gt;
+ &lt;/svg&gt;
+ &lt;span class="riso-dropcap-letter"&gt;T&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;script&gt;
+(function() {
+ 
+ const generateBlob = (config) =&gt; {
+ const { size, growth, edges, seed } = config;
+ const points = createPoints(size, growth, edges, seed);
+ return createSvgPath(points);
+ };
+
+ const createPoints = (size, minGrowth, edgesCount, seed) =&gt; {
+ const randGen = randomDoubleGenerator(seed);
+ const outerRad = size / 2;
+ 
+ 
+ 
+ 
+ 
+ const minRadiusRatio = 0.70;
+ const maxRadiusRatio = 0.90;
+ const innerRad = outerRad * (minRadiusRatio + ((minGrowth - 4) / 3) * (maxRadiusRatio - minRadiusRatio));
+ const center = size / 2;
+ const slices = divide(edgesCount);
+ const destPoints = [];
+
+ slices.forEach((degree) =&gt; {
+ const O = magicPoint(randGen(), innerRad, outerRad);
+ const end = point(center, O, degree);
+ destPoints.push(end);
+ });
+
+ return destPoints;
+ };
+
+ const divide = (count) =&gt; {
+ const deg = 360 / count;
+ return Array(count).fill(0).map((_, i) =&gt; i * deg);
+ };
+
+ const point = (origin, radius, degree) =&gt; {
+ const rad = (degree * Math.PI) / 180;
+ const x = origin + radius * Math.cos(rad);
+ const y = origin + radius * Math.sin(rad);
+ return [Math.round(x), Math.round(y)];
+ };
+
+ const magicPoint = (value, min, max) =&gt; {
+ let radius = min + value * (max - min);
+ if (radius &gt; max) radius = radius - min;
+ else if (radius &lt; min) radius = radius + min;
+ return radius;
+ };
+
+ const randomDoubleGenerator = (s) =&gt; {
+ const mask = 0xffffffff;
+ let m_w = (123456789 + s) &amp; mask;
+ let m_z = (987654321 - s) &amp; mask;
+
+ return function() {
+ m_z = (36969 * (m_z &amp; 65535) + (m_z &gt;&gt;&gt; 16)) &amp; mask;
+ m_w = (18000 * (m_w &amp; 65535) + (m_w &gt;&gt;&gt; 16)) &amp; mask;
+ const result = ((m_z &lt;&lt; 16) + (m_w &amp; 65535)) &gt;&gt;&gt; 0;
+ return result / 4294967296;
+ };
+ };
+
+ const createSvgPath = (points) =&gt; {
+ let svgPath = "";
+ let mid = [
+ (points[0][0] + points[1][0]) / 2,
+ (points[0][1] + points[1][1]) / 2,
+ ];
+ svgPath += "M" + mid[0] + "," + mid[1];
+
+ for (let i = 0; i &lt; points.length; i++) {
+ const p1 = points[(i + 1) % points.length];
+ const p2 = points[(i + 2) % points.length];
+ mid = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
+ svgPath += "Q" + p1[0] + "," + p1[1] + "," + mid[0] + "," + mid[1];
+ }
+ svgPath += "Z";
+ return svgPath;
+ };
+
+ 
+ const svg = document.getElementById('riso-drop-0831e69a');
+ if (svg) {
+ const seed = parseInt(svg.dataset.seed);
+ const randomness = parseInt(svg.dataset.randomness);
+ const complexity = parseInt(svg.dataset.complexity);
+ const size = parseInt(svg.dataset.size);
+
+ const path = generateBlob({
+ size: size,
+ growth: randomness,
+ edges: complexity,
+ seed: seed
+ });
+
+ const pathElement = document.getElementById('riso-drop-0831e69a-path');
+ if (pathElement) {
+ pathElement.setAttribute('d', path);
+ }
+ }
+})();
+&lt;/script&gt;
+his site runs on &lt;a href="https://gohugo.io"&gt;Hugo&lt;/a&gt;, a static site generator, and deploys to GitHub Pages via a GitHub Actions workflow that builds when changes are pushed to &lt;code&gt;main&lt;/code&gt;.
+Why GitHub pages? It is free and it works with my registar. I also set the site up as an expirement so I could recommend simple GitHub pages sites to other people. Our homeowners association saves money by publishing information on a website that is also hosted on GitHub pages.&lt;/p&gt;</description></item><item><title>App Store Age Gates</title><link>/post/2026-08-12-app-store-age-gates/</link><pubDate>Wed, 12 Aug 2026 06:02:00 -0400</pubDate><guid>/post/2026-08-12-app-store-age-gates/</guid><description>&lt;h1 id="peto-quia-peto-or-app-store-age-gates-on-all-ages-content"&gt;Peto quia peto or App Store Age Gates on All Ages Content&lt;/h1&gt;
+&lt;p&gt;&lt;div class="riso-blob-container" style="--riso-blob-width: 25%;"&gt;
+ &lt;svg class="riso-blob"
+ id="riso-blob-b1011773"
+ viewBox="0 0 300 300"
+ xmlns="http://www.w3.org/2000/svg"
+ data-seed="11600151"
+ data-randomness="7"
+ data-complexity="13"
+ data-size="300"&gt;
+ &lt;defs&gt;
+ &lt;path id="riso-blob-b1011773-path" d="" /&gt;
+
+ 
+ &lt;clipPath id="riso-blob-b1011773-clip"&gt;
+ &lt;use href="#riso-blob-b1011773-path" transform="translate(0, 0)" /&gt;
+ &lt;use href="#riso-blob-b1011773-path" transform="translate(2, 1)" /&gt;
+ &lt;use href="#riso-blob-b1011773-path" transform="translate(0, -3)" /&gt;
+ &lt;/clipPath&gt;
+
+ 
+ &lt;filter id="riso-blob-b1011773-noise" x="-20%" y="-20%" width="140%" height="140%"&gt;
+ &lt;feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="11600151" result="noise" /&gt;
+ &lt;feColorMatrix in="noise" type="saturate" values="0" result="desaturatedNoise"/&gt;
+ &lt;feComponentTransfer in="desaturatedNoise" result="bwNoise"&gt;
+ &lt;feFuncA type="table" tableValues="0 0.05 0.1 0.15 0.2" /&gt;
+ &lt;/feComponentTransfer&gt;
+ &lt;feBlend in="SourceGraphic" in2="bwNoise" mode="multiply" result="textured" /&gt;
+ &lt;/filter&gt;
+
+ 
+ &lt;radialGradient id="riso-blob-b1011773-grad1" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#ff48b0" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#ff48b0" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#ff48b0" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+
+ &lt;radialGradient id="riso-blob-b1011773-grad2" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#ff7477" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#ff7477" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#ff7477" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+
+ &lt;radialGradient id="riso-blob-b1011773-grad3" cx="100%" cy="100%" r="100%"&gt;
+ &lt;stop offset="10%" stop-color="#fff700" stop-opacity="1" /&gt;
+ &lt;stop offset="33%" stop-color="#fff700" stop-opacity="0.85" /&gt;
+ &lt;stop offset="66.7%" stop-color="#fff700" stop-opacity="0" /&gt;
+ &lt;/radialGradient&gt;
+ &lt;/defs&gt;
+
+ 
+ &lt;g filter="url(#riso-blob-b1011773-noise)" clip-path="url(#riso-blob-b1011773-clip)"&gt;
+ 
+ &lt;g class="riso-blob-base"&gt;
+ 
+ &lt;use href="#riso-blob-b1011773-path"
+ fill="#ff48b0"
+ transform="translate(0, 0)" /&gt;
+
+ 
+ &lt;use href="#riso-blob-b1011773-path"
+ fill="#ff7477"
+ transform="translate(2, 1)" /&gt;
+
+ 
+ &lt;use href="#riso-blob-b1011773-path"
+ fill="#fff700"
+ transform="translate(0, -3)" /&gt;
+ &lt;/g&gt;
+
+ 
+ &lt;g class="riso-blob-gradient"&gt;
+ &lt;use href="#riso-blob-b1011773-path"
+ fill="url(#riso-blob-b1011773-grad1)"
+ opacity="0.2"
+ transform="translate(0, -3)" /&gt;
+ &lt;/g&gt;
+ &lt;/g&gt;
+ &lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(function() {
+ 
+ const generateBlob = (config) =&gt; {
+ const { size, growth, edges, seed } = config;
+ const points = createPoints(size, growth, edges, seed);
+ return createSvgPath(points);
+ };
+
+ const createPoints = (size, minGrowth, edgesCount, seed) =&gt; {
+ const randGen = randomDoubleGenerator(seed);
+ const outerRad = size / 2;
+ 
+ 
+ 
+ 
+ 
+ const minRadiusRatio = 0.70;
+ const maxRadiusRatio = 0.90;
+ const innerRad = outerRad * (minRadiusRatio + ((minGrowth - 4) / 3) * (maxRadiusRatio - minRadiusRatio));
+ const center = size / 2;
+ const slices = divide(edgesCount);
+ const destPoints = [];
+
+ slices.forEach((degree) =&gt; {
+ const O = magicPoint(randGen(), innerRad, outerRad);
+ const end = point(center, O, degree);
+ destPoints.push(end);
+ });
+
+ return destPoints;
+ };
+
+ const divide = (count) =&gt; {
+ const deg = 360 / count;
+ return Array(count).fill(0).map((_, i) =&gt; i * deg);
+ };
+
+ const point = (origin, radius, degree) =&gt; {
+ const rad = (degree * Math.PI) / 180;
+ const x = origin + radius * Math.cos(rad);
+ const y = origin + radius * Math.sin(rad);
+ return [Math.round(x), Math.round(y)];
+ };
+
+ const magicPoint = (value, min, max) =&gt; {
+ let radius = min + value * (max - min);
+ if (radius &gt; max) radius = radius - min;
+ else if (radius &lt; min) radius = radius + min;
+ return radius;
+ };
+
+ const randomDoubleGenerator = (s) =&gt; {
+ const mask = 0xffffffff;
+ let m_w = (123456789 + s) &amp; mask;
+ let m_z = (987654321 - s) &amp; mask;
+
+ return function() {
+ m_z = (36969 * (m_z &amp; 65535) + (m_z &gt;&gt;&gt; 16)) &amp; mask;
+ m_w = (18000 * (m_w &amp; 65535) + (m_w &gt;&gt;&gt; 16)) &amp; mask;
+ const result = ((m_z &lt;&lt; 16) + (m_w &amp; 65535)) &gt;&gt;&gt; 0;
+ return result / 4294967296;
+ };
+ };
+
+ const createSvgPath = (points) =&gt; {
+ let svgPath = "";
+ let mid = [
+ (points[0][0] + points[1][0]) / 2,
+ (points[0][1] + points[1][1]) / 2,
+ ];
+ svgPath += "M" + mid[0] + "," + mid[1];
+
+ for (let i = 0; i &lt; points.length; i++) {
+ const p1 = points[(i + 1) % points.length];
+ const p2 = points[(i + 2) % points.length];
+ mid = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
+ svgPath += "Q" + p1[0] + "," + p1[1] + "," + mid[0] + "," + mid[1];
+ }
+ svgPath += "Z";
+ return svgPath;
+ };
+
+ 
+ const svg = document.getElementById('riso-blob-b1011773');
+ if (svg) {
+ const seed = parseInt(svg.dataset.seed);
+ const randomness = parseInt(svg.dataset.randomness);
+ const complexity = parseInt(svg.dataset.complexity);
+ const size = parseInt(svg.dataset.size);
+
+ const path = generateBlob({
+ size: size,
+ growth: randomness,
+ edges: complexity,
+ seed: seed
+ });
+
+ const pathElement = document.getElementById('riso-blob-b1011773-path');
+ if (pathElement) {
+ pathElement.setAttribute('d', path);
+ }
+ }
+})();
+&lt;/script&gt;
+
+René Descartes, contemplating his own existence declared &amp;ldquo;Cogito ergo sum&amp;rdquo; – &amp;ldquo;I think, therefore I am.&amp;rdquo; And with that, he stopped questioning whether the world he experienced was piped into his mind by a demonic force and moved on with his life. The fact that he could doubt, he concluded, was foundational proof of his existence.
+App Store Accountability Acts have started to roll out in states like &lt;a href="https://capitol.texas.gov/tlodocs/89R/billtext/pdf/SB02420F.pdf"&gt;Texas&lt;/a&gt; and &lt;a href="https://le.utah.gov/~2025/bills/static/SB0142.html"&gt;Utah&lt;/a&gt; (&lt;a href="https://lis.virginia.gov/bill-details/20261/SB237"&gt;Virginia has a version that has been continued to 2027&lt;/a&gt;). These laws place liability on mobile App Stores and app developers to check whether the user of a device has parental permission to download and use the app. &lt;a href="https://developer.apple.com/documentation/declaredagerange/"&gt;Parental permission can be granted&lt;/a&gt; by &amp;ldquo;a parent or guardian or the Family Organizer … always … ask the child everytime … never.&amp;rdquo; Unless you live in Texas. If you create an Apple account in Texas you will always share your age range with developers and there is no way to turn the sharing off.
+How do the app stores verify age? &lt;a href="https://support.apple.com/en-us/125662"&gt;Apple checks&lt;/a&gt; whether a user is over 18 by requesting the user to add a credit card (not a debit card!) to their account, checking how long the user has had an Apple account, or by analyzing a picture of a user&amp;rsquo;s government issued identification card. If a user cannot pass one of these checks, they are required to attach their account to family user group in order to set up parental consent.&lt;/p&gt;</description></item><item><title>Claude and Docker MCP Toolkit on Ubuntu</title><link>/post/2025-08-24-2025-08-24-claude-and-docker-mcp-toolkit-on-ubuntu/</link><pubDate>Sun, 24 Aug 2025 12:29:12 -0400</pubDate><guid>/post/2025-08-24-2025-08-24-claude-and-docker-mcp-toolkit-on-ubuntu/</guid><description>&lt;h1 id="how-to-set-up-claude-desktop-with-docker-mcp-toolkit-on-ubuntu"&gt;How to Set Up Claude Desktop with Docker MCP Toolkit on Ubuntu&lt;/h1&gt;
+&lt;p&gt;Getting Claude Desktop working with Docker Desktop&amp;rsquo;s MCP (Model Context Protocol) toolkit on Ubuntu requires a few manual configuration steps. This guide walks you through the complete process, from installing both Docker Desktop and Claude Desktop to successfully connecting them via MCP integration.&lt;/p&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu Linux system&lt;/li&gt;
+&lt;li&gt;Basic familiarity with command line operations&lt;/li&gt;
+&lt;li&gt;Git installed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="step-1-install-docker-desktop"&gt;Step 1: Install Docker Desktop&lt;/h2&gt;
+&lt;p&gt;First, install Docker Engine and then Docker Desktop:&lt;/p&gt;</description></item><item><title>Family Technology Use</title><link>/family-culture/family-technology-use/</link><pubDate>Fri, 28 Mar 2025 07:41:34 -0400</pubDate><guid>/family-culture/family-technology-use/</guid><description>&lt;h1 id="definition"&gt;Definition&lt;/h1&gt;
 &lt;p&gt;Technology use in this document refers to personal computing devices such as computers, phones, and tablets to access content on the internet or local device. This includes specific concerns related to social media, video games, extreme content, and online communities.&lt;/p&gt;
 &lt;h1 id="goals"&gt;Goals&lt;/h1&gt;
 &lt;ol&gt;
@@ -355,4 +923,21 @@ way to support the multi-tenant pattern as well as various approaches I came acr
 &lt;/code&gt;&lt;/pre&gt;
  &lt;/tr&gt;
 &lt;/table&gt;
-&lt;p&gt;Logic focuses on using knowledge in a provable and correct way. When it is used in AI it does not prove out that the claims are true. If an agent is taught that all birds can fly, it will be able to use logic to infer that a dog is not a bird. However, it will run into problems when classifying a penguin. &lt;/p&gt;</description></item><item><title>Qualia</title><link>/2018/10/10/qualia/</link><pubDate>Wed, 10 Oct 2018 03:36:29 +0000</pubDate><guid>/2018/10/10/qualia/</guid><description>&lt;p&gt;Have you ever tried to describe the color red to someone who suffers from protanopia, deuteranopia, protanomaly, or deuteranomaly? It is nearly impossible since those who are red-green color blind are missing the corresponding photoreceptors. The experience of seeing red is so familiar to those who have experienced it. And that type of experience, one which is difficult to communicate, does not change based on other experiences, is unique to the individual experiencing it, and immediately recognized, is qualia. &lt;/p&gt;</description></item><item><title>A Brief Introduction to Bayes&amp;#8217; Theorem</title><link>/2018/08/22/a-brief-introduction-to-bayes-theorem/</link><pubDate>Wed, 22 Aug 2018 13:13:41 +0000</pubDate><guid>/2018/08/22/a-brief-introduction-to-bayes-theorem/</guid><description>&lt;p&gt;Bayes’ Theorem stated is, “the conditional probability of A given B is the conditional probability of B given A scaled by the relative probability of A compared to B”. I find it easier to understand through a practical explanation. Let’s say you are having a medical test performed at the recommendation of your doctor, who recommends tests to everyone because they get a nice kickback and college tuition is not cheap! You are young and healthy and are being tested for the existence of a new form of cancer that only exists in 1% of the population. These cancer detecting tests accurately detect the cancer 8 out of 10 times in an infected individual. However, they “detect” cancer in 1 out of 10 cancer free patients. Your test results come back positive! But before you get worried, let’s figure out the chance that you actually have cancer.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Logic focuses on using knowledge in a provable and correct way. When it is used in AI it does not prove out that the claims are true. If an agent is taught that all birds can fly, it will be able to use logic to infer that a dog is not a bird. However, it will run into problems when classifying a penguin. &lt;/p&gt;</description></item><item><title>Qualia</title><link>/2018/10/10/qualia/</link><pubDate>Wed, 10 Oct 2018 03:36:29 +0000</pubDate><guid>/2018/10/10/qualia/</guid><description>&lt;p&gt;Have you ever tried to describe the color red to someone who suffers from protanopia, deuteranopia, protanomaly, or deuteranomaly? It is nearly impossible since those who are red-green color blind are missing the corresponding photoreceptors. The experience of seeing red is so familiar to those who have experienced it. And that type of experience, one which is difficult to communicate, does not change based on other experiences, is unique to the individual experiencing it, and immediately recognized, is qualia. &lt;/p&gt;</description></item><item><title>A Brief Introduction to Bayes&amp;#8217; Theorem</title><link>/2018/08/22/a-brief-introduction-to-bayes-theorem/</link><pubDate>Wed, 22 Aug 2018 13:13:41 +0000</pubDate><guid>/2018/08/22/a-brief-introduction-to-bayes-theorem/</guid><description>&lt;p&gt;Bayes’ Theorem stated is, “the conditional probability of A given B is the conditional probability of B given A scaled by the relative probability of A compared to B”. I find it easier to understand through a practical explanation. Let’s say you are having a medical test performed at the recommendation of your doctor, who recommends tests to everyone because they get a nice kickback and college tuition is not cheap! You are young and healthy and are being tested for the existence of a new form of cancer that only exists in 1% of the population. These cancer detecting tests accurately detect the cancer 8 out of 10 times in an infected individual. However, they “detect” cancer in 1 out of 10 cancer free patients. Your test results come back positive! But before you get worried, let’s figure out the chance that you actually have cancer.&lt;/p&gt;</description></item><item><title/><link>/_test/_index-no-shortcodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/_test/_index-no-shortcodes/</guid><description/></item><item><title/><link>/_test/long-content/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/_test/long-content/</guid><description/></item><item><title/><link>/_test/minimal-post/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/_test/minimal-post/</guid><description/></item><item><title/><link>/_test/README/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/_test/README/</guid><description>&lt;h1 id="test-suite-documentation"&gt;Test Suite Documentation&lt;/h1&gt;
+&lt;p&gt;This directory contains a comprehensive test suite for the offset Hugo theme.&lt;/p&gt;
+&lt;h2 id="structure"&gt;Structure&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;content/_test/
+├── _index.md # Main test page with component showcase
+├── single-post-test.md # Tests single post layout
+├── minimal-post.md # Tests minimal front matter
+├── long-content.md # Tests long content and edge cases
+├── image-test.md # Tests image rendering
+├── shortcode-test.md # Tests custom shortcodes
+└── README.md # This file
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="accessing-the-test-suite"&gt;Accessing the Test Suite&lt;/h2&gt;
+&lt;p&gt;With Hugo server running in development mode:&lt;/p&gt;</description></item><item><title/><link>/_test/single-post-test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/_test/single-post-test/</guid><description/></item><item><title>The Courage to Understand</title><link>/quote/courage-to-understand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/quote/courage-to-understand/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;You already know enough. So do I. It is not knowledge we lack. What is missing is the courage to understand what we know and to draw conclusions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;— Sven Lindqvist&lt;/p&gt;
+&lt;p&gt;When I read this quote by Sven Lindqvist in his book &lt;em&gt;Exterminate All the Brutes&lt;/em&gt;, I was shaken so much I put the book down.
+I knew that I was responsible to act on this information. When faced with an injustice, it is not enough to acknowledge that something is not fair. I realized that true belief requires action even when what must be done is uncomfortable.&lt;/p&gt;</description></item></channel></rss>

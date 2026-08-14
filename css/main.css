@@ -110,6 +110,23 @@ article .content {
     margin-top: var(--space-6);
 }
 
+/*
+ * A post's front-matter title (rendered in the page's own <h1>, above) is the
+ * real page title and stays at full size. If a post's Markdown body also opens
+ * with its own # heading, that's content, not the title -- size it down so it
+ * reads as a subheading instead of competing with the actual title above it.
+ */
+.content h1 {
+    font-size: var(--text-3xl);
+}
+
+/* Same heading, appearing inside a list-view excerpt -- smaller still, since
+   it's sitting inside a compact post-list card next to the real post title link. */
+.post-excerpt h1 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+}
+
 /* Example: Post navigation */
 .post-navigation {
     display: flex;

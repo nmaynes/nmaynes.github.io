@@ -1,0 +1,88 @@
+<!doctype html><html lang=en-us><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Claude and Docker MCP Toolkit on Ubuntu | Nathan's Blog</title><meta name=description content="infrequent posts about things I am working on"><meta name=author content="Nathan Maynes"><link rel=stylesheet href=/css/main.css></head><body><a class=skip-link href=#main-content>Skip to main content</a><header><h1><a href=/>Nathan's Blog</a></h1><p>infrequent posts about things I am working on</p><nav><ul><li><a href=/post/>Posts</a></li><li><a href=/categories/>Categories</a></li><li><a href=/tags/>Tags</a></li><li><a href=/about/>About</a></li><li><a href=/design/>Design</a></li><li><a href=/ai-use-disclosure/>AI Use Disclosure</a></li></ul></nav></header><main id=main-content><article><header><h1>Claude and Docker MCP Toolkit on Ubuntu</h1><div class=post-meta><time datetime=2025-08-24>August 24, 2025
+</time><span>in default</span><div class=tags>Tags:
+<a href=/tags/default>default</a></div></div></header><div class=content><h1 id=how-to-set-up-claude-desktop-with-docker-mcp-toolkit-on-ubuntu>How to Set Up Claude Desktop with Docker MCP Toolkit on Ubuntu</h1><p>Getting Claude Desktop working with Docker Desktop&rsquo;s MCP (Model Context Protocol) toolkit on Ubuntu requires a few manual configuration steps. This guide walks you through the complete process, from installing both Docker Desktop and Claude Desktop to successfully connecting them via MCP integration.</p><h2 id=prerequisites>Prerequisites</h2><ul><li>Ubuntu Linux system</li><li>Basic familiarity with command line operations</li><li>Git installed</li></ul><h2 id=step-1-install-docker-desktop>Step 1: Install Docker Desktop</h2><p>First, install Docker Engine and then Docker Desktop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Add Docker&#39;s official GPG key</span>
+</span></span><span class=line><span class=cl>sudo apt-get update
+</span></span><span class=line><span class=cl>sudo apt-get install ca-certificates curl
+</span></span><span class=line><span class=cl>sudo install -m <span class=m>0755</span> -d /etc/apt/keyrings
+</span></span><span class=line><span class=cl>sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+</span></span><span class=line><span class=cl>sudo chmod a+r /etc/apt/keyrings/docker.asc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Add the repository to Apt sources</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;deb [arch=</span><span class=k>$(</span>dpkg --print-architecture<span class=k>)</span><span class=s2> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+</span></span></span><span class=line><span class=cl><span class=s2>  </span><span class=k>$(</span>. /etc/os-release <span class=o>&amp;&amp;</span> <span class=nb>echo</span> <span class=s2>&#34;</span><span class=si>${</span><span class=nv>UBUNTU_CODENAME</span><span class=k>:-</span><span class=nv>$VERSION_CODENAME</span><span class=si>}</span><span class=s2>&#34;</span><span class=k>)</span><span class=s2> stable&#34;</span> <span class=p>|</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Install Docker Engine</span>
+</span></span><span class=line><span class=cl>sudo apt-get update
+</span></span><span class=line><span class=cl>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Test Docker installation</span>
+</span></span><span class=line><span class=cl>sudo docker run hello-world
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Download and install Docker Desktop (download the .deb file first)</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> ~/Downloads
+</span></span><span class=line><span class=cl>sudo apt-get install ./docker-desktop-amd64.deb
+</span></span></code></pre></div><h2 id=step-2-install-claude-desktop>Step 2: Install Claude Desktop</h2><p>Clone and build Claude Desktop using the community repository:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Navigate to your code directory</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> ~/Code
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Clone the Claude Desktop repository</span>
+</span></span><span class=line><span class=cl>git clone https://github.com/emsi/claude-desktop
+</span></span><span class=line><span class=cl><span class=nb>cd</span> claude-desktop
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Build and install Claude Desktop</span>
+</span></span><span class=line><span class=cl>./install-claude-desktop.sh
+</span></span></code></pre></div><p>The script will automatically:</p><ul><li>Check for and install required dependencies</li><li>Download and extract resources from the Windows version</li><li>Create a proper Debian package</li><li>Guide you through installation</li></ul><p>Test that Claude Desktop works:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>claude-desktop
+</span></span></code></pre></div><h2 id=step-3-verify-docker-mcp-components>Step 3: Verify Docker MCP Components</h2><p>Docker Desktop on Ubuntu includes MCP components, but they need to be discovered and configured. Let&rsquo;s check if the MCP components are installed:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Check for MCP components in Docker directories</span>
+</span></span><span class=line><span class=cl>find ~/.docker -name <span class=s2>&#34;*mcp*&#34;</span> 2&gt;/dev/null
+</span></span></code></pre></div><p>You should see output similar to:</p><pre tabindex=0><code>/home/username/.docker/mcp
+/home/username/.docker/mcp/catalogs/docker-mcp.yaml  
+/home/username/.docker/cli-plugins/docker-mcp
+</code></pre><p>If you see these files, the MCP components are installed. Let&rsquo;s examine them:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Check the MCP CLI plugin details</span>
+</span></span><span class=line><span class=cl>ls -la ~/.docker/cli-plugins/docker-mcp
+</span></span><span class=line><span class=cl>file ~/.docker/cli-plugins/docker-mcp
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Check the MCP catalog file</span>
+</span></span><span class=line><span class=cl>cat ~/.docker/mcp/catalogs/docker-mcp.yaml
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># See what&#39;s in the MCP directory</span>
+</span></span><span class=line><span class=cl>ls -la ~/.docker/mcp/
+</span></span></code></pre></div><h2 id=step-4-test-docker-mcp-cli>Step 4: Test Docker MCP CLI</h2><p>Verify that the Docker MCP CLI plugin is working:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Test the MCP plugin</span>
+</span></span><span class=line><span class=cl>docker mcp --help
+</span></span></code></pre></div><p>This should show the Docker MCP Toolkit CLI help with various subcommands like <code>catalog</code>, <code>client</code>, <code>config</code>, <code>gateway</code>, <code>server</code>, etc.</p><p>You can also check the current configuration:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Check current MCP configuration</span>
+</span></span><span class=line><span class=cl>docker mcp config show
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># List available MCP clients</span>
+</span></span><span class=line><span class=cl>docker mcp client list
+</span></span></code></pre></div><h2 id=step-5-connect-claude-desktop-to-docker-mcp>Step 5: Connect Claude Desktop to Docker MCP</h2><p>This is the crucial step that makes the integration work. Use the Docker MCP CLI to automatically configure Claude Desktop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Connect Claude Desktop globally (system-wide)</span>
+</span></span><span class=line><span class=cl>docker mcp client connect claude-desktop --global
+</span></span></code></pre></div><p>You should see output like:</p><pre tabindex=0><code>=== System-wide MCP Configurations ===
+ ● claude-desktop: connected
+   MCP_DOCKER: Docker MCP Catalog (gateway server) (stdio)
+ ● gordon: disconnected
+You might have to restart &#39;claude-desktop&#39;.
+</code></pre><h2 id=step-6-verify-configuration>Step 6: Verify Configuration</h2><p>Check that the configuration file was created properly:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># View the Claude Desktop configuration</span>
+</span></span><span class=line><span class=cl>cat ~/.config/Claude/claude_desktop_config.json
+</span></span></code></pre></div><p>The file should contain something like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;mcpServers&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;docker&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;command&#34;</span><span class=p>:</span> <span class=s2>&#34;docker&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;args&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;mcp&#34;</span><span class=p>,</span> <span class=s2>&#34;client&#34;</span><span class=p>,</span> <span class=s2>&#34;connect&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;env&#34;</span><span class=p>:</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>You can also list the configured clients:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># List MCP client configurations</span>
+</span></span><span class=line><span class=cl>docker mcp client ls
+</span></span></code></pre></div><h2 id=step-7-check-available-mcp-servers-and-tools>Step 7: Check Available MCP Servers and Tools</h2><p>List available MCP servers and tools:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Check available servers</span>
+</span></span><span class=line><span class=cl>docker mcp server list
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># List all available MCP tools</span>
+</span></span><span class=line><span class=cl>docker mcp tools list
+</span></span></code></pre></div><p>Initially, you might see servers like <code>aws-documentation</code>, <code>fetch</code>, <code>filesystem</code>, <code>time</code>, <code>wikipedia-mcp</code>, but no <code>docker</code> server.</p><p>If the <code>docker</code> server is not listed, you may need to add or enable it. After proper configuration, you should see:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker mcp server list
+</span></span><span class=line><span class=cl><span class=c1># Should show: aws-documentation, docker, fetch, filesystem, sequentialthinking, time, wikipedia-mcp</span>
+</span></span></code></pre></div><h2 id=step-8-restart-claude-desktop>Step 8: Restart Claude Desktop</h2><p><strong>Important</strong>: Completely quit and restart Claude Desktop (don&rsquo;t just refresh):</p><ol><li>Close Claude Desktop completely</li><li>Reopen the application</li></ol><h2 id=step-9-test-the-integration>Step 9: Test the Integration</h2><p>Once Claude Desktop restarts, you can test the Docker integration by asking Claude to perform Docker operations:</p><ul><li>&ldquo;Can you list my running Docker containers?&rdquo;</li><li>&ldquo;Show me my Docker images&rdquo;</li><li>&ldquo;What&rsquo;s the status of my Docker services?&rdquo;</li></ul><p>Claude should now be able to execute Docker commands and provide real-time information about your Docker environment.</p><h2 id=troubleshooting>Troubleshooting</h2><h3 id=config-not-found-error>&ldquo;Config not found&rdquo; Error</h3><p>If you see this error in Docker Desktop&rsquo;s MCP Toolkit screen, it usually means the MCP components aren&rsquo;t properly installed or the connection hasn&rsquo;t been established. Go back to Step 4 and ensure the global connection was successful.</p><h3 id=no-docker-tools-available>No Docker Tools Available</h3><p>If Claude can&rsquo;t access Docker functionality after restarting, check:</p><ol><li>Verify the Docker server appears in <code>docker mcp server list</code></li><li>Ensure Claude Desktop was completely restarted</li><li>Check that Docker Desktop itself is running</li></ol><h3 id=permission-issues>Permission Issues</h3><p>Make sure your user has proper Docker permissions:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Add your user to the docker group (if not already done)</span>
+</span></span><span class=line><span class=cl>sudo usermod -aG docker <span class=nv>$USER</span>
+</span></span><span class=line><span class=cl><span class=c1># Log out and back in for changes to take effect</span>
+</span></span></code></pre></div><h2 id=what-you-can-do-now>What You Can Do Now</h2><p>With the integration working, Claude Desktop can help you:</p><ul><li><strong>Container Management</strong>: List, start, stop, and inspect containers</li><li><strong>Image Operations</strong>: View images, check sizes, and manage repositories</li><li><strong>System Monitoring</strong>: Check Docker system status and resource usage</li><li><strong>Log Analysis</strong>: Access and analyze container logs</li><li><strong>Development Workflow</strong>: Streamline Docker-based development tasks</li></ul><h2 id=conclusion>Conclusion</h2><p>The Docker MCP integration transforms Claude Desktop into a powerful Docker management interface. While the setup on Ubuntu requires manual configuration (unlike the more automated experience on other platforms), the result is a seamless integration that makes Docker operations much more intuitive and accessible.</p><p>The key insight is that Docker Desktop&rsquo;s MCP toolkit exists on Ubuntu but requires the manual connection step using <code>docker mcp client connect claude-desktop --global</code> to properly configure the integration.</p><h2 id=additional-resources>Additional Resources</h2><ul><li><a href=https://docs.docker.com/>Docker MCP Toolkit Documentation</a></li><li><a href=https://github.com/emsi/claude-desktop>Claude Desktop for Linux (emsi/claude-desktop)</a></li><li><a href=https://github.com/modelcontextprotocol/specification>Model Context Protocol Specification</a></li></ul><hr><p><em>Have questions or run into issues? The Docker and Claude communities are generally helpful for troubleshooting these integrations.</em></p></div><nav class=post-navigation><div class=prev-post><span>← Previous</span>
+<a href=/post/2025-03-28-family-technology-use/>Family Technology Use</a></div><div class=next-post><span>Next →</span>
+<a href=/post/2026-08-12-app-store-age-gates/>App Store Age Gates</a></div></nav></article></main><footer><div class="footer-quote footer-quote--riso"><blockquote class=footer-quote-text>&ldquo;You already know enough. So do I. It is not knowledge we lack. What is missing is the courage to understand what we know and to draw conclusions.&rdquo;</blockquote><p class=footer-quote-source><a href=/quote/courage-to-understand/>The Courage to Understand</a></p></div><p>&copy; 2026 Nathan's Blog</p><nav><ul><li><a href=https://github.com/nmaynes target=_blank rel=noopener>Github</a></li><li><a href=https://x.com/nathanmaynes target=_blank rel=noopener>X</a></li></ul></nav></footer></body></html>

@@ -20,7 +20,7 @@ html {
 /* === ROOT === */
 body {
     font-family: var(--font-sans);
-    font-size: var(--text-base);
+    font-size: var(--text-xl);
     font-weight: var(--weight-normal);
     line-height: var(--leading-relaxed);
     color: var(--color-text-primary);
@@ -35,17 +35,32 @@ body {
 
 /* Headings inherit from parent context */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: var(--weight-semibold);
+    font-family: var(--font-heading);
     line-height: var(--leading-tight);
     color: var(--color-heading);
     margin-bottom: var(--space-4);
 }
 
-h1 { font-size: var(--text-4xl); }
-h2 { font-size: var(--text-3xl); }
-h3 { font-size: var(--text-2xl); }
-h4 { font-size: var(--text-xl); }
-h5 { font-size: var(--text-lg); }
+h1 {
+    font-size: var(--text-6xl);
+    font-family: var(--font-heading-h1);
+    font-weight: 600;
+    font-style: italic;
+}
+
+h2, h3 {
+    font-weight: 800;
+}
+
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+
+h4, h5, h6 {
+    font-weight: 400;
+}
+
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
 h6 { font-size: var(--text-base); }
 
 /* Spacing between headings */
@@ -120,6 +135,132 @@ pre code {
     font-size: inherit;
 }
 
+/* Syntax Highlighting (Chroma) */
+.highlight {
+    margin-bottom: var(--space-4);
+}
+
+.highlight pre {
+    margin-bottom: 0;
+}
+
+/* Light theme syntax colors */
+:root, [data-theme="light"] {
+    --syntax-comment:    var(--color-neutral-500);
+    --syntax-keyword:    #0066cc;
+    --syntax-string:     #22863a;
+    --syntax-number:     #005cc5;
+    --syntax-function:   #6f42c1;
+    --syntax-class:      #6f42c1;
+    --syntax-operator:   #d73a49;
+    --syntax-variable:   #e36209;
+    --syntax-constant:   #005cc5;
+}
+
+/* Dark theme syntax colors */
+[data-theme="dark"] {
+    --syntax-comment:    var(--color-neutral-400);
+    --syntax-keyword:    #79b8ff;
+    --syntax-string:     #85e89d;
+    --syntax-number:     #79b8ff;
+    --syntax-function:   #b392f0;
+    --syntax-class:      #b392f0;
+    --syntax-operator:   #f97583;
+    --syntax-variable:   #ffab70;
+    --syntax-constant:   #79b8ff;
+}
+
+/* Chroma syntax highlighting classes */
+.chroma .c,   /* Comment */
+.chroma .cm,  /* Comment.Multiline */
+.chroma .c1,  /* Comment.Single */
+.chroma .cs { /* Comment.Special */
+    color: var(--syntax-comment);
+    font-style: italic;
+}
+
+.chroma .k,   /* Keyword */
+.chroma .kc,  /* Keyword.Constant */
+.chroma .kd,  /* Keyword.Declaration */
+.chroma .kn,  /* Keyword.Namespace */
+.chroma .kp,  /* Keyword.Pseudo */
+.chroma .kr,  /* Keyword.Reserved */
+.chroma .kt { /* Keyword.Type */
+    color: var(--syntax-keyword);
+    font-weight: var(--weight-semibold);
+}
+
+.chroma .s,   /* String */
+.chroma .sa,  /* String.Affix */
+.chroma .sb,  /* String.Backtick */
+.chroma .sc,  /* String.Char */
+.chroma .dl,  /* String.Delimiter */
+.chroma .s2,  /* String.Double */
+.chroma .se,  /* String.Escape */
+.chroma .sh,  /* String.Heredoc */
+.chroma .si,  /* String.Interpol */
+.chroma .sx,  /* String.Other */
+.chroma .sr,  /* String.Regex */
+.chroma .s1,  /* String.Single */
+.chroma .ss { /* String.Symbol */
+    color: var(--syntax-string);
+}
+
+.chroma .m,   /* Number */
+.chroma .mb,  /* Number.Bin */
+.chroma .mf,  /* Number.Float */
+.chroma .mh,  /* Number.Hex */
+.chroma .mi,  /* Number.Integer */
+.chroma .il,  /* Number.Integer.Long */
+.chroma .mo { /* Number.Oct */
+    color: var(--syntax-number);
+}
+
+.chroma .n,   /* Name */
+.chroma .na,  /* Name.Attribute */
+.chroma .nb,  /* Name.Builtin */
+.chroma .bp,  /* Name.Builtin.Pseudo */
+.chroma .nf,  /* Name.Function */
+.chroma .fm { /* Name.Function.Magic */
+    color: var(--syntax-function);
+}
+
+.chroma .nc,  /* Name.Class */
+.chroma .ne { /* Name.Exception */
+    color: var(--syntax-class);
+    font-weight: var(--weight-semibold);
+}
+
+.chroma .nv,  /* Name.Variable */
+.chroma .vc,  /* Name.Variable.Class */
+.chroma .vg,  /* Name.Variable.Global */
+.chroma .vi,  /* Name.Variable.Instance */
+.chroma .vm { /* Name.Variable.Magic */
+    color: var(--syntax-variable);
+}
+
+.chroma .o,   /* Operator */
+.chroma .ow { /* Operator.Word */
+    color: var(--syntax-operator);
+}
+
+.chroma .p { /* Punctuation */
+    color: var(--color-text-primary);
+}
+
+.chroma .err { /* Error */
+    color: var(--color-error);
+    font-weight: var(--weight-bold);
+}
+
+.chroma .gd { /* Generic.Deleted */
+    color: var(--color-error);
+}
+
+.chroma .gi { /* Generic.Inserted */
+    color: var(--color-success);
+}
+
 /* === LISTS === */
 ul, ol {
     margin-bottom: var(--space-4);
@@ -191,6 +332,24 @@ th, td {
 th {
     font-weight: var(--weight-semibold);
     background-color: var(--color-bg-secondary);
+}
+
+/* === SKIP LINK === */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    z-index: var(--z-tooltip);
+
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+}
+
+.skip-link:focus {
+    left: var(--space-4);
+    top: var(--space-4);
 }
 
 /* === SELECTION === */

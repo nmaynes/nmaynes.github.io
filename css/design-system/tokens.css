@@ -4,6 +4,41 @@
  * Edit these to customize the entire theme
  */
 
+/* === CUSTOM FONTS ===
+ * All three static faces share one family name ('Inter') with distinct
+ * weight/style descriptors, so the browser can actually pick the right
+ * face when CSS requests a given font-weight/font-style instead of only
+ * ever rendering whichever face happened to load under a unique name.
+ * Coverage note: only regular (400), medium (500), and bold italic (700
+ * italic) are available. There's no plain (non-italic) bold and no plain
+ * (non-bold) italic face, so font-weight: 700 without italic, or
+ * font-style: italic without bold, will fall back to the browser's
+ * synthesized (faux) bold/italic from the nearest available face.
+ */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/InterDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/InterDisplay-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/InterDisplay-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
 :root {
     /* === COLORS === */
 
@@ -40,9 +75,11 @@
     /* === TYPOGRAPHY === */
 
     /* Font Families */
-    --font-sans: "Sono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-heading-h1: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
     /* Font Sizes */
     --text-xs:   0.75rem;   /* 12px */
@@ -70,7 +107,7 @@
     --weight-semibold: 600;
     --weight-bold: 700;
 
-    /* Default body weight (Sono SemiBold) */
+    /* Default body weight */
     --body-weight: 600;
 
     /* === SPACING === */

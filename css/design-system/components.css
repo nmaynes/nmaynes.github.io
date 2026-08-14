@@ -178,6 +178,7 @@
 
 .post-meta time {
     font-weight: var(--weight-medium);
+    font-style: italic;
 }
 
 /* === POST LIST === */
@@ -300,4 +301,68 @@
 
 .toc a:hover {
     color: var(--color-link);
+}
+
+/* === FOOTER QUOTE === */
+/* Shared structure for all footer-quote style variants -- see footer-quote.html partial */
+.footer-quote {
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-quote-text {
+    border: none;
+    color: inherit;
+    font-style: italic;
+}
+
+.footer-quote-source a {
+    color: inherit;
+}
+
+/* --- Style 1: Minimal --- blends into the footer's existing quiet, muted text */
+.footer-quote--minimal {
+    margin-bottom: var(--space-6);
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+}
+
+.footer-quote--minimal .footer-quote-text {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-quote--minimal .footer-quote-source {
+    display: inline;
+    margin: 0;
+}
+
+.footer-quote--minimal .footer-quote-source::before {
+    content: " \2014 ";
+}
+
+/* --- Style 2: Card --- a proper pull-quote, more visual presence, reusing the
+   site's existing card language (tinted background, rounded corners) */
+.footer-quote--card {
+    margin-bottom: var(--space-8);
+    padding: var(--space-6);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    text-align: left;
+}
+
+.footer-quote--card .footer-quote-text {
+    margin: 0 0 var(--space-3);
+    padding: 0;
+    font-size: var(--text-lg);
+    color: var(--color-text-primary);
+}
+
+.footer-quote--card .footer-quote-source {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
 }
